@@ -23,7 +23,7 @@ const HeaderTextContainer = styled.div`
     margin-top: 10vh;
   }
   h1 {
-    color: #fff;
+    color: #fafafa;
     font-family: 'Dancing Script', sans-serif;
     font-size: 5rem;
     text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
@@ -31,11 +31,10 @@ const HeaderTextContainer = styled.div`
     transform: rotate(-15deg);
   }
   p {
-    color: #fff;
+    color: #fafafa;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: 1.5rem;
-    text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
     margin-bottom: 0.6rem;
   }
   span {
@@ -49,9 +48,8 @@ const HeaderTextContainer = styled.div`
     left: -2px;
     width: 100%;
     height: 4px;
-    background-color: #fff;
+    background-color: #fafafa;
     border-radius: 4px;
-    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
   }
 
 `;
@@ -73,6 +71,47 @@ const HeaderImage = styled.img`
   }
 `;
 
+const Logo = styled.div`
+  {
+    position: absolute;
+    top: 45%;
+    right: -29px;
+    width: 58px; 
+    height: 88px;
+    background-color: #fafafa;
+    margin: 28.87px 0;
+    border-radius: .5em;
+    transform: rotate(90deg);
+    z-index: 10;
+  }
+  &:before, &:after{
+    position: absolute;
+    width: inherit; 
+    height: inherit;
+    border-radius: inherit;
+    background: inherit;
+    content: '';
+  }
+  &:before {
+    transform: rotate(60deg);
+  }
+  &:after {
+    transform: rotate(-60deg);
+  }
+  span {
+    position: absolute;
+    width: inherit; 
+    height: inherit;
+    padding-top: 50%;
+    padding-left: 27%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #715FB5;
+    transform: rotate(-90deg);
+    z-index: 12;
+  }
+`;
+
 export default class MyselfLanding extends React.Component {
   render() {
     return (
@@ -85,6 +124,9 @@ export default class MyselfLanding extends React.Component {
           </TextIntro>
         </HeaderTextContainer>
         <HeaderImage src={imgOfMyself} alt="picture of myself" />
+        <Logo>
+          <span>N8</span>
+        </Logo>
       </LandingContainer>
     )
   }

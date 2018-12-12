@@ -26,7 +26,7 @@ const TextContainer = styled.div`
     color: #707070;
     font-family: 'Dancing Script', sans-serif;
     font-size: 5rem;
-    text-shadow: 1px 3px 5px #707070;
+    text-shadow: 1px 2px 8px #707070;
     margin-bottom: 2.8rem;
     transform: rotate(-15deg);
   }
@@ -49,7 +49,7 @@ const TextIntro = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: left;
+    margin-left: 40px;
     width: 85%;
     line-height: 35px;
   }
@@ -71,7 +71,8 @@ const RenlyWoofContainer = styled.div`
     content: '~woof~';
     position: absolute;
     top: 50%;
-    left: 70%;
+    left: 65%;
+    color: #707070;
     font-family: 'Merriweather', sans-serif;
     font-size: 2vw;
     font-size: 2vmin;
@@ -85,15 +86,6 @@ const Image = styled.img`
     position: relative;
   }
 `;
-
-// const RenlyWoof = styled.span`
-//   {
-//     font-family: 'Merriweather', sans-serif;
-//     position: relative;
-//     bottom: 15vh;
-//     right: 8vw;
-//   }
-// `;
 
 export default class MyselfLanding extends React.Component {
   render() {
