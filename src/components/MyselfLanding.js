@@ -20,14 +20,15 @@ const HeaderTextContainer = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 14vh;
+    margin-top: 10vh;
   }
   h1 {
     color: #fff;
     font-family: 'Dancing Script', sans-serif;
-    font-size: 8vw;
-    text-shadow: 1px 5px 5px rgba(0, 0, 0, 0.4);
-    margin-bottom: 1rem;
+    font-size: 5rem;
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
+    margin-bottom: 3rem;
+    transform: rotate(-15deg);
   }
   p {
     color: #fff;
@@ -35,7 +36,7 @@ const HeaderTextContainer = styled.div`
     font-weight: bold;
     font-size: 1.5rem;
     text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
   }
   span {
     font-family: 'Merriweather', serif;
@@ -59,8 +60,8 @@ const TextIntro = styled.div`
   {
     display: flex;
     flex-direction: column;
-    align-items: left;
-    text-align: left;
+    align-items: center;
+    width: 100%;
   }
 `
 
@@ -72,18 +73,18 @@ const HeaderImage = styled.img`
   }
 `;
 
-export default class Landing1 extends React.Component {
+export default class MyselfLanding extends React.Component {
   render() {
     return (
       <LandingContainer>
         <HeaderTextContainer>
-          <h1>Greetings!</h1>
+          <h1>Welcome!</h1>
           <TextIntro>
             <p>My name is Nathan,</p>
             <p>but you can call me <span>Nate.</span></p>
           </TextIntro>
         </HeaderTextContainer>
-        <HeaderImage src={imgOfMyself} alt="picture of my dog" />
+        <HeaderImage src={imgOfMyself} alt="picture of myself" />
       </LandingContainer>
     )
   }
