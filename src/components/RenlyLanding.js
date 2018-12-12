@@ -1,5 +1,6 @@
 import React from 'react'
 import imgOfRenly from '../images/renly-color.png'
+import comment from '../images/icons/comment.svg'
 import styled from '@emotion/styled'
 
 const LandingContainer = styled.div`
@@ -28,7 +29,7 @@ const TextContainer = styled.div`
     font-family: 'Dancing Script', sans-serif;
     font-size: 5rem;
     text-shadow: 1px 2px 8px #707070;
-    margin-bottom: 2.8rem;
+    margin-bottom: 2.6rem;
     transform: rotate(-15deg);
   }
   p {

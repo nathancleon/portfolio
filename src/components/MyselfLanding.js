@@ -1,5 +1,7 @@
 import React from 'react'
 import imgOfMyself from '../images/me-color.png'
+import downArrow from '../images/icons/long-arrow-down.svg'
+import {keyframes} from '@emotion/core'
 import styled from '@emotion/styled'
 
 const LandingContainer = styled.div`
@@ -74,7 +76,7 @@ const HeaderImage = styled.img`
 const Logo = styled.div`
   {
     position: absolute;
-    top: 45%;
+    top: 50%;
     right: -29px;
     width: 58px; 
     height: 88px;
@@ -112,6 +114,40 @@ const Logo = styled.div`
   }
 `;
 
+const bounce = keyframes`
+  {
+    0% { bottom: -13px; }
+    50% { bottom: -8px; }
+    100% { bottom: -13px; }
+  }
+`;
+
+const ScrollContainer = styled.div`
+  {
+    position: absolute;
+    width: 40px;
+    bottom: 2vh;
+    right: -22px;
+    z-index: 10;
+  }
+`;
+
+const ScrollDown = styled.div`
+  {
+    position: relative;
+  }
+`;
+
+const ScrollIcon = styled.img`
+  {
+    position: absolute;
+    width: 35px;
+    filter: drop-shadow(1px 3px 8px rgba(0, 0, 0, 0.6));
+    animation: ${bounce} 1s infinite;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  }
+`;
+
 export default class MyselfLanding extends React.Component {
   render() {
     return (
@@ -127,6 +163,11 @@ export default class MyselfLanding extends React.Component {
         <Logo>
           <span>N8</span>
         </Logo>
+        <ScrollContainer>
+          <ScrollDown>
+            <ScrollIcon src={downArrow} alt="icon of an actual old school scroll document" />
+          </ScrollDown>
+        </ScrollContainer>
       </LandingContainer>
     )
   }
