@@ -23,7 +23,7 @@ const HeaderTextContainer = styled.div`
     margin-top: 10vh;
   }
   h1 {
-    color: #fafafa;
+    color: #f2f2f2;
     font-family: 'Dancing Script', sans-serif;
     font-size: 5rem;
     text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
@@ -31,7 +31,7 @@ const HeaderTextContainer = styled.div`
     transform: rotate(-15deg);
   }
   p {
-    color: #fafafa;
+    color: #f2f2f2;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: 1.5rem;
@@ -78,7 +78,7 @@ const Logo = styled.div`
     right: -29px;
     width: 58px; 
     height: 88px;
-    background-color: #fafafa;
+    background-color: #f2f2f2;
     margin: 28.87px 0;
     border-radius: .5em;
     transform: rotate(90deg);

@@ -11,6 +11,7 @@ const LandingContainer = styled.div`
     height: 100vh;
     position: relative;
     background-color: #8DE4F5;
+    overflow: hidden;
   }
 `;
 
@@ -58,7 +59,7 @@ const TextIntro = styled.div`
 const ImageContainer = styled.div`
   {
     position: absolute;
-    bottom: 0;
+    bottom: -1vh;
     width: 100%;
   }
 `;
@@ -74,6 +75,7 @@ const RenlyWoofContainer = styled.div`
     left: 65%;
     color: #707070;
     font-family: 'Merriweather', sans-serif;
+    font-weight: bold;
     font-size: 2vw;
     font-size: 2vmin;
     transform: rotate(-15deg);
@@ -82,7 +84,6 @@ const RenlyWoofContainer = styled.div`
 
 const Image = styled.img`
   {
-    margin-bottom: -0.8vh;
     position: relative;
   }
 `;
