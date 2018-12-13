@@ -9,8 +9,8 @@ const LandingContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 48vw;
-    height: 100vh;
+    width: 48%;
+    height: 100%;
     position: relative;
     background-color: #715FB5;
   }
@@ -69,7 +69,7 @@ const HeaderImage = styled.img`
   {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    min-width: 100%;
   }
 `;
 
@@ -165,7 +165,7 @@ export default class MyselfLanding extends React.Component {
         </Logo>
         <ScrollContainer>
           <ScrollDown>
-            <ScrollIcon src={downArrow} alt="icon of an actual old school scroll document" />
+            <ScrollIcon src={downArrow} alt="downward facing arrow" />
           </ScrollDown>
         </ScrollContainer>
       </LandingContainer>

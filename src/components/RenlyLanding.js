@@ -8,8 +8,8 @@ const LandingContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 52vw;
-    height: 100vh;
+    width: 52%;
+    height: 100%;
     position: relative;
     background-color: #8DE4F5;
     overflow: hidden;
@@ -61,31 +61,57 @@ const ImageContainer = styled.div`
   {
     position: absolute;
     bottom: -1vh;
-    width: 100%;
+    min-width: 100%;
+  }
+`;
+
+
+const Image = styled.img`
+  {
+    position: relative;
   }
 `;
 
 const RenlyWoofContainer = styled.div`
   {
-    position: relative;
-  }
-  &:after {
-    content: '~woof~';
     position: absolute;
-    top: 50%;
-    left: 65%;
+    top: 48%;
+    left: 68%;
+    transform: rotate(-20deg);
+  }
+`;
+
+const RenlyWoof =  styled.div`
+  {
+    position: relative;
+    width: 9.5vmin;
+    height: 9.5vmin;
+  }
+`;
+
+const CommentBubble = styled.img`
+  { 
+    position: absolute;
+    width: 100%;
     color: #707070;
     font-family: 'Merriweather', sans-serif;
     font-weight: bold;
     font-size: 2vw;
     font-size: 2vmin;
-    transform: rotate(-15deg);
+    z-index: -15;
   }
 `;
 
-const Image = styled.img`
+const BubbleText = styled.p`
   {
-    position: relative;
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    color: #f2f2f2;
+    font-family: 'Merriweather', sans-serif;
+    font-weight: bold;
+    font-size: 2vmin;
+    z-index: 20;
   }
 `;
 
@@ -100,9 +126,12 @@ export default class MyselfLanding extends React.Component {
           </TextIntro>
         </TextContainer>
         <ImageContainer>
+          <Image src={imgOfRenly} alt="picture of my dog" />
           <RenlyWoofContainer>
-            <Image src={imgOfRenly} alt="picture of my dog" />
-            {/* <RenlyWoof>~woof~</RenlyWoof> */}
+            <RenlyWoof>
+              <CommentBubble src={comment} alt="comment bubble" />
+              <BubbleText>~woof~</BubbleText>
+            </RenlyWoof>
           </RenlyWoofContainer>
         </ImageContainer>
       </LandingContainer>
