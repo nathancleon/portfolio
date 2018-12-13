@@ -1,5 +1,6 @@
 import React from 'react'
 import imgOfMyself from '../images/me-color.png'
+import codepattern from '../images/icons/codepattern.svg'
 import downArrow from '../images/icons/long-arrow-down.svg'
 import {keyframes} from '@emotion/core'
 import styled from '@emotion/styled'
@@ -16,18 +17,36 @@ const LandingContainer = styled.div`
   }
 `;
 
+const CodeBackground = styled.div`
+  {
+    height: 100%;
+    width: 100%;
+    background-image: url(${codepattern});
+    background-size: 200px;
+    background-repeat: repeat;
+  }
+`;
+
+const BackgroundFilter = styled.div`
+  {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(113,95,181,0.7);
+  }
+`;
+
 const HeaderTextContainer = styled.div`
   {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 10vh;
+    padding-top: 10vh;
   }
   h1 {
     color: #f2f2f2;
     font-family: 'Dancing Script', sans-serif;
-    font-size: 5rem;
+    font-size: 10vmin;
     text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
     margin-bottom: 3rem;
     transform: rotate(-15deg);
@@ -36,7 +55,8 @@ const HeaderTextContainer = styled.div`
     color: #f2f2f2;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 3vmin;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
     margin-bottom: 0.6rem;
   }
   span {
@@ -49,9 +69,10 @@ const HeaderTextContainer = styled.div`
     bottom: -6px;
     left: -2px;
     width: 100%;
-    height: 4px;
+    height: 0.4vmin;
     background-color: #fafafa;
     border-radius: 4px;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
   }
 
 `;
@@ -62,6 +83,8 @@ const TextIntro = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-left: 40px;
+    margin-right: 40px;
   }
 `
 
@@ -152,22 +175,26 @@ export default class MyselfLanding extends React.Component {
   render() {
     return (
       <LandingContainer>
-        <HeaderTextContainer>
-          <h1>Welcome!</h1>
-          <TextIntro>
-            <p>My name is Nathan,</p>
-            <p>but you can call me <span>Nate.</span></p>
-          </TextIntro>
-        </HeaderTextContainer>
-        <HeaderImage src={imgOfMyself} alt="picture of myself" />
-        <Logo>
-          <span>N8</span>
-        </Logo>
-        <ScrollContainer>
-          <ScrollDown>
-            <ScrollIcon src={downArrow} alt="downward facing arrow" />
-          </ScrollDown>
-        </ScrollContainer>
+        <CodeBackground>
+          <BackgroundFilter>
+            <HeaderTextContainer>
+              <h1>Welcome!</h1>
+              <TextIntro>
+                <p>My name is Nathan,</p>
+                <p>but you can call me <span>Nate.</span></p>
+              </TextIntro>
+            </HeaderTextContainer>
+            <HeaderImage src={imgOfMyself} alt="picture of myself" />
+            <Logo>
+              <span>N8</span>
+            </Logo>
+            <ScrollContainer>
+              <ScrollDown>
+                <ScrollIcon src={downArrow} alt="downward facing arrow" />
+              </ScrollDown>
+            </ScrollContainer>
+          </BackgroundFilter>
+        </CodeBackground>
       </LandingContainer>
     )
   }
