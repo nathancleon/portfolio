@@ -25,6 +25,11 @@ const CodeBackground = styled.div`
     background-size: 200px;
     background-repeat: repeat;
   }
+  @media screen and (max-width: 1024px) and (orientation: portrait) {
+    {
+      background-size: 100px;
+    }
+  }
 `;
 
 const BackgroundFilter = styled.div`
@@ -48,8 +53,19 @@ const HeaderTextContainer = styled.div`
     font-family: 'Dancing Script', sans-serif;
     font-size: 10vmin;
     text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
-    margin-bottom: 3rem;
+    margin-bottom: 5vmin;
     transform: rotate(-15deg);
+  }
+`;
+
+const TextIntro = styled.div`
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    line-height: 4vmin;
+    z-index: 20;
   }
   p {
     color: #f2f2f2;
@@ -57,7 +73,6 @@ const HeaderTextContainer = styled.div`
     font-weight: bold;
     font-size: 3vmin;
     text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
-    margin-bottom: 0.6rem;
   }
   span {
     font-family: 'Merriweather', serif;
@@ -66,25 +81,13 @@ const HeaderTextContainer = styled.div`
   span:after {
     content: '';
     position: absolute;
-    bottom: -6px;
-    left: -2px;
+    bottom: -0.5vmin;
+    left: 0;
     width: 100%;
     height: 0.4vmin;
     background-color: #fafafa;
     border-radius: 4px;
     box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
-  }
-
-`;
-
-const TextIntro = styled.div`
-  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-left: 40px;
-    margin-right: 40px;
   }
 `
 
@@ -127,9 +130,9 @@ const Logo = styled.div`
     position: absolute;
     width: inherit; 
     height: inherit;
-    padding-top: 50%;
-    padding-left: 27%;
-    font-size: 1rem;
+    padding-top: 30%;
+    padding-left: 20%;
+    font-size: 0.8rem;
     font-weight: bold;
     color: #715FB5;
     transform: rotate(-90deg);
@@ -148,9 +151,9 @@ const bounce = keyframes`
 const ScrollContainer = styled.div`
   {
     position: absolute;
-    width: 40px;
-    bottom: 2vh;
-    right: -22px;
+    width: 3vmin;
+    bottom: 3vh;
+    right: -1.5vmin;
     z-index: 10;
   }
 `;
@@ -164,7 +167,6 @@ const ScrollDown = styled.div`
 const ScrollIcon = styled.img`
   {
     position: absolute;
-    width: 35px;
     filter: drop-shadow(1px 3px 8px rgba(0, 0, 0, 0.6));
     animation: ${bounce} 1s infinite;
     animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
@@ -180,13 +182,12 @@ export default class MyselfLanding extends React.Component {
             <HeaderTextContainer>
               <h1>Welcome!</h1>
               <TextIntro>
-                <p>My name is Nathan,</p>
-                <p>but you can call me <span>Nate.</span></p>
+                <p>My name is Nathaniel Collins León, but you can call me <span>Nate.</span></p>
               </TextIntro>
             </HeaderTextContainer>
             <HeaderImage src={imgOfMyself} alt="picture of myself" />
             <Logo>
-              <span>N8</span>
+              <span>Nate León</span>
             </Logo>
             <ScrollContainer>
               <ScrollDown>

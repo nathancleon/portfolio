@@ -6,6 +6,18 @@ import MyselfLanding from '../components/MyselfLanding'
 import RenlyLanding from '../components/RenlyLanding'
 
 const ContentWrapper = styled.div`
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+  }
   {
     display: flex;
     height: 100vh;
@@ -13,11 +25,15 @@ const ContentWrapper = styled.div`
     margin: 0;
     padding: 0;
   }
-  html, body, *{
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    box-sizing: border-box;
+  @media screen and (max-width: 1024px) and (orientation: portrait) {
+    {
+      height: 70vh;
+    }
+  }
+  @media screen and (max-width: 600px) and (orientation: portrait) {
+    {
+      height: 50vh;
+    }
   }
 `;
 

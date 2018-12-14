@@ -25,6 +25,11 @@ const BoneBackground = styled.div`
     background-size: 200px;
     background-repeat: repeat;
   }
+  @media screen and (max-width: 1024px) and (orientation: portrait) {
+    {
+      background-size: 100px;
+    }
+  }
 `;
 
 const BackgroundFilter = styled.div`
@@ -48,23 +53,9 @@ const TextContainer = styled.div`
     font-family: 'Dancing Script', sans-serif;
     font-size: 10vmin;
     text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
-    margin-bottom: 2.6rem;
+    margin-bottom: 5vmin;
     transform: rotate(-15deg);
   }
-  p {
-    color: #707070;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    font-size: 3vmin;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    margin-bottom: 0.5rem;
-  }
-  span {
-    font-family: 'Merriweather', serif;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    position: relative;
-  }
-
 `;
 
 const TextIntro = styled.div`
@@ -72,10 +63,21 @@ const TextIntro = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 40px;
-    margin-right: 40px;
-    width: 85%;
-    line-height: 35px;
+    width: 80%;
+    line-height: 4vmin;
+    z-index: 20;
+  }
+  p {
+    color: #707070;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 3vmin;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  span {
+    font-family: 'Merriweather', serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    position: relative;
   }
 `
 
@@ -145,7 +147,7 @@ export default class MyselfLanding extends React.Component {
             <TextContainer>
               <h1>Saludos!</h1>
               <TextIntro>
-                <p>I work as a <span>full stack web developer</span> so that my dog can live a happy life.</p>
+                <p>I work as a <span>full stack web developer</span> so that my dog Renly can live a happy life.</p>
               </TextIntro>
             </TextContainer>
             <ImageContainer>
