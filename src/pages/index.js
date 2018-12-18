@@ -30,7 +30,7 @@ const ContentWrapper = styled.div`
       height: 70vh;
     }
   }
-  @media screen and (max-width: 600px) and (orientation: portrait) {
+  @media screen and (max-width: 540px){
     {
       height: 50vh;
     }

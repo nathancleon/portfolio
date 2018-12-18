@@ -107,7 +107,7 @@ const Logo = styled.div`
     width: 58px; 
     height: 88px;
     background-color: #f2f2f2;
-    margin: 28.87px 0;
+    margin: 28px 0;
     border-radius: .5em;
     transform: rotate(90deg);
     z-index: 10;
@@ -138,6 +138,19 @@ const Logo = styled.div`
     transform: rotate(-90deg);
     z-index: 12;
   }
+
+  @media only screen and (max-width: 600px) {
+    {
+      width: 36px;
+      height: 52px;
+      right: -18px;
+    }
+    span {
+      padding-top: 25%;
+      font-size: 0.3rem;
+      line-height: 1rem;
+    }
+  }
 `;
 
 const bounce = keyframes`
@@ -155,6 +168,12 @@ const ScrollContainer = styled.div`
     bottom: 3vh;
     right: -1.5vmin;
     z-index: 10;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    {
+      display: none
+    }
   }
 `;
 
