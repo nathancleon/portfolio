@@ -7,10 +7,7 @@ import styled from '@emotion/styled'
 
 const LandingContainer = styled.div`
   {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 48%;
+    width: 50%;
     height: 100%;
     position: relative;
     background-color: #715FB5;
@@ -34,6 +31,9 @@ const CodeBackground = styled.div`
 
 const BackgroundFilter = styled.div`
   {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     height: 100%;
     background-color: rgba(113,95,181,0.7);
@@ -95,7 +95,8 @@ const HeaderImage = styled.img`
   {
     position: absolute;
     bottom: 0;
-    min-width: 100%;
+    max-width: 50vw;
+    max-height: 50vh;
   }
 `;
 

@@ -6,10 +6,7 @@ import styled from '@emotion/styled'
 
 const LandingContainer = styled.div`
   {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 52%;
+    width: 50%;
     height: 100%;
     position: relative;
     background-color: #8DE4F5;
@@ -34,6 +31,9 @@ const BoneBackground = styled.div`
 
 const BackgroundFilter = styled.div`
   {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     height: 100%;
     background-color: rgba(141,228,245,0.7);
@@ -49,7 +49,7 @@ const TextContainer = styled.div`
     padding-top: 10vh;
   }
   h1 {
-    color: #707070;
+    color: #505050;
     font-family: 'Dancing Script', sans-serif;
     font-size: 10vmin;
     text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
@@ -68,7 +68,7 @@ const TextIntro = styled.div`
     z-index: 20;
   }
   p {
-    color: #707070;
+    color: #505050;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: 3vmin;
@@ -85,12 +85,13 @@ const ImageContainer = styled.div`
   {
     position: absolute;
     bottom: -1vh;
-    min-width: 100%;
   }
 `;
 
 const Image = styled.img`
   {
+    max-width: 50vw;
+    max-height: 50vh;
     position: relative;
   }
 `;

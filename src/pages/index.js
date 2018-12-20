@@ -4,8 +4,9 @@ import SEO from '../components/seo'
 import styled from '@emotion/styled'
 import MyselfLanding from '../components/MyselfLanding'
 import RenlyLanding from '../components/RenlyLanding'
+import Projects from '../components/Projects'
 
-const ContentWrapper = styled.div`
+const LandingWrapper = styled.div`
   html, body {
     width: 100%;
     height: 100%;
@@ -47,11 +48,12 @@ const IndexPage = () => (
       <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Merriweather:700i|Open+Sans:400,700" rel="stylesheet" />
       <html lang="en" />
     </Helmet>
-    <ContentWrapper>
-      <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
+    <LandingWrapper>
+      <SEO title="Nathaniel Collins Portfolio" keywords={['gatsby', 'portfolio', 'react', 'full stack', 'web developer', 'front end', 'software engineer']} />
       <MyselfLanding />
       <RenlyLanding />
-    </ContentWrapper>
+    </LandingWrapper>
+    <Projects />
   </>
 )
 
