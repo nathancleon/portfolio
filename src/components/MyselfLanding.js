@@ -107,7 +107,7 @@ const Logo = styled.div`
     right: -29px;
     width: 58px; 
     height: 88px;
-    background-color: #f2f2f2;
+    background-color: #fefefe;
     margin: 28px 0;
     border-radius: .5em;
     transform: rotate(90deg);

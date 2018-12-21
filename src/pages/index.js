@@ -4,7 +4,7 @@ import SEO from '../components/seo'
 import styled from '@emotion/styled'
 import MyselfLanding from '../components/MyselfLanding'
 import RenlyLanding from '../components/RenlyLanding'
-import Projects from '../components/Projects'
+import Projects from '../components/Projects/Projects'
 
 const LandingWrapper = styled.div`
   html, body {
