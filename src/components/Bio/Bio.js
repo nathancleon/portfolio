@@ -64,7 +64,7 @@ const Title = styled.h1`
 const BioText = styled.h3`
   {
     text-align: justify;
-    width: 70%;
+    width: 60%;
     color: #505050;
     font-size: 2vmin;
     font-weight: normal;
@@ -76,6 +76,7 @@ const ContentContainer = styled.div`
    {
     display: flex;
     justify-content: space-between;
+    width: 60%;
   }
   @media only screen and (max-width: 860px) {
     {

@@ -27,8 +27,7 @@ const ContentContainer = styled.div`
     display: flex;
     align-items: top;
     justify-content: space-between;
-    height: 80%;
-    width: 100%;
+    width: 70%;
     padding-left: 5vw;
   }
   @media only screen and (max-width: 860px) {
@@ -173,7 +172,7 @@ const HackForChange = styled.div`
     display: flex;
     align-items: top;
     justify-content: space-between;
-    width: 100%;
+    width: 70%;
     margin-right: 15vw;
     margin-top: 8vw;
   }

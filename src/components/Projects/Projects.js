@@ -34,8 +34,7 @@ const ContentContainer = styled.div`
     display: flex;
     align-items: top;
     justify-content: space-between;
-    height: 80%;
-    width: 100%;
+    width: 80%;
     padding-left: 5vw;
   }
   @media only screen and (max-width: 860px) {
