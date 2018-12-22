@@ -9,18 +9,6 @@ import Experience from '../components/Experience/Experience'
 import Bio from '../components/Bio/Bio'
 
 const LandingWrapper = styled.div`
-  html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  *{
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    box-sizing: border-box;
-  }
   {
     display: flex;
     height: 100vh;
@@ -48,6 +36,7 @@ const IndexPage = () => (
       ]}
     >
       <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Merriweather:700i|Open+Sans:400,700" rel="stylesheet" />
+      <link href="" rel="./styles.css" />
       <html lang="en" />
     </Helmet>
     <LandingWrapper>
