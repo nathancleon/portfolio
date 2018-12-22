@@ -61,6 +61,14 @@ const Title = styled.h1`
   }
 `
 
+const BioGreeting = styled.h2`
+  {
+    font-size: 3.5vmin;
+    font-family: 'Merriweather', serif;
+    color: #505050;
+  }
+`;
+
 const BioText = styled.h3`
   {
     text-align: justify;
@@ -69,6 +77,14 @@ const BioText = styled.h3`
     font-size: 2vmin;
     font-weight: normal;
     line-height: 4vmin;
+  }
+  a {
+    color: #715FB5;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  a:hover {
+    color: #2BE0F5;
   }
 `;
 
@@ -145,9 +161,10 @@ export default class Bio extends React.Component {
     return(
       <BioContainer>
         <Title>Bio</Title>
-        <BioText>Nice to meet you! I'm a full stack developer located in Washington D.C. 
+        <BioGreeting>Nice to meet you!</BioGreeting>
+        <BioText> I'm a full stack developer located in Washington D.C. 
           I love creating interesting websites and learning more about user experience and design. 
-          I've done some freelance work and currently work as a TA for Thinkful at a weekly meetup for HTML, CSS, and JavaScript workshops.
+          I've done some freelance work and currently work as a TA for <a href="https://www.thinkful.com/" target="_blank" rel="noopener noreferrer">Thinkful</a> at a weekly meetup for HTML, CSS, and JavaScript workshops.
           I'm currently looking for work and you can contact me below.</BioText>
         <ContentContainer>
           <MyselfImg src={meWithComputer} alt="myself with a computer" />

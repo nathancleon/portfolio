@@ -27,13 +27,14 @@ const ContentContainer = styled.div`
     display: flex;
     align-items: top;
     justify-content: space-between;
-    width: 70%;
+    width: 100%;
     padding-left: 5vw;
   }
   @media only screen and (max-width: 860px) {
     {
       flex-direction: column;
       padding-left: 0;
+      with: 100%
     }
   }
 `;
@@ -111,10 +112,11 @@ p {
 
 const SelectedExperience = styled.div`
   {
-    width: 75%;
+    width: 65%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 2vw;
   }
   a first-of-type {
     width: 80%;
@@ -126,8 +128,9 @@ const SelectedExperience = styled.div`
   }
   @media only screen and (max-width: 860px) {
     {
-      width: 100%;
+      width: 90%;
       height: 100%;
+      margin-right: 0;
     }
     img {
       width: 100%;
@@ -141,7 +144,7 @@ const TechStack = styled.div`
     height: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: -3vh;
+    margin-top: -10vh;
     margin-left: 10%;
   }
   img {
@@ -153,11 +156,10 @@ const TechStack = styled.div`
   }
   @media only screen and (max-width: 860px) {
     {
-      width: 80%;
-      margin-top: 0;
+      width: 90%;
+      margin-top: -5vh;
       margin-left: 0;
-      padding-left: 2.5%;
-      padding-right: 2.5%;
+      padding-left: 10%;
     }
     img {
       width: 7vw;
@@ -172,7 +174,7 @@ const HackForChange = styled.div`
     display: flex;
     align-items: top;
     justify-content: space-between;
-    width: 70%;
+    width: 100%;
     margin-right: 15vw;
     margin-top: 8vw;
   }
@@ -181,6 +183,7 @@ const HackForChange = styled.div`
       flex-direction: column;
       padding-left: 0;
       margin-right: 0;
+      width: 90%;
     }
   }
 `;

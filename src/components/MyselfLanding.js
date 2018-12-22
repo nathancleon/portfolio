@@ -132,9 +132,9 @@ const Logo = styled.div`
     width: inherit; 
     height: inherit;
     padding-top: 30%;
-    padding-left: 20%;
-    font-size: 0.8rem;
+    font-size: 1.5vmin;
     font-weight: bold;
+    text-align: center;
     color: #715FB5;
     transform: rotate(-90deg);
     z-index: 12;
@@ -202,12 +202,12 @@ export default class MyselfLanding extends React.Component {
             <HeaderTextContainer>
               <h1>Welcome!</h1>
               <TextIntro>
-                <p>My name is Nathaniel Collins León, but you can call me <span>Nate.</span></p>
+                <p>My name is Nathaniel Alexander Collins León, but you can call me <span>Nathan.</span></p>
               </TextIntro>
             </HeaderTextContainer>
             <HeaderImage src={imgOfMyself} alt="picture of myself" />
             <Logo>
-              <span>Nate León</span>
+              <span>Nathan León</span>
             </Logo>
             <ScrollContainer>
               <ScrollDown>

@@ -34,7 +34,7 @@ const ContentContainer = styled.div`
     display: flex;
     align-items: top;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
     padding-left: 5vw;
   }
   @media only screen and (max-width: 860px) {
@@ -42,6 +42,7 @@ const ContentContainer = styled.div`
       flex-direction: column;
       align-items: center;
       padding-left: 0;
+      width: 100%;
     }
   }
 `;
@@ -155,7 +156,7 @@ const ProjectList = styled.ul`
 
 const SelectedProject = styled.div`
   {
-    width: 75%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,10 +164,6 @@ const SelectedProject = styled.div`
   a {
     width: 80%;
     cursor: pointer;
-  }
-  img:hover {
-    background-color: #eee;
-    border-radius: 4px;
   }
   @media only screen and (max-width: 860px) {
     {
@@ -178,13 +175,32 @@ const SelectedProject = styled.div`
   }
 `;
 
+const LiveDemoLink = styled.a`
+  {
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    color: #715FB5;
+    font-family: 'Merriweather', serif;
+    margin-top: -10vh;
+  }
+  &:hover {
+    color: #2BE0F5;
+  }
+  @media only screen and (max-width: 860px) {
+    {
+      margin-top: -6vh;
+    }
+  }
+`;
+
 const TechStack = styled.div`
   {
     width: 60%;
     height: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: -2vh;
+    margin-top: 4vh;
     margin-left: 10%;
   }
   img {
@@ -195,8 +211,7 @@ const TechStack = styled.div`
   }
   @media only screen and (max-width: 860px) {
     {
-      width: 100%;
-      margin-top: 0;
+      width: 90%;
       align-self: center;
     }
     img {
@@ -345,9 +360,8 @@ export default class Projects extends React.Component {
             }
           </ProjectListContainer>
         <SelectedProject>
-          <a href={selectedProject.liveDemo} target="_blank" rel="noopener noreferrer">
-            <img src={selectedProject.image} alt="design mockup" />
-          </a>
+        <img src={selectedProject.image} alt="design mockup" />
+          <LiveDemoLink href={selectedProject.liveDemo} target="_blank" rel="noopener noreferrer">Live Demo</LiveDemoLink>
           <TechStack>
           {
             selectedProject.techStack.map((stack, index) => {
