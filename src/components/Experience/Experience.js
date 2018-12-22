@@ -13,7 +13,12 @@ const ExperienceContainer = styled.div`
     flex-direction: column;
     align-items: center;
     padding-top: 15vh;
-    background-color: #fefefe;
+    background-color: rgba(141,228,245,0.07);
+  }
+  @media only screen and (max-width: 860px) {
+    {
+      padding-top: 10vh;
+    }
   }
 `;
 
@@ -112,12 +117,12 @@ const SelectedExperience = styled.div`
     flex-direction: column;
     align-items: center;
   }
-  a {
+  a first-of-type {
     width: 80%;
     cursor: pointer;
+    margin-top: 4vw;
   }
   img:hover {
-    background-color: #eee;
     border-radius: 4px;
   }
   @media only screen and (max-width: 860px) {
@@ -149,10 +154,11 @@ const TechStack = styled.div`
   }
   @media only screen and (max-width: 860px) {
     {
-      width: 100%;
+      width: 80%;
       margin-top: 0;
       margin-left: 0;
-      padding-left: 32%;
+      padding-left: 2.5%;
+      padding-right: 2.5%;
     }
     img {
       width: 7vw;
@@ -169,7 +175,7 @@ const HackForChange = styled.div`
     justify-content: space-between;
     width: 100%;
     margin-right: 15vw;
-    margin-top: 5vw;
+    margin-top: 8vw;
   }
   @media only screen and (max-width: 860px) {
     {
@@ -182,18 +188,18 @@ const HackForChange = styled.div`
 
 const HackForChangeImage = styled.div`
   {
-    height: 100%;
-    width: 85%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 4vw;
   }
   a {
-    width: 80%;
+    width: 70%;
     cursor: pointer;
   }
   img {
+    width: 80%;
     border-radius: 4px;
   }
   img:hover {
@@ -229,11 +235,24 @@ p {
   font-family: "Open Sans", sans-serif;
   color: #888;
 }
+@media only screen and (max-width: 1200px) {
+  {
+    width: 40%;
+    padding-left: 5vw;
+    margin-top: -2vw;
+    margin-bottom: 5vh;
+    align-self: center;
+  }
+  p {
+    font-size: 2vmin;
+  }
+}
+
 @media only screen and (max-width: 860px) {
   {
     width: 90%;
     padding-left: 5vw;
-    margin-top: 5vh;
+    margin-top: -2vw;
     margin-bottom: 5vh;
     align-self: center;
   }
@@ -253,7 +272,7 @@ export default class Experience extends React.Component {
         <ContentContainer>
           <ExperienceText>
             <h2>Green Roof Diagnostics Redesign</h2>
-            <p>Worked alongside the software engineer at Green Roof Diagnostics to completely redesign their site to engineer's spec. Created initial mockup and implemented site based on agreed upon design.</p>
+            <p>Worked alongside the principal engineer at Green Roof Diagnostics to completely redesign their site to engineer's spec. Created initial mockup and implemented site based on agreed upon design.</p>
           </ExperienceText>
         <SelectedExperience>
           <a href="https://github.com/nathancleon/green-roof-diagnostics" target="_blank" rel="noopener noreferrer">

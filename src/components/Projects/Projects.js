@@ -22,6 +22,11 @@ const ProjectsContainer = styled.div`
     padding-top: 15vh;
     background-color: #fefefe;
   }
+  @media only screen and (max-width: 860px) {
+    {
+      padding-top: 10vh;
+    }
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -76,7 +81,7 @@ const Title = styled.h1`
   }
   @media only screen and (max-width: 860px) {
     {
-      margin-bottom: 2vh;
+      margin-bottom: 5vh;
     }
   }
 `
@@ -203,7 +208,7 @@ const TechStack = styled.div`
 `;
 
 const selectedColor = {
-  color: '#8DE4F5'
+  color: '#2BE0F5'
 }
 
 

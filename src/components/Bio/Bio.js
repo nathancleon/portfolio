@@ -66,7 +66,7 @@ const BioText = styled.h3`
     text-align: justify;
     width: 70%;
     color: #505050;
-    font-size: 2.5vmin;
+    font-size: 2vmin;
     font-weight: normal;
     line-height: 4vmin;
   }
