@@ -193,8 +193,7 @@ const HackForChangeImage = styled.div`
     cursor: pointer;
   }
   img:hover {
-    background-color: #eee;
-    border-radius: 4px;
+    box-shadow: 10px 10px 5px 5px rgba(113,95,181,0.2);
   }
   @media only screen and (max-width: 840px) {
     {
