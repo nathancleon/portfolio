@@ -33,6 +33,12 @@ const ContentContainer = styled.div`
     width: 100%;
     padding-left: 5vw;
   }
+  @media only screen and (max-width: 740px) {
+    {
+      flex-direction: column;
+      padding-left: 0;
+    }
+  }
 `;
 
 const Title = styled.h1`
@@ -67,6 +73,11 @@ const Title = styled.h1`
     z-index: -2;
     transform: rotate(-8deg);
   }
+  @media only screen and (max-width: 740px) {
+    {
+      margin-bottom: 2vh;
+    }
+  }
 `
 
 const ProjectListContainer = styled.div`
@@ -75,6 +86,13 @@ const ProjectListContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+@media only screen and (max-width: 740px) {
+  {
+    flex-direction: row;
+    width: 100%;
+    padding-left: 5vw;
+  }
 }
 `;
 
@@ -113,6 +131,21 @@ const ProjectList = styled.ul`
     font-family: "Open Sans", sans-serif;
     color: #888;
   }
+  @media only screen and (max-width: 740px) {
+    {
+      width: 100%;
+    }
+    li:after {
+      display: none;
+    }
+    li span {
+      text-align: center;
+      font-size: 4vmin;
+    }
+    li p {
+      font-size: 2vmin;
+    }
+  }
 `;
 
 const SelectedProject = styled.div`
@@ -123,21 +156,50 @@ const SelectedProject = styled.div`
     flex-direction: column;
     align-items: center;
   }
-  img {
+  a {
     width: 80%;
+    cursor: pointer;
+  }
+  img:hover {
+    background-color: #eee;
+    border-radius: 4px;
+  }
+  @media only screen and (max-width: 740px) {
+    {
+      width: 100%;
+      height: 100%;
+    }
+    img {
+      width: 100%;
+    }
   }
 `;
 
 const TechStack = styled.div`
   {
-    width: 50%;
+    width: 60%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: -5vh;
+    margin-top: -3vh;
+    margin-left: 10%;
   }
   img {
-    width: 3vw;
-    max-height: 3vw;
+    width: 4vw;
+    max-height: 4vw;
+    cursor: pointer;
+    padding: 5px;
+  }
+  @media only screen and (max-width: 740px) {
+    {
+      width: 80%;
+      margin-top: 0;
+      align-self: center;
+    }
+    img {
+      width: 7vw;
+      max-height: 7vw;
+    }
   }
 `;
 
@@ -178,10 +240,11 @@ export default class Projects extends React.Component {
             {
               icon: githubIcon,
               altText: 'github',
-              link: ''
+              link: 'https://github.com/nathancleon/self-journal'
             }
           ],
-          image: mentalnoteImg
+          image: mentalnoteImg,
+          liveDemo: "https://mentalnote.herokuapp.com/"
         },
         {
           title: "Sprout Log",
@@ -206,10 +269,11 @@ export default class Projects extends React.Component {
             {
               icon: githubIcon,
               altText: 'github',
-              link: ''
+              link: 'https://github.com/nathancleon/sprout-log-app'
             }
           ],
-          image: sproutlogImg
+          image: sproutlogImg,
+          liveDemo: "https://sprout-log.herokuapp.com/"
         },
         {
           title: "Bark Local",
@@ -230,25 +294,27 @@ export default class Projects extends React.Component {
             {
               icon: githubIcon,
               altText: 'github',
-              link: ''
+              link: 'https://github.com/nathancleon/bark-local'
             }
           ],
-          image: barklocalImg
+          image: barklocalImg,
+          liveDemo: "https://nathancleon.github.io/bark-local/"
         },
       ],
       selectedIndex: 0
     }
 
-    this.selectedProject = this.selectedProject.bind(this);
+    this.selectProject = this.selectProject.bind(this);
   }
 
-  selectedProject(index) {
+  selectProject(index) {
       this.setState({
         selectedIndex: index
       })
   }
 
   render() {
+      const selectedProject = this.state.projects[this.state.selectedIndex];
     return(
       <ProjectsContainer>
         <Title>Projects</Title>
@@ -258,7 +324,7 @@ export default class Projects extends React.Component {
             this.state.projects.map((project, index) => {
               return (
                 <ProjectList key={index}>
-                  <li onClick={() => this.selectedProject(index)}>
+                  <li onClick={() => this.selectProject(index)}>
                     <span>{project.title}</span>
                     <p>{project.description}</p>
                   </li>
@@ -268,13 +334,18 @@ export default class Projects extends React.Component {
             }
           </ProjectListContainer>
         <SelectedProject>
-          <img src={this.state.projects[this.state.selectedIndex].image} alt="design mockup" />
+          <a href={selectedProject.liveDemo} target="_blank" rel="noopener noreferrer">
+            <img src={selectedProject.image} alt="design mockup" />
+          </a>
           <TechStack>
           {
-            this.state.projects[this.state.selectedIndex].techStack.map((stack, index) => {
-              return (
+            selectedProject.techStack.map((stack, index) => {
+              return index !== selectedProject.techStack.length ?
+                <a href={stack.link} target="_blank" rel="noopener noreferrer" key={index}>
+                  <img src={stack.icon} alt={stack.altText} title={stack.altText} />
+                </a>:
                 <img key={index} src={stack.icon} alt={stack.altText} title={stack.altText} />
-              )
+            
             })
           }
           </TechStack>
