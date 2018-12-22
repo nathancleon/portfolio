@@ -36,7 +36,7 @@ const IndexPage = () => (
       ]}
     >
       <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Merriweather:700i|Open+Sans:400,700" rel="stylesheet" />
-      <link href="" rel="./styles.css" />
+      <link href="./styles.css" rel="./styles.css" />
       <html lang="en" />
     </Helmet>
     <LandingWrapper>
