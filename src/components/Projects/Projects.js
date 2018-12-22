@@ -33,7 +33,7 @@ const ContentContainer = styled.div`
     width: 100%;
     padding-left: 5vw;
   }
-  @media only screen and (max-width: 740px) {
+  @media only screen and (max-width: 840px) {
     {
       flex-direction: column;
       padding-left: 0;
@@ -73,7 +73,7 @@ const Title = styled.h1`
     z-index: -2;
     transform: rotate(-8deg);
   }
-  @media only screen and (max-width: 740px) {
+  @media only screen and (max-width: 840px) {
     {
       margin-bottom: 2vh;
     }
@@ -87,7 +87,7 @@ const ProjectListContainer = styled.div`
   display: flex;
   flex-direction: column;
 }
-@media only screen and (max-width: 740px) {
+@media only screen and (max-width: 840px) {
   {
     flex-direction: row;
     width: 100%;
@@ -131,7 +131,7 @@ const ProjectList = styled.ul`
     font-family: "Open Sans", sans-serif;
     color: #888;
   }
-  @media only screen and (max-width: 740px) {
+  @media only screen and (max-width: 840px) {
     {
       width: 100%;
     }
@@ -164,7 +164,7 @@ const SelectedProject = styled.div`
     background-color: #eee;
     border-radius: 4px;
   }
-  @media only screen and (max-width: 740px) {
+  @media only screen and (max-width: 840px) {
     {
       width: 100%;
       height: 100%;
@@ -190,7 +190,7 @@ const TechStack = styled.div`
     cursor: pointer;
     padding: 5px;
   }
-  @media only screen and (max-width: 740px) {
+  @media only screen and (max-width: 840px) {
     {
       width: 80%;
       margin-top: 0;

@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import greenroofImg from '../../images/greenroof-diagnostics-mockup.png'
+import HackForChangeImg from '../../images/me-atxhackforchange.jpg'
 import htmlIcon from '../../images/icons/html-5.svg'
 import cssIcon from '../../images/icons/css-3.svg'
 import jqueryIcon from '../../images/icons/jquery.svg'
 import githubIcon from '../../images/icons/github-icon.svg'
 
-const ProjectsContainer = styled.div`
+const ExperienceContainer = styled.div`
   {
     display: flex;
     flex-direction: column;
@@ -25,7 +26,7 @@ const ContentContainer = styled.div`
     width: 100%;
     padding-left: 5vw;
   }
-  @media only screen and (max-width: 740px) {
+  @media only screen and (max-width: 840px) {
     {
       flex-direction: column;
       padding-left: 0;
@@ -66,14 +67,14 @@ const Title = styled.h1`
     z-index: -2;
     transform: rotate(-8deg);
   }
-  @media only screen and (max-width: 740px) {
+  @media only screen and (max-width: 840px) {
     {
       margin-bottom: 5vh;
     }
   }
 `
 
-const ProjectListContainer = styled.div`
+const ExperienceText = styled.div`
 {
   width: 25%;
   height: 100%;
@@ -89,7 +90,7 @@ p {
   font-family: "Open Sans", sans-serif;
   color: #888;
 }
-@media only screen and (max-width: 740px) {
+@media only screen and (max-width: 840px) {
   {
     width: 90%;
     padding-left: 5vw;
@@ -103,7 +104,7 @@ p {
 }
 `;
 
-const SelectedProject = styled.div`
+const SelectedExperience = styled.div`
   {
     height: 100%;
     width: 85%;
@@ -119,7 +120,7 @@ const SelectedProject = styled.div`
     background-color: #eee;
     border-radius: 4px;
   }
-  @media only screen and (max-width: 740px) {
+  @media only screen and (max-width: 840px) {
     {
       width: 100%;
       height: 100%;
@@ -146,7 +147,7 @@ const TechStack = styled.div`
     padding: 5px;
     margin-right: 2vw;
   }
-  @media only screen and (max-width: 740px) {
+  @media only screen and (max-width: 840px) {
     {
       width: 80%;
       margin-top: 0;
@@ -157,6 +158,86 @@ const TechStack = styled.div`
       max-height: 7vw;
     }
   }
+`;
+
+
+const HackForChange = styled.div`
+   {
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 15vw;
+    margin-top: 5vw;
+  }
+  @media only screen and (max-width: 840px) {
+    {
+      flex-direction: column;
+      padding-left: 0;
+      margin-right: 0;
+    }
+  }
+`;
+
+const HackForChangeImage = styled.div`
+  {
+    height: 100%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 4vw;
+  }
+  a {
+    width: 80%;
+    cursor: pointer;
+  }
+  img:hover {
+    background-color: #eee;
+    border-radius: 4px;
+  }
+  @media only screen and (max-width: 840px) {
+    {
+      width: 100%;
+      height: 100%;
+      order: 2;
+      margin-left: 0;
+    }
+    img {
+      width: 100%;
+    }
+  }
+`;
+
+const HackForChangeText = styled.div`
+{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15vw;
+}
+h2 {
+  color: #715FB5;
+}
+p {
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  color: #888;
+}
+@media only screen and (max-width: 840px) {
+  {
+    width: 90%;
+    padding-left: 5vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    align-self: center;
+    order: 1;
+  }
+  p {
+    font-size: 2vmin;
+  }
+}
 `;
 
 
@@ -175,14 +256,14 @@ export default class Projects extends React.Component {
 
   render() {
     return(
-      <ProjectsContainer>
+      <ExperienceContainer>
         <Title>Experience</Title>
         <ContentContainer>
-          <ProjectListContainer>
+          <ExperienceText>
             <h2>Green Roof Diagnostics Redesign</h2>
             <p>Worked alongside the software engineer at Green Roof Diagnostics to completely redesign their site to engineer's spec. Created initial mockup and implemented site based on agreed upon design</p>
-          </ProjectListContainer>
-        <SelectedProject>
+          </ExperienceText>
+        <SelectedExperience>
           <a href="https://github.com/nathancleon/green-roof-diagnostics" target="_blank" rel="noopener noreferrer">
             <img src={greenroofImg} alt="design mockup" />
           </a>
@@ -194,9 +275,20 @@ export default class Projects extends React.Component {
               <img src={githubIcon} alt="github" title="github"/>
             </a>
           </TechStack>
-        </SelectedProject>
+        </SelectedExperience>
         </ContentContainer>
-      </ProjectsContainer>
+        <HackForChange>
+        <HackForChangeImage>
+          <a href="http://atxhackforchange.org/" target="_blank" rel="noopener noreferrer">
+            <img src={HackForChangeImg} alt="design mockup" />
+          </a>
+        </HackForChangeImage>
+        <HackForChangeText>
+            <h2>ATX Hack For Change 2016</h2>
+            <p>Worked alongside actual beekeepers, a software engineer, a UX Designer, and a Content Marketing Coordinator to develop an app to assist local beekeepers.</p>
+        </HackForChangeText>
+        </HackForChange>
+      </ExperienceContainer>
     )
   }
 }
