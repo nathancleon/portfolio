@@ -240,18 +240,7 @@ p {
 `;
 
 
-export default class Projects extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.selectProject = this.selectProject.bind(this);
-  }
-
-  selectProject(index) {
-      this.setState({
-        selectedIndex: index
-      })
-  }
+export default class Experience extends React.Component {
 
   render() {
     return(
