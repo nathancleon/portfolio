@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import MyselfLanding from '../components/MyselfLanding'
 import RenlyLanding from '../components/RenlyLanding'
 import Projects from '../components/Projects/Projects'
+import Experience from '../components/Experience/Experience'
 
 const LandingWrapper = styled.div`
   html, body {
@@ -54,6 +55,7 @@ const IndexPage = () => (
       <RenlyLanding />
     </LandingWrapper>
     <Projects />
+    <Experience />
   </>
 )
 

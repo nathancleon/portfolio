@@ -48,7 +48,7 @@ const Title = styled.h1`
     color: #fefefe;
     position: relative;
     transform: rotate(-5deg);
-    margin-bottom: 10vh;
+    margin-bottom: 3vw;
   }
   &:before {
     content: '';
