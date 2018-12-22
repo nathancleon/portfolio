@@ -340,11 +340,11 @@ export default class Projects extends React.Component {
           <TechStack>
           {
             selectedProject.techStack.map((stack, index) => {
-              return index !== selectedProject.techStack.length ?
+              return index === selectedProject.techStack.length ?
+                <img src={stack.icon} alt={stack.altText} title={stack.altText} />:
                 <a href={stack.link} target="_blank" rel="noopener noreferrer" key={index}>
                   <img src={stack.icon} alt={stack.altText} title={stack.altText} />
-                </a>:
-                <img key={index} src={stack.icon} alt={stack.altText} title={stack.altText} />
+                </a>
             
             })
           }
