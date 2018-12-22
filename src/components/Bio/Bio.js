@@ -13,6 +13,11 @@ const BioContainer = styled.div`
     padding-top: 15vh;
     background-color: #fefefe;
   }
+  @media only screen and (max-width: 860px) {
+    {
+      padding-top: 5vh;
+    }
+  }
 `;
 
 const Title = styled.h1`
@@ -49,7 +54,7 @@ const Title = styled.h1`
     transform: rotate(-8deg);
   }
 
-  @media only screen and (max-width: 840px) {
+  @media only screen and (max-width: 860px) {
     {
       margin-bottom: 10vw;
     }
@@ -58,7 +63,7 @@ const Title = styled.h1`
 
 const BioText = styled.h3`
   {
-    text-align: center;
+    text-align: justify;
     width: 70%;
     color: #505050;
     font-size: 2.5vmin;
@@ -72,6 +77,11 @@ const ContentContainer = styled.div`
     display: flex;
     justify-content: space-between;
   }
+  @media only screen and (max-width: 860px) {
+    {
+      flex-direction: column;
+    }
+  }
 `;
 
 const MyselfImg = styled.img`
@@ -79,6 +89,11 @@ const MyselfImg = styled.img`
     width: 60%;
     margin-bottom: -100px;
     align-self: center;
+  }
+  @media only screen and (max-width: 860px) {
+    {
+      order: 2;
+    }
   }
 `;
 
@@ -88,9 +103,7 @@ const Contact = styled.div`
     flex-direction: column;
     align-items: center;
     width: 40%;
-    height: 100%;
     margin-top: 20%;
-    margin-bottom: -4vh;
   }
   h2 {
     text-align: center;
@@ -98,13 +111,16 @@ const Contact = styled.div`
     font-size: 3vmin;
   }
   p {
-    font-family: 'Open Sans', serif;
-    font-size: 2vmin;
+    font-family: 'Merriweather', serif;
+    font-size: 2.5vmin;
     text-align: center;
+    color: #505050;
+    font-weight: bold;
   }
-  media only screen and (max-width: 840px) {
+  @media only screen and (max-width: 860px) {
     {
-      margin-top: 25%;
+      margin-top: 5%;
+      width: 100%;
     }
   }
 `;
@@ -130,7 +146,7 @@ export default class Bio extends React.Component {
         <Title>Bio</Title>
         <BioText>Nice to meet you! I'm a full stack developer located in Washington D.C. 
           I love creating interesting websites and learning more about user experience and design. 
-          I've had some freelance work and currently work as a TA for Thinkful at a weekly meetup for HTML, CSS, and JavaScript workshops.
+          I've done some freelance work and currently work as a TA for Thinkful at a weekly meetup for HTML, CSS, and JavaScript workshops.
           I'm currently looking for work and you can contact me below.</BioText>
         <ContentContainer>
           <MyselfImg src={meWithComputer} alt="myself with a computer" />

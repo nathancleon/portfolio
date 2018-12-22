@@ -33,9 +33,10 @@ const ContentContainer = styled.div`
     width: 100%;
     padding-left: 5vw;
   }
-  @media only screen and (max-width: 840px) {
+  @media only screen and (max-width: 860px) {
     {
       flex-direction: column;
+      align-items: center;
       padding-left: 0;
     }
   }
@@ -48,7 +49,7 @@ const Title = styled.h1`
     color: #fefefe;
     position: relative;
     transform: rotate(-5deg);
-    margin-bottom: 3vw;
+    margin-bottom: 5vw;
   }
   &:before {
     content: '';
@@ -73,7 +74,7 @@ const Title = styled.h1`
     z-index: -2;
     transform: rotate(-8deg);
   }
-  @media only screen and (max-width: 840px) {
+  @media only screen and (max-width: 860px) {
     {
       margin-bottom: 2vh;
     }
@@ -87,7 +88,7 @@ const ProjectListContainer = styled.div`
   display: flex;
   flex-direction: column;
 }
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 860px) {
   {
     flex-direction: row;
     width: 100%;
@@ -131,7 +132,7 @@ const ProjectList = styled.ul`
     font-family: "Open Sans", sans-serif;
     color: #888;
   }
-  @media only screen and (max-width: 840px) {
+  @media only screen and (max-width: 860px) {
     {
       width: 100%;
     }
@@ -150,8 +151,7 @@ const ProjectList = styled.ul`
 
 const SelectedProject = styled.div`
   {
-    height: 100%;
-    width: 85%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -164,10 +164,9 @@ const SelectedProject = styled.div`
     background-color: #eee;
     border-radius: 4px;
   }
-  @media only screen and (max-width: 840px) {
+  @media only screen and (max-width: 860px) {
     {
-      width: 100%;
-      height: 100%;
+      width: 90%;
     }
     img {
       width: 100%;
@@ -181,18 +180,18 @@ const TechStack = styled.div`
     height: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: -3vh;
+    margin-top: -2vh;
     margin-left: 10%;
   }
   img {
-    width: 4vw;
-    max-height: 4vw;
+    width: 3vw;
+    max-height: 3vw;
     cursor: pointer;
     padding: 5px;
   }
-  @media only screen and (max-width: 840px) {
+  @media only screen and (max-width: 860px) {
     {
-      width: 80%;
+      width: 100%;
       margin-top: 0;
       align-self: center;
     }
@@ -202,6 +201,10 @@ const TechStack = styled.div`
     }
   }
 `;
+
+const selectedColor = {
+  color: '#8DE4F5'
+}
 
 
 export default class Projects extends React.Component {
@@ -325,7 +328,11 @@ export default class Projects extends React.Component {
               return (
                 <ProjectList key={index}>
                   <li onClick={() => this.selectProject(index)}>
-                    <span>{project.title}</span>
+                    {
+                      index !== this.state.selectedIndex ?
+                      <span>{project.title}</span>:
+                      <span style={selectedColor}>{project.title}</span>
+                    }
                     <p>{project.description}</p>
                   </li>
                 </ProjectList>

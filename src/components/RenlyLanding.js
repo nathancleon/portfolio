@@ -129,7 +129,7 @@ const CommentBubble = styled.img`
 const BubbleText = styled.p`
   {
     position: absolute;
-    top: 30%;
+    top: 34%;
     left: 12%;
     color: #8DE4F5;
     font-family: 'Merriweather', sans-serif;

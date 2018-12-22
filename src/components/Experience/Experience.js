@@ -26,7 +26,7 @@ const ContentContainer = styled.div`
     width: 100%;
     padding-left: 5vw;
   }
-  @media only screen and (max-width: 840px) {
+  @media only screen and (max-width: 860px) {
     {
       flex-direction: column;
       padding-left: 0;
@@ -67,7 +67,7 @@ const Title = styled.h1`
     z-index: -2;
     transform: rotate(-8deg);
   }
-  @media only screen and (max-width: 840px) {
+  @media only screen and (max-width: 860px) {
     {
       margin-bottom: 5vh;
     }
@@ -84,13 +84,14 @@ const ExperienceText = styled.div`
 }
 h2 {
   color: #715FB5;
+  font-size: 4vmin;
 }
 p {
   font-size: 1rem;
   font-family: "Open Sans", sans-serif;
   color: #888;
 }
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 860px) {
   {
     width: 90%;
     padding-left: 5vw;
@@ -106,8 +107,7 @@ p {
 
 const SelectedExperience = styled.div`
   {
-    height: 100%;
-    width: 85%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,7 +120,7 @@ const SelectedExperience = styled.div`
     background-color: #eee;
     border-radius: 4px;
   }
-  @media only screen and (max-width: 840px) {
+  @media only screen and (max-width: 860px) {
     {
       width: 100%;
       height: 100%;
@@ -141,17 +141,18 @@ const TechStack = styled.div`
     margin-left: 10%;
   }
   img {
-    width: 4vw;
-    max-height: 4vw;
+    width: 3vw;
+    max-height: 3vw;
     cursor: pointer;
     padding: 5px;
-    margin-right: 2vw;
+    margin-right: 3vw;
   }
-  @media only screen and (max-width: 840px) {
+  @media only screen and (max-width: 860px) {
     {
-      width: 80%;
+      width: 100%;
       margin-top: 0;
-      margin-left: 50%;
+      margin-left: 0;
+      padding-left: 32%;
     }
     img {
       width: 7vw;
@@ -170,7 +171,7 @@ const HackForChange = styled.div`
     margin-right: 15vw;
     margin-top: 5vw;
   }
-  @media only screen and (max-width: 840px) {
+  @media only screen and (max-width: 860px) {
     {
       flex-direction: column;
       padding-left: 0;
@@ -192,10 +193,13 @@ const HackForChangeImage = styled.div`
     width: 80%;
     cursor: pointer;
   }
-  img:hover {
-    box-shadow: 10px 10px 5px 5px rgba(113,95,181,0.2);
+  img {
+    border-radius: 4px;
   }
-  @media only screen and (max-width: 840px) {
+  img:hover {
+    box-shadow: 15px 15px 20px rgba(113,95,181,0.2);
+  }
+  @media only screen and (max-width: 860px) {
     {
       width: 100%;
       height: 100%;
@@ -214,24 +218,24 @@ const HackForChangeText = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 15vw;
+  margin-top: 10vw;
 }
 h2 {
   color: #715FB5;
+  font-size: 4vmin;
 }
 p {
   font-size: 1rem;
   font-family: "Open Sans", sans-serif;
   color: #888;
 }
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 860px) {
   {
     width: 90%;
     padding-left: 5vw;
     margin-top: 5vh;
     margin-bottom: 5vh;
     align-self: center;
-    order: 1;
   }
   p {
     font-size: 2vmin;
@@ -249,7 +253,7 @@ export default class Experience extends React.Component {
         <ContentContainer>
           <ExperienceText>
             <h2>Green Roof Diagnostics Redesign</h2>
-            <p>Worked alongside the software engineer at Green Roof Diagnostics to completely redesign their site to engineer's spec. Created initial mockup and implemented site based on agreed upon design</p>
+            <p>Worked alongside the software engineer at Green Roof Diagnostics to completely redesign their site to engineer's spec. Created initial mockup and implemented site based on agreed upon design.</p>
           </ExperienceText>
         <SelectedExperience>
           <a href="https://github.com/nathancleon/green-roof-diagnostics" target="_blank" rel="noopener noreferrer">
