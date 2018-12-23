@@ -67,7 +67,7 @@ const Title = styled.h1`
 
 const BioGreeting = styled.h2`
   {
-    font-size: 3.5vmin;
+    font-size: 2.5vw;
     font-family: 'Merriweather', sans-serif;
     color: #505050;
     margin-bottom: 2vw;
@@ -141,12 +141,12 @@ const Contact = styled.div`
   h2 {
     text-align: center;
     color: #715FB5;
-    font-size: 3vmin;
+    font-size: 2vw;
     margin-bottom: 4vw;
   }
   p {
     font-family: 'Merriweather', sans-serif;
-    font-size: 2.5vmin;
+    font-size: 1.5vw;
     text-align: center;
     color: #505050;
     font-weight: bold;

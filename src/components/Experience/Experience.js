@@ -69,7 +69,7 @@ const Title = styled.h1`
     position: absolute;
     width: 20vw;
     height: 6vw;
-    top: -1.5vmin;
+    top: -1.5vw;
     left: -3vw;
     background-color: #8DE4F5;
     border-radius: 4px;
@@ -93,7 +93,7 @@ const ExperienceText = styled.div`
 }
 h2 {
   color: #715FB5;
-  font-size: 4vmin;
+  font-size: 2vw;
   margin-bottom: 2vw;
 }
 p {
@@ -245,7 +245,7 @@ const HackForChangeText = styled.div`
 }
 h2 {
   color: #715FB5;
-  font-size: 4vmin;
+  font-size: 2vw;
   margin-bottom: 2vw;
 }
 p {

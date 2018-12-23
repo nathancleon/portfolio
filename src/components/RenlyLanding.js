@@ -51,14 +51,17 @@ const TextContainer = styled.div`
   h1 {
     color: #505050;
     font-family: 'Dancing Script', sans-serif;
-    font-size: 10vmin;
+    font-size: 6vw;
     text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
-    margin-bottom: 5vmin;
+    margin-bottom: 4vw;
     transform: rotate(-15deg);
   }
   @media only screen and (max-width: 1024px) {
     {
       padding-top: 4vh;
+    }
+    h1 {
+      font-size: 7vw;
     }
   }
 `;
@@ -69,20 +72,25 @@ const TextIntro = styled.div`
     flex-direction: column;
     align-items: center;
     width: 80%;
-    line-height: 4vmin;
+    line-height: 3vw;
     z-index: 20;
   }
   p {
     color: #505050;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    font-size: 3vmin;
+    font-size: 2vw;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   }
   span {
     font-family: 'Merriweather', sans-serif;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     position: relative;
+  }
+  @media only screen and (max-width: 1024px) {
+    p {
+      font-size: 2vw;
+    }
   }
 `
 
@@ -113,8 +121,8 @@ const RenlyWoofContainer = styled.div`
 const RenlyWoof =  styled.div`
   {
     position: relative;
-    width: 9.5vmin;
-    height: 9.5vmin;
+    width: 6vw;
+    height: 6vw;
   }
 `;
 
@@ -126,7 +134,6 @@ const CommentBubble = styled.img`
     font-family: 'Merriweather', sans-serif;
     font-weight: bold;
     font-size: 2vw;
-    font-size: 2vmin;
     z-index: -15;
   }
 `;
@@ -139,7 +146,7 @@ const BubbleText = styled.p`
     color: #8DE4F5;
     font-family: 'Merriweather', sans-serif;
     font-weight: bold;
-    font-size: 2vmin;
+    font-size: 1.3vw;
     z-index: 20;
   }
 

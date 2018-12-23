@@ -51,14 +51,17 @@ const HeaderTextContainer = styled.div`
   h1 {
     color: #f2f2f2;
     font-family: 'Dancing Script', sans-serif;
-    font-size: 10vmin;
+    font-size: 6vw;
     text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
-    margin-bottom: 5vmin;
+    margin-bottom: 4vw;
     transform: rotate(-15deg);
   }
   @media only screen and (max-width: 1024px) {
     {
       padding-top: 4vh;
+    }
+    h1 {
+      font-size: 7vw;
     }
   }
 `;
@@ -69,14 +72,14 @@ const TextIntro = styled.div`
     flex-direction: column;
     align-items: center;
     width: 75%;
-    line-height: 4vmin;
+    line-height: 3vw;
     z-index: 20;
   }
   p {
     color: #f2f2f2;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    font-size: 3vmin;
+    font-size: 1.5vw;
     text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
   }
   span {
@@ -86,13 +89,18 @@ const TextIntro = styled.div`
   span:after {
     content: '';
     position: absolute;
-    bottom: -0.5vmin;
+    bottom: -0.5vw;
     left: 0;
     width: 100%;
-    height: 0.4vmin;
+    height: 0.2vw;
     background-color: #fafafa;
     border-radius: 4px;
     box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
+  }
+  @media only screen and (max-width: 1024px) {
+    p {
+      font-size: 2vw;
+    }
   }
 `
 
@@ -136,12 +144,12 @@ const Logo = styled.div`
     position: absolute;
     width: inherit; 
     height: inherit;
-    padding-top: 50%;
-    font-size: 1.3vmin;
+    padding-top: 34%;
+    font-size: 0.8vw;
     font-weight: bold;
     text-align: center;
     font-family: 'Merriweather', sans-serif;
-    line-height: 1rem;
+    line-height: 1.5vw;
     color: #715FB5;
     transform: rotate(-90deg);
     z-index: 12;
@@ -154,9 +162,8 @@ const Logo = styled.div`
       right: -18px;
     }
     span {
-      padding-top: 25%;
-      font-size: 0.3rem;
-      line-height: 1rem;
+      font-size: 2vw;
+      line-height: 2vw;
     }
   }
 `;
@@ -172,9 +179,9 @@ const bounce = keyframes`
 const ScrollContainer = styled.div`
   {
     position: absolute;
-    width: 3vmin;
-    bottom: 3vh;
-    right: -1.5vmin;
+    width: 2vw;
+    bottom: 2vw;
+    right: -1vw;
     z-index: 10;
   }
 
