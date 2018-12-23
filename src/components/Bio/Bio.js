@@ -74,7 +74,7 @@ const BioGreeting = styled.h2`
   }
   @media only screen and (max-width: 860px) {
     {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 `;
@@ -169,7 +169,7 @@ const Social = styled.div`
     width: 50%;
   }
   a {
-    width: 4vmin;
+    width: 30px;
   }
 `;
 

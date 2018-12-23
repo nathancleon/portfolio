@@ -168,7 +168,7 @@ const SelectedProject = styled.div`
   }
   @media only screen and (max-width: 860px) {
     {
-      width: 90%;
+      width: 100%;
     }
     img {
       width: 100%;
@@ -179,6 +179,11 @@ const SelectedProject = styled.div`
 const SelectedImg = styled.img`
   {
     max-width: 50vw;
+  }
+  @media only screen and (max-width: 860px) {
+    {
+      max-width: 100vw;
+    }
   }
 `;
 
@@ -203,7 +208,7 @@ const LiveDemoLink = styled.a`
 
 const TechStack = styled.div`
   {
-    width: 60%;
+    width: 80%;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -211,19 +216,20 @@ const TechStack = styled.div`
     margin-left: 10%;
   }
   img {
-    width: 3vw;
-    max-height: 3vw;
+    width: 5vw;
+    max-height: 5vw;
     cursor: pointer;
     padding: 5px;
   }
   @media only screen and (max-width: 860px) {
     {
-      width: 90%;
+      width: 70%;
       align-self: center;
+      margin-left: 0;
     }
     img {
-      width: 7vw;
-      max-height: 7vw;
+      width: 8vw;
+      max-height: 8vw;
     }
   }
 `;

@@ -143,7 +143,12 @@ const SelectedExperience = styled.div`
 
 const SelectedImg = styled.img`
   {
-    max-width: 50vw;
+    max-width: 60vw;
+  }
+  @media only screen and (max-width: 860px) {
+    {
+      max-width: 100vw;
+    }
   }
 `;
 
@@ -171,8 +176,8 @@ const TechStack = styled.div`
       margin-top: 2vh;
     }
     img {
-      width: 7vw;
-      max-height: 7vw;
+      width: 8vw;
+      max-height: 8vw;
     }
   }
 `;
@@ -185,21 +190,20 @@ const HackForChange = styled.div`
     justify-content: space-around;
     width: 100%;
     margin-right: 15vw;
-    margin-top: 25vw;
+    margin-top: 15vw;
   }
   @media only screen and (max-width: 860px) {
     {
       flex-direction: column;
       padding-left: 0;
       margin-right: 0;
-      width: 90%;
     }
   }
 `;
 
 const HackForChangeImage = styled.div`
   {
-    width: 75%;
+    max-width: 60vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -218,8 +222,7 @@ const HackForChangeImage = styled.div`
   }
   @media only screen and (max-width: 860px) {
     {
-      width: 100%;
-      height: 100%;
+      max-width: 100vw;
       order: 2;
       margin-left: 0;
       margin-top: 10vw;
@@ -268,9 +271,6 @@ p {
     margin-top: -2vw;
     margin-bottom: 5vh;
     align-self: center;
-  }
-  p {
-    font-size: 12px;
   }
 }
 `;
