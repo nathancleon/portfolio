@@ -50,7 +50,7 @@ const Title = styled.h1`
     color: #fefefe;
     position: relative;
     transform: rotate(-5deg);
-    margin-bottom: 10vw;
+    margin-bottom: 5vw;
   }
   &:before {
     content: '';
@@ -77,7 +77,7 @@ const Title = styled.h1`
   }
   @media only screen and (max-width: 860px) {
     {
-      margin-bottom: 5vw;
+      margin-bottom: 10vw;
     }
   }
 `
