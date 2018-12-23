@@ -80,7 +80,7 @@ const TextIntro = styled.div`
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   }
   span {
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', sans-serif;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     position: relative;
   }

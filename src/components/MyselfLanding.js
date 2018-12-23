@@ -80,7 +80,7 @@ const TextIntro = styled.div`
     text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
   }
   span {
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', sans-serif;
     position: relative;
   }
   span:after {
@@ -140,7 +140,7 @@ const Logo = styled.div`
     font-size: 1.3vmin;
     font-weight: bold;
     text-align: center;
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', sans-serif;
     line-height: 1rem;
     color: #715FB5;
     transform: rotate(-90deg);
