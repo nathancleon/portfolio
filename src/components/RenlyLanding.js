@@ -6,8 +6,8 @@ import styled from '@emotion/styled'
 
 const LandingContainer = styled.div`
   {
-    width: 50%;
-    height: 100%;
+    min-width: 50%;
+    min-height: 100%;
     position: relative;
     background-color: #8DE4F5;
     overflow: hidden;
