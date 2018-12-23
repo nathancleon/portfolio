@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import mentalnoteImg from '../../images/mentalnotemockup.png'
-import sproutlogImg from '../../images/sproutlog-mockup.png'
-import barklocalImg from '../../images/barklocal-mockup.png'
+import mentalnoteImg from '../../images/mentalnotemockup-min.png'
+import sproutlogImg from '../../images/sproutlog-mockup-min.png'
+import barklocalImg from '../../images/barklocal-mockup-min.png'
 import htmlIcon from '../../images/icons/html-5.svg'
 import cssIcon from '../../images/icons/css-3.svg'
 import jqueryIcon from '../../images/icons/jquery.svg'
@@ -57,7 +57,7 @@ const Title = styled.h1`
     position: absolute;
     width: 20vmin;
     height: 8vmin;
-    top: -2vmin;
+    top: -1.5vmin;
     left: -2.5vmin;
     background-color: #715FB5;
     border-radius: 4px;

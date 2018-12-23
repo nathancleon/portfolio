@@ -1,5 +1,5 @@
 import React from 'react'
-import imgOfMyself from '../images/me-color.png'
+import imgOfMyself from '../images/me-color-small.png'
 import codepattern from '../images/icons/codepattern.svg'
 import downArrow from '../images/icons/long-arrow-down.svg'
 import {keyframes} from '@emotion/core'
@@ -22,7 +22,7 @@ const CodeBackground = styled.div`
     background-size: 200px;
     background-repeat: repeat;
   }
-  @media screen and (max-width: 1024px) and (orientation: portrait) {
+  @media screen and (max-width: 1024px) {
     {
       background-size: 100px;
     }
@@ -46,7 +46,7 @@ const HeaderTextContainer = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-top: 10vh;
+    padding-top: 20vh;
   }
   h1 {
     color: #f2f2f2;
@@ -56,7 +56,7 @@ const HeaderTextContainer = styled.div`
     margin-bottom: 5vmin;
     transform: rotate(-15deg);
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1024px) {
     {
       padding-top: 4vh;
     }

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import meWithComputer from '../../images/me-with-computer.png'
+import meWithComputer from '../../images/me-with-computer-min.png'
 import twitterIcon from '../../images/icons/twitter-square.svg'
 import linkedinIcon from '../../images/icons/linkedin.svg'
 import githubIcon from '../../images/icons/github-square.svg'
@@ -39,8 +39,8 @@ const Title = styled.h1`
     position: absolute;
     width: 12vmin;
     height: 6vmin;
-    top: -1vmin;
-    left: -2.5vmin;
+    top: -0.5vmin;
+    left: -3vmin;
     background-color: #715FB5;
     border-radius: 4px;
     z-index: -1;
@@ -48,7 +48,7 @@ const Title = styled.h1`
   &:after {
     content: '';
     position: absolute;
-    width: 14vmin;
+    width: 15vmin;
     height: 8vmin;
     top: -1.5vmin;
     left: -4vmin;

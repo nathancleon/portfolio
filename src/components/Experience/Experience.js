@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import greenroofImg from '../../images/greenroof-diagnostics-mockup.png'
-import HackForChangeImg from '../../images/me-atxhackforchange.jpg'
+import greenroofImg from '../../images/greenroof-diagnostics-mockup-min.png'
+import HackForChangeImg from '../../images/me-atxhackforchange-min.jpg'
 import htmlIcon from '../../images/icons/html-5.svg'
 import cssIcon from '../../images/icons/css-3.svg'
 import jqueryIcon from '../../images/icons/jquery.svg'
@@ -56,7 +56,7 @@ const Title = styled.h1`
     position: absolute;
     width: 25vmin;
     height: 8vmin;
-    top: -2vmin;
+    top: -1.5vmin;
     left: -2.5vmin;
     background-color: #715FB5;
     border-radius: 4px;
@@ -210,11 +210,11 @@ const HackForChangeImage = styled.div`
     margin-left: 4vw;
   }
   a {
-    width: 70%;
+    width: 90%;
     cursor: pointer;
   }
   img {
-    width: 80%;
+    width: 100%;
     border-radius: 4px;
   }
   img:hover {

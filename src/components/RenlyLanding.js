@@ -1,5 +1,5 @@
 import React from 'react'
-import imgOfRenly from '../images/renly-color.png'
+import imgOfRenly from '../images/renly-color-min.png'
 import bonepattern from '../images/icons/bonepatternpurple.svg'
 import comment from '../images/icons/comment.svg'
 import styled from '@emotion/styled'
@@ -46,7 +46,7 @@ const TextContainer = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-top: 10vh;
+    padding-top: 20vh;
   }
   h1 {
     color: #505050;
@@ -56,7 +56,7 @@ const TextContainer = styled.div`
     margin-bottom: 5vmin;
     transform: rotate(-15deg);
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1024px) {
     {
       padding-top: 4vh;
     }
