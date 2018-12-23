@@ -109,6 +109,9 @@ p {
     margin-bottom: 5vw;
     align-self: center;
   }
+  h2 {
+    font-size: 1.25rem;
+  }
   p {
     font-size: 14px;
   }
@@ -261,6 +264,9 @@ p {
     margin-bottom: 5vw;
     align-self: center;
   }
+  h2 {
+    font-size: 1.25rem;
+  }
   p {
     font-size: 14px;
   }
@@ -273,6 +279,9 @@ p {
     margin-top: -2vw;
     margin-bottom: 5w;
     align-self: center;
+  }
+  h2 {
+    font-size: 1.25rem;
   }
 }
 `;
