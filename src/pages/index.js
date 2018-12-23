@@ -12,8 +12,8 @@ import Bio from '../components/Bio/Bio'
 const LandingWrapper = styled.div`
   {
     display: flex;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
     margin: 0;
     padding: 0;
   }
