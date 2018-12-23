@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import {Global, css} from '@emotion/core'
 import SEO from '../components/seo'
 import styled from '@emotion/styled'
 import MyselfLanding from '../components/MyselfLanding'
@@ -9,18 +10,6 @@ import Experience from '../components/Experience/Experience'
 import Bio from '../components/Bio/Bio'
 
 const LandingWrapper = styled.div`
-  html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  *{
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    box-sizing: border-box;
-  }
   {
     display: flex;
     height: 100vh;
@@ -50,14 +39,33 @@ const IndexPage = () => (
       <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Merriweather:700i|Open+Sans:400,700" rel="stylesheet" />
       <html lang="en" />
     </Helmet>
-    <LandingWrapper>
-      <SEO title="Nathaniel Collins Portfolio" keywords={['gatsby', 'portfolio', 'react', 'full stack', 'web developer', 'front end', 'software engineer']} />
-      <MyselfLanding />
-      <RenlyLanding />
-    </LandingWrapper>
-    <Projects />
-    <Experience />
-    <Bio />
+    <div>
+      <Global
+        styles={css`
+          html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }
+          *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            box-sizing: border-box;
+          }
+        `}
+      />
+      <LandingWrapper>
+        <SEO title="Nathaniel Collins Portfolio" keywords={['gatsby', 'portfolio', 'react', 'full stack', 'web developer', 'front end', 'software engineer']} />
+        <MyselfLanding />
+        <RenlyLanding />
+      </LandingWrapper>
+      <Projects />
+      <Experience />
+      <Bio />
+    </div>
+    
   </>
 )
 
