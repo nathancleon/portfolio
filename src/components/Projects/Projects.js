@@ -19,14 +19,9 @@ const ProjectsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 15vh;
+    padding-top: 15vw;
     background-color: #fefefe;
-    margin-bottom: 5vh;
-  }
-  @media only screen and (max-width: 860px) {
-    {
-      padding-top: 10vh;
-    }
+    margin-bottom: 5vw;
   }
 `;
 
@@ -55,7 +50,7 @@ const Title = styled.h1`
     color: #fefefe;
     position: relative;
     transform: rotate(-5deg);
-    margin-bottom: 5vw;
+    margin-bottom: 10vw;
   }
   &:before {
     content: '';
@@ -82,7 +77,7 @@ const Title = styled.h1`
   }
   @media only screen and (max-width: 860px) {
     {
-      margin-bottom: 5vh;
+      margin-bottom: 5vw;
     }
   }
 `
@@ -194,14 +189,14 @@ const LiveDemoLink = styled.a`
     text-align: center;
     color: #715FB5;
     font-family: 'Merriweather', serif;
-    margin-top: -2vh;
+    margin-top: -2vw;
   }
   &:hover {
     color: #2BE0F5;
   }
   @media only screen and (max-width: 860px) {
     {
-      margin-top: 2vh;
+      margin-top: 2vw;
     }
   }
 `;
@@ -212,7 +207,7 @@ const TechStack = styled.div`
     height: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: 4vh;
+    margin-top: 4vw;
     margin-left: 10%;
   }
   img {
@@ -226,6 +221,7 @@ const TechStack = styled.div`
       width: 70%;
       align-self: center;
       margin-left: 0;
+      margin-bottom: 10vw;
     }
     img {
       width: 8vw;

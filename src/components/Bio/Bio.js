@@ -11,13 +11,13 @@ const BioContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 15vh;
+    padding-top: 5vw;
     margin-left: 10vw;
     background-color: #fefefe;
   }
   @media only screen and (max-width: 860px) {
     {
-      padding-top: 5vh;
+      padding-top: 5vw;
       width: 100%;
       margin-left: 0;
     }
@@ -70,7 +70,7 @@ const BioGreeting = styled.h2`
     font-size: 3.5vmin;
     font-family: 'Merriweather', serif;
     color: #505050;
-    margin-bottom: 2vh;
+    margin-bottom: 2vw;
   }
   @media only screen and (max-width: 860px) {
     {
@@ -84,7 +84,7 @@ const BioText = styled.h3`
     text-align: justify;
     width: 80%;
     color: #505050;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: normal;
     line-height: 25px;
   }
@@ -95,6 +95,11 @@ const BioText = styled.h3`
   }
   a:hover {
     color: #2BE0F5;
+  }
+  @media only screen and (max-width: 860px) {
+    {
+      font-size: 14px;
+    }
   }
 `;
 

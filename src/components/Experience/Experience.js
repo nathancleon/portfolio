@@ -12,14 +12,14 @@ const ExperienceContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 15vh;
-    padding-bottom: 15vh;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
     background-color: rgba(141,228,245,0.07);
   }
   @media only screen and (max-width: 860px) {
     {
-      padding-top: 10vh;
-      margin-bottom: 5vh;
+      padding-top: 7vw;
+      margin-bottom: 7vw;
     }
   }
 `;
@@ -48,7 +48,7 @@ const Title = styled.h1`
     color: #fefefe;
     position: relative;
     transform: rotate(-5deg);
-    margin-bottom: 5vw;
+    margin-bottom: 10vw;
     margin-top: 5vw;
   }
   &:before {
@@ -76,7 +76,7 @@ const Title = styled.h1`
   }
   @media only screen and (max-width: 860px) {
     {
-      margin-bottom: 5vh;
+      margin-bottom: 5vw;
     }
   }
 `
@@ -87,12 +87,12 @@ const ExperienceText = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 10vw;
+  margin-top: 5vw;
 }
 h2 {
   color: #715FB5;
   font-size: 4vmin;
-  margin-bottom: 2vh;
+  margin-bottom: 2vw;
 }
 p {
   font-size: 1rem;
@@ -103,8 +103,8 @@ p {
   {
     width: 90%;
     padding-left: 5vw;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
     align-self: center;
   }
   p {
@@ -158,12 +158,12 @@ const TechStack = styled.div`
     height: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: -4vh;
+    margin-top: -4vw;
     margin-left: 10%;
   }
   img {
-    width: 3vw;
-    max-height: 3vw;
+    width: 5vw;
+    max-height: 5vw;
     cursor: pointer;
     padding: 5px;
     margin-right: 3vw;
@@ -173,7 +173,7 @@ const TechStack = styled.div`
       width: 90%;
       margin-left: 0;
       padding-left: 10%;
-      margin-top: 2vh;
+      margin-top: 2vw;
     }
     img {
       width: 8vw;
@@ -239,24 +239,24 @@ const HackForChangeText = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 10vw;
+  margin-top: 5vw;
 }
 h2 {
   color: #715FB5;
   font-size: 4vmin;
-  margin-bottom: 2vh;
+  margin-bottom: 2vw;
 }
 p {
   font-size: 1rem;
   font-family: "Open Sans", sans-serif;
   color: #888;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 860px) {
   {
     width: 40%;
     padding-left: 5vw;
     margin-top: -2vw;
-    margin-bottom: 5vh;
+    margin-bottom: 5vw;
     align-self: center;
   }
   p {
@@ -269,7 +269,7 @@ p {
     width: 90%;
     padding-left: 5vw;
     margin-top: -2vw;
-    margin-bottom: 5vh;
+    margin-bottom: 5w;
     align-self: center;
   }
 }
