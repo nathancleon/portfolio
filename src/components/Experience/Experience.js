@@ -13,11 +13,13 @@ const ExperienceContainer = styled.div`
     flex-direction: column;
     align-items: center;
     padding-top: 15vh;
+    padding-bottom: 15vh;
     background-color: rgba(141,228,245,0.07);
   }
   @media only screen and (max-width: 860px) {
     {
       padding-top: 10vh;
+      margin-bottom: 5vh;
     }
   }
 `;
@@ -90,6 +92,7 @@ const ExperienceText = styled.div`
 h2 {
   color: #715FB5;
   font-size: 4vmin;
+  margin-bottom: 2vh;
 }
 p {
   font-size: 1rem;
@@ -138,13 +141,19 @@ const SelectedExperience = styled.div`
   }
 `;
 
+const SelectedImg = styled.img`
+  {
+    max-width: 50vw;
+  }
+`;
+
 const TechStack = styled.div`
   {
     width: 30%;
     height: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: -10vh;
+    margin-top: -4vh;
     margin-left: 10%;
   }
   img {
@@ -157,9 +166,9 @@ const TechStack = styled.div`
   @media only screen and (max-width: 860px) {
     {
       width: 90%;
-      margin-top: -5vh;
       margin-left: 0;
       padding-left: 10%;
+      margin-top: 2vh;
     }
     img {
       width: 7vw;
@@ -173,10 +182,10 @@ const HackForChange = styled.div`
    {
     display: flex;
     align-items: top;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     margin-right: 15vw;
-    margin-top: 8vw;
+    margin-top: 25vw;
   }
   @media only screen and (max-width: 860px) {
     {
@@ -213,6 +222,7 @@ const HackForChangeImage = styled.div`
       height: 100%;
       order: 2;
       margin-left: 0;
+      margin-top: 10vw;
     }
     img {
       width: 100%;
@@ -231,6 +241,7 @@ const HackForChangeText = styled.div`
 h2 {
   color: #715FB5;
   font-size: 4vmin;
+  margin-bottom: 2vh;
 }
 p {
   font-size: 1rem;
@@ -278,7 +289,7 @@ export default class Experience extends React.Component {
           </ExperienceText>
         <SelectedExperience>
           <a href="https://github.com/nathancleon/green-roof-diagnostics" target="_blank" rel="noopener noreferrer">
-            <img src={greenroofImg} alt="design mockup" />
+            <SelectedImg src={greenroofImg} alt="design mockup" />
           </a>
           <TechStack>
             <img src={htmlIcon} alt="html" title="html" />

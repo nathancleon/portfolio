@@ -129,7 +129,7 @@ const CommentBubble = styled.img`
 const BubbleText = styled.p`
   {
     position: absolute;
-    top: 30%;
+    top: 34%;
     left: 12%;
     color: #8DE4F5;
     font-family: 'Merriweather', sans-serif;
@@ -140,13 +140,13 @@ const BubbleText = styled.p`
 
   @media only screen and (max-width: 600px) {
     {
-      top: 20%;
+      top: 30%;
     }
   }
 
   @media only screen and (max-width: 420px) {
     {
-      top: 15%;
+      top: 25%;
     }
   }
 `;

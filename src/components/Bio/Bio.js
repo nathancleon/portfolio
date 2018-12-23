@@ -7,10 +7,12 @@ import githubIcon from '../../images/icons/github-square.svg'
 
 const BioContainer = styled.div`
   {
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 15vh;
+    margin-left: 10vw;
     background-color: #fefefe;
   }
   @media only screen and (max-width: 860px) {
@@ -66,6 +68,7 @@ const BioGreeting = styled.h2`
     font-size: 3.5vmin;
     font-family: 'Merriweather', serif;
     color: #505050;
+    margin-bottom: 2vh;
   }
 `;
 
@@ -92,7 +95,7 @@ const ContentContainer = styled.div`
    {
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    width: 80%;
   }
   @media only screen and (max-width: 860px) {
     {
@@ -110,6 +113,7 @@ const MyselfImg = styled.img`
   @media only screen and (max-width: 860px) {
     {
       order: 2;
+      margin-top: 10vw;
     }
   }
 `;
@@ -126,6 +130,7 @@ const Contact = styled.div`
     text-align: center;
     color: #715FB5;
     font-size: 3vmin;
+    margin-bottom: 4vw;
   }
   p {
     font-family: 'Merriweather', serif;
@@ -133,10 +138,11 @@ const Contact = styled.div`
     text-align: center;
     color: #505050;
     font-weight: bold;
+    margin-top: 4vw;
   }
   @media only screen and (max-width: 860px) {
     {
-      margin-top: 5%;
+      margin-top: 15vw;
       width: 100%;
     }
   }

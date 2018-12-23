@@ -106,7 +106,7 @@ const Logo = styled.div`
     top: 50%;
     right: -29px;
     width: 58px; 
-    height: 88px;
+    height: 90px;
     background-color: #fefefe;
     margin: 28px 0;
     border-radius: .5em;
@@ -131,11 +131,12 @@ const Logo = styled.div`
     position: absolute;
     width: inherit; 
     height: inherit;
-    padding-top: 30%;
+    padding-top: 50%;
     font-size: 1.3vmin;
     font-weight: bold;
     text-align: center;
     font-family: 'Merriweather', serif;
+    line-height: 1rem;
     color: #715FB5;
     transform: rotate(-90deg);
     z-index: 12;

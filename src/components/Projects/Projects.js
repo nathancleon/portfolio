@@ -21,6 +21,7 @@ const ProjectsContainer = styled.div`
     align-items: center;
     padding-top: 15vh;
     background-color: #fefefe;
+    margin-bottom: 5vh;
   }
   @media only screen and (max-width: 860px) {
     {
@@ -175,6 +176,12 @@ const SelectedProject = styled.div`
   }
 `;
 
+const SelectedImg = styled.img`
+  {
+    max-width: 50vw;
+  }
+`;
+
 const LiveDemoLink = styled.a`
   {
     width: 100%;
@@ -182,14 +189,14 @@ const LiveDemoLink = styled.a`
     text-align: center;
     color: #715FB5;
     font-family: 'Merriweather', serif;
-    margin-top: -10vh;
+    margin-top: -2vh;
   }
   &:hover {
     color: #2BE0F5;
   }
   @media only screen and (max-width: 860px) {
     {
-      margin-top: -6vh;
+      margin-top: 2vh;
     }
   }
 `;
@@ -360,7 +367,7 @@ export default class Projects extends React.Component {
             }
           </ProjectListContainer>
         <SelectedProject>
-        <img src={selectedProject.image} alt="design mockup" />
+        <SelectedImg src={selectedProject.image} alt="design mockup" />
           <LiveDemoLink href={selectedProject.liveDemo} target="_blank" rel="noopener noreferrer">Live Demo</LiveDemoLink>
           <TechStack>
           {
