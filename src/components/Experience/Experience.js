@@ -108,7 +108,7 @@ p {
     align-self: center;
   }
   p {
-    font-size: 2vmin;
+    font-size: 14px;
   }
 }
 `;
@@ -257,7 +257,7 @@ p {
     align-self: center;
   }
   p {
-    font-size: 2vmin;
+    font-size: 14px;
   }
 }
 
@@ -270,7 +270,7 @@ p {
     align-self: center;
   }
   p {
-    font-size: 2vmin;
+    font-size: 12px;
   }
 }
 `;

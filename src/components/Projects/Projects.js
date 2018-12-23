@@ -134,7 +134,7 @@ const ProjectList = styled.ul`
     color: #715FB5;
   }
   li p {
-    font-size: 0.75rem;
+    font-size: 14px;
     font-family: "Open Sans", sans-serif;
     color: #888;
   }
@@ -150,7 +150,7 @@ const ProjectList = styled.ul`
       font-size: 4vmin;
     }
     li p {
-      font-size: 2vmin;
+      font-size: 12px;
     }
   }
 `;
