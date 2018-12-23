@@ -46,7 +46,7 @@ const HeaderTextContainer = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-top: 20vh;
+    padding-top: 15vw;
   }
   h1 {
     color: #f2f2f2;
@@ -58,7 +58,7 @@ const HeaderTextContainer = styled.div`
   }
   @media only screen and (max-width: 1024px) {
     {
-      padding-top: 4vh;
+      padding-top: 8vw;
     }
     h1 {
       font-size: 7vw;
@@ -109,7 +109,6 @@ const HeaderImage = styled.img`
     position: absolute;
     bottom: 0;
     max-width: 50vw;
-    max-height: 50vh;
   }
 `;
 
@@ -145,11 +144,11 @@ const Logo = styled.div`
     width: inherit; 
     height: inherit;
     padding-top: 34%;
-    font-size: 0.8vw;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     font-family: 'Merriweather', sans-serif;
-    line-height: 1.5vw;
+    line-height: 1.5rem;
     color: #715FB5;
     transform: rotate(-90deg);
     z-index: 12;
@@ -162,8 +161,9 @@ const Logo = styled.div`
       right: -18px;
     }
     span {
-      font-size: 2vw;
-      line-height: 2vw;
+      padding-top: 40%;
+      font-size: 0.5rem;
+      line-height: 0.8rem;
     }
   }
 `;

@@ -46,7 +46,7 @@ const TextContainer = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-top: 20vh;
+    padding-top: 15vw;
   }
   h1 {
     color: #505050;
@@ -58,7 +58,7 @@ const TextContainer = styled.div`
   }
   @media only screen and (max-width: 1024px) {
     {
-      padding-top: 4vh;
+      padding-top: 8vw;
     }
     h1 {
       font-size: 7vw;
@@ -97,14 +97,13 @@ const TextIntro = styled.div`
 const ImageContainer = styled.div`
   {
     position: absolute;
-    bottom: -1vh;
+    bottom: -1vw;
   }
 `;
 
 const Image = styled.img`
   {
     max-width: 50vw;
-    max-height: 50vh;
     position: relative;
   }
 `;
