@@ -19,12 +19,7 @@ const LandingWrapper = styled.div`
   }
   @media screen and (max-width: 1024px) and (orientation: portrait) {
     {
-      height: 70vh;
-    }
-  }
-  @media screen and (max-width: 540px){
-    {
-      height: 50vh;
+      height: 80vw;
     }
   }
 `;
