@@ -26,7 +26,7 @@ const BioContainer = styled.div`
 
 const Title = styled.h1`
   {
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', sans-serif;
     font-size: 4vmin;
     color: #fefefe;
     position: relative;
@@ -68,7 +68,7 @@ const Title = styled.h1`
 const BioGreeting = styled.h2`
   {
     font-size: 3.5vmin;
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', sans-serif;
     color: #505050;
     margin-bottom: 2vw;
   }
@@ -145,7 +145,7 @@ const Contact = styled.div`
     margin-bottom: 4vw;
   }
   p {
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', sans-serif;
     font-size: 2.5vmin;
     text-align: center;
     color: #505050;

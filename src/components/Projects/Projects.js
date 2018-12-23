@@ -45,7 +45,7 @@ const ContentContainer = styled.div`
 
 const Title = styled.h1`
   {
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', sans-serif;
     font-size: 4vmin;
     color: #fefefe;
     position: relative;
@@ -188,7 +188,7 @@ const LiveDemoLink = styled.a`
     text-decoration: none;
     text-align: center;
     color: #715FB5;
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', sans-serif;
     margin-top: -2vw;
   }
   &:hover {

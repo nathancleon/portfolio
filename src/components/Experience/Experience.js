@@ -43,7 +43,7 @@ const ContentContainer = styled.div`
 
 const Title = styled.h1`
   {
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', sans-serif;
     font-size: 4vmin;
     color: #fefefe;
     position: relative;
