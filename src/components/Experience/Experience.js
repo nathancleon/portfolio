@@ -44,7 +44,7 @@ const ContentContainer = styled.div`
 const Title = styled.h1`
   {
     font-family: 'Merriweather', sans-serif;
-    font-size: 4vmin;
+    font-size: 2.5vw;
     color: #fefefe;
     position: relative;
     transform: rotate(-5deg);
@@ -54,10 +54,12 @@ const Title = styled.h1`
   &:before {
     content: '';
     position: absolute;
-    width: 25vmin;
-    height: 8vmin;
-    top: -1.5vmin;
-    left: -2.5vmin;
+    content: '';
+    position: absolute;
+    width: 17vw;
+    height: 6vw;
+    top: -1.5vw;
+    left: -2vw;
     background-color: #715FB5;
     border-radius: 4px;
     z-index: -1;
@@ -65,10 +67,10 @@ const Title = styled.h1`
   &:after {
     content: '';
     position: absolute;
-    width: 29vmin;
-    height: 8vmin;
+    width: 20vw;
+    height: 6vw;
     top: -1.5vmin;
-    left: -4vmin;
+    left: -3vw;
     background-color: #8DE4F5;
     border-radius: 4px;
     z-index: -2;
