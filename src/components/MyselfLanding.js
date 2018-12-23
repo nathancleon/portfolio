@@ -56,6 +56,11 @@ const HeaderTextContainer = styled.div`
     margin-bottom: 5vmin;
     transform: rotate(-15deg);
   }
+  @media only screen and (max-width: 600px) {
+    {
+      padding-top: 4vh;
+    }
+  }
 `;
 
 const TextIntro = styled.div`
