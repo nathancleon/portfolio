@@ -341,7 +341,7 @@ export default class Experience extends React.Component {
         </HackForChangeImage>
         <HackForChangeText>
             <h2>ATX Hack For Change 2016</h2>
-            <p>Worked alongside actual beekeepers, a software engineer, a UX Designer, and a Content Marketing Coordinator to develop an app to assist local beekeepers.</p>
+            <p>Worked alongside actual beekeepers, a software engineer and a UX Designer to develop an app to assist local beekeepers.</p>
         </HackForChangeText>
         </HackForChange>
       </ExperienceContainer>
