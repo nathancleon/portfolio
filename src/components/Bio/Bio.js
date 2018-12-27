@@ -63,6 +63,27 @@ const Title = styled.h1`
       margin-bottom: 10vw;
     }
   }
+  @media only screen and (max-width: 600px) {
+    {
+      font-size: 1.5rem;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      width: 3.25rem;
+      height: 2.5rem;
+      top: -0.25rem;
+      left: -0.5rem;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 3.75rem;
+      height: 3rem;
+      top: -0.5rem;
+      left: -0.75rem;
+    }
+  }
 `
 
 const BioGreeting = styled.h2`
@@ -141,6 +162,7 @@ const Contact = styled.div`
   h2 {
     text-align: center;
     color: #715FB5;
+    font-family: 'Dancing Script', sans-serif;
     font-size: 2vw;
     margin-bottom: 4vw;
   }
@@ -158,7 +180,7 @@ const Contact = styled.div`
       width: 100%;
     }
     h2 {
-      font-size: 16px;
+      font-size: 2rem;
     }
     p {
       font-size: 14px;
@@ -193,7 +215,7 @@ export default class Bio extends React.Component {
         <ContentContainer>
           <MyselfImg src={meWithComputer} alt="myself with a computer" />
           <Contact>
-            <h2>Contact</h2>
+            <h2>Say Hello!</h2>
             <Social>
               <a href="https://twitter.com/NathanCLeon" target="_blank" rel="noopener noreferrer">
                 <img src={twitterIcon} alt="twitter link" />

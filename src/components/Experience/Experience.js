@@ -81,6 +81,27 @@ const Title = styled.h1`
       margin-bottom: 10vw;
     }
   }
+  @media only screen and (max-width: 600px) {
+    {
+      font-size: 1.5rem;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      width: 9.5rem;
+      height: 3rem;
+      top: -0.5rem;
+      left: -0.9rem;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 9.5rem;
+      height: 3rem;
+      top: -0.5rem;
+      left: -0.9rem;
+    }
+  }
 `
 
 const ExperienceText = styled.div`

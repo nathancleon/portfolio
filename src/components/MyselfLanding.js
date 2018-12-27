@@ -46,7 +46,7 @@ const HeaderTextContainer = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-top: 15vw;
+    margin-top: 10vw;
   }
   h1 {
     color: #f2f2f2;
@@ -58,10 +58,15 @@ const HeaderTextContainer = styled.div`
   }
   @media only screen and (max-width: 1024px) {
     {
-      padding-top: 8vw;
+      margin-top: 8vw;
     }
     h1 {
       font-size: 7vw;
+    }
+  }
+  @media only screen and (max-width: 550px) {
+    h1 {
+      font-size: 2rem;
     }
   }
 `;
@@ -100,6 +105,12 @@ const TextIntro = styled.div`
   @media only screen and (max-width: 1024px) {
     p {
       font-size: 2vw;
+    }
+  }
+  @media only screen and (max-width: 550px) {
+    p {
+      font-size: 0.75rem;
+      line-height: 1rem;
     }
   }
 `

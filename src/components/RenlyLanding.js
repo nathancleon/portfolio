@@ -46,7 +46,7 @@ const TextContainer = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-top: 15vw;
+    margin-top: 10vw;
   }
   h1 {
     color: #505050;
@@ -58,10 +58,15 @@ const TextContainer = styled.div`
   }
   @media only screen and (max-width: 1024px) {
     {
-      padding-top: 8vw;
+      margin-top: 8vw;
     }
     h1 {
       font-size: 7vw;
+    }
+  }
+  @media only screen and (max-width: 550px) {
+    h1 {
+      font-size: 2rem;
     }
   }
 `;
@@ -79,7 +84,7 @@ const TextIntro = styled.div`
     color: #505050;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    font-size: 2vw;
+    font-size: 1.5vw;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   }
   span {
@@ -90,6 +95,12 @@ const TextIntro = styled.div`
   @media only screen and (max-width: 1024px) {
     p {
       font-size: 2vw;
+    }
+  }
+  @media only screen and (max-width: 550px) {
+    p {
+      font-size: 0.75rem;
+      line-height: 1rem;
     }
   }
 `
@@ -152,12 +163,6 @@ const BubbleText = styled.p`
   @media only screen and (max-width: 600px) {
     {
       top: 30%;
-    }
-  }
-
-  @media only screen and (max-width: 420px) {
-    {
-      top: 25%;
     }
   }
 `;

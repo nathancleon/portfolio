@@ -80,6 +80,28 @@ const Title = styled.h1`
       margin-bottom: 10vw;
     }
   }
+  @media only screen and (max-width: 600px) {
+    {
+      font-size: 1.5rem;
+      margin-bottom: 10vw;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      width: 7.5rem;
+      height: 3rem;
+      top: -0.5rem;
+      left: -0.9rem;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 7.5rem;
+      height: 3rem;
+      top: -0.5rem;
+      left: -0.9rem;
+    }
+  }
 `
 
 const ProjectListContainer = styled.div`
@@ -239,6 +261,7 @@ export default class Projects extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      images: [mentalnoteImg, sproutlogImg, barklocalImg],
       projects: [
         {
           title: "Mentalnote",
@@ -274,7 +297,6 @@ export default class Projects extends React.Component {
               link: 'https://github.com/nathancleon/self-journal'
             }
           ],
-          image: mentalnoteImg,
           liveDemo: "https://mentalnote.herokuapp.com/"
         },
         {
@@ -303,7 +325,6 @@ export default class Projects extends React.Component {
               link: 'https://github.com/nathancleon/sprout-log-app'
             }
           ],
-          image: sproutlogImg,
           liveDemo: "https://sprout-log.herokuapp.com/"
         },
         {
@@ -328,7 +349,6 @@ export default class Projects extends React.Component {
               link: 'https://github.com/nathancleon/bark-local'
             }
           ],
-          image: barklocalImg,
           liveDemo: "https://nathancleon.github.io/bark-local/"
         },
       ],
@@ -369,7 +389,7 @@ export default class Projects extends React.Component {
             }
           </ProjectListContainer>
         <SelectedProject>
-        <SelectedImg src={selectedProject.image} alt="design mockup" />
+        <SelectedImg src={this.state.images[this.state.selectedIndex]} alt="design mockup" />
           <LiveDemoLink href={selectedProject.liveDemo} target="_blank" rel="noopener noreferrer">Live Demo</LiveDemoLink>
           <TechStack>
           {
