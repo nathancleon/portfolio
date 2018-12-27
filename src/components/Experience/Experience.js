@@ -81,7 +81,7 @@ const Title = styled.h1`
       margin-bottom: 10vw;
     }
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     {
       font-size: 1.5rem;
     }

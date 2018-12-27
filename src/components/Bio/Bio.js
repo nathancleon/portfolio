@@ -63,14 +63,14 @@ const Title = styled.h1`
       margin-bottom: 10vw;
     }
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     {
       font-size: 1.5rem;
     }
     &:before {
       content: '';
       position: absolute;
-      width: 3.25rem;
+      width: 3.4rem;
       height: 2.5rem;
       top: -0.25rem;
       left: -0.5rem;
@@ -78,10 +78,10 @@ const Title = styled.h1`
     &:after {
       content: '';
       position: absolute;
-      width: 3.75rem;
+      width: 4rem;
       height: 3rem;
       top: -0.5rem;
-      left: -0.75rem;
+      left: -0.8rem;
     }
   }
 `
@@ -163,7 +163,7 @@ const Contact = styled.div`
     text-align: center;
     color: #715FB5;
     font-family: 'Dancing Script', sans-serif;
-    font-size: 2vw;
+    font-size: 3vw;
     margin-bottom: 4vw;
   }
   p {
