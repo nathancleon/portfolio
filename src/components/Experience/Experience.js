@@ -317,7 +317,7 @@ export default class Experience extends React.Component {
         <ContentContainer>
           <ExperienceText>
             <h2>Green Roof Diagnostics Redesign</h2>
-            <p>Worked alongside the principal engineer at Green Roof Diagnostics to completely redesign their site to engineer's spec. Created initial mockup and implemented site based on agreed upon design.</p>
+            <p>Freelance contract with a company called Green Roof Diagnostics. Worked alongside the principal engineer at Green Roof Diagnostics to completely redesign their site to engineer's spec. Created initial mockup and implemented site based on agreed upon design.</p>
           </ExperienceText>
         <SelectedExperience>
           <a href="https://github.com/nathancleon/green-roof-diagnostics" target="_blank" rel="noopener noreferrer">
