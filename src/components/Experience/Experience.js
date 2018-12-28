@@ -169,7 +169,7 @@ const SelectedExperience = styled.div`
 
 const SelectedImg = styled.img`
   {
-    max-width: 60vw;
+    max-width: 50vw;
   }
   @media only screen and (max-width: 860px) {
     {
