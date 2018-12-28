@@ -233,8 +233,8 @@ const TechStack = styled.div`
     margin-left: 10%;
   }
   img {
-    width: 5vw;
-    max-height: 5vw;
+    width: 3vw;
+    max-height: 3vw;
     cursor: pointer;
     padding: 5px;
   }
