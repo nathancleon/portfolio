@@ -29,7 +29,7 @@ const ContentContainer = styled.div`
   {
     display: flex;
     align-items: top;
-    justify-content: space-between;
+    justify-content: center;
     width: 90%;
     padding-left: 5vw;
   }
