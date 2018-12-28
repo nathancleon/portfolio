@@ -110,6 +110,7 @@ const ProjectListContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-self: center;
 }
 @media only screen and (max-width: 860px) {
   {
@@ -174,7 +175,7 @@ const ProjectList = styled.ul`
 
 const SelectedProject = styled.div`
   {
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -195,7 +196,7 @@ const SelectedProject = styled.div`
 
 const SelectedImg = styled.img`
   {
-    max-width: 50vw;
+    max-width: 60vw;
   }
   @media only screen and (max-width: 860px) {
     {
