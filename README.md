@@ -7,8 +7,7 @@
   Portfolio – Built using Gatsby
 </h1>
 
-## 🧐 Why Gatsby?
----
+# 🧐 Why Gatsby?
 
 1.  **Fast, fast, & super fast**
 
@@ -16,16 +15,16 @@
 
     
     This is due to a few reasons: 
-    *Inlined critical CSS
-    *Code splitting
-    *Prefetch of soon-to-be-needed resources
-    *Automatic optimizations
+    
+    * Inlined critical CSS
+    * Code splitting
+    * Prefetch of soon-to-be-needed resources
+    * Automatic optimizations
 
 
 2.  **Familiar**
 
     I used React for my last project and wanted to use a familiar framework.
-
     By doing this, I was able to split different sections of the portfolio sites into separate components.
 
 
