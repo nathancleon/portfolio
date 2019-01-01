@@ -105,9 +105,9 @@ const BioText = styled.h3`
     text-align: justify;
     width: 80%;
     color: #505050;
-    font-size: 1rem;
+    font-size: 2vmin;
     font-weight: normal;
-    line-height: 25px;
+    line-height: 4vmin;
   }
   a {
     color: #715FB5;
@@ -119,7 +119,8 @@ const BioText = styled.h3`
   }
   @media only screen and (max-width: 860px) {
     {
-      font-size: 14px;
+      font-size: 1rem;
+      line-height: 2rem;
     }
   }
 `;
@@ -166,13 +167,19 @@ const Contact = styled.div`
     font-size: 3vw;
     margin-bottom: 4vw;
   }
-  p {
+  a:last-of-type {
+    text-decoration: none;
+  }
+  a p {
     font-family: 'Merriweather', sans-serif;
     font-size: 1.5vw;
     text-align: center;
     color: #505050;
     font-weight: bold;
     margin-top: 4vw;
+  }
+  a p:hover {
+    color: #2BE0F5;
   }
   @media only screen and (max-width: 860px) {
     {
@@ -227,7 +234,7 @@ export default class Bio extends React.Component {
                 <img src={githubIcon} alt="github link" />
               </a>
             </Social>
-            <p>nathancleon@gmail.com</p>
+            <a href="mailto:nathancleon@gmail.com"><p>nathancleon@gmail.com</p></a>
           </Contact>
         </ContentContainer>
       </BioContainer>

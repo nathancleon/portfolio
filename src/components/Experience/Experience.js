@@ -27,8 +27,8 @@ const ExperienceContainer = styled.div`
 const ContentContainer = styled.div`
   {
     display: flex;
-    align-items: top;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding-left: 5vw;
   }
@@ -121,6 +121,7 @@ p {
   font-size: 1rem;
   font-family: "Open Sans", sans-serif;
   color: #888;
+  line-height: 2rem;
 }
 @media only screen and (max-width: 860px) {
   {
@@ -132,6 +133,7 @@ p {
   }
   h2 {
     font-size: 1.25rem;
+    text-align: center;
   }
   p {
     font-size: 14px;
@@ -212,8 +214,8 @@ const TechStack = styled.div`
 const HackForChange = styled.div`
    {
     display: flex;
-    align-items: top;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
     margin-right: 15vw;
     margin-top: 15vw;
@@ -276,6 +278,7 @@ p {
   font-size: 1rem;
   font-family: "Open Sans", sans-serif;
   color: #888;
+  line-height: 2rem;
 }
 @media only screen and (max-width: 860px) {
   {
@@ -283,10 +286,10 @@ p {
     padding-left: 5vw;
     margin-top: -2vw;
     margin-bottom: 5vw;
-    align-self: center;
   }
   h2 {
     font-size: 1.25rem;
+    text-align: center;
   }
   p {
     font-size: 14px;
