@@ -95,7 +95,7 @@ const BioGreeting = styled.h2`
   }
   @media only screen and (max-width: 860px) {
     {
-      font-size: 16px;
+      font-size: 1.5rem;
     }
   }
 `;
@@ -189,8 +189,8 @@ const Contact = styled.div`
     h2 {
       font-size: 2rem;
     }
-    p {
-      font-size: 14px;
+    a p {
+      font-size: 1rem;
     }
   }
 `;
