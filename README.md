@@ -7,7 +7,7 @@
   Portfolio – Built using Gatsby
 </h1>
 
-# 🧐 Why Gatsby?
+### 🧐 Why Gatsby?
 
 1.  **Fast, fast, & super fast**
 
@@ -15,20 +15,19 @@
 
     
     This is due to a few reasons: 
-    
     * Inlined critical CSS
     * Code splitting
     * Prefetch of soon-to-be-needed resources
     * Automatic optimizations
 
 
-2.  **Familiar**
+2.  **Familiar <img alt="React" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png" width="25" />**
 
     I used React for my last project and wanted to use a familiar framework.
     By doing this, I was able to split different sections of the portfolio sites into separate components.
 
 
-3.  **Gatsby Emotion**
+3.  **Gatsby Emotion <img alt="Emotion" src="https://emotion.sh/static/a76dfa0d18a0536af9e917cdb8f873b9/ae35a/emotion.png" width="25" />**
 
     While working on my portfolio I decided to use [Emotion](https://emotion.sh/), a CSS-in-JS library, to build out the site.
 
