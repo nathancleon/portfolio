@@ -11,7 +11,7 @@
 
 1.  **Fast, fast, & super fast**
 
-    I wanted to use Gatsby because it is incredibly [fast](https://www.gatsbyjs.org/blog/2017-09-13-why-is-gatsby-so-fast/).
+    I wanted to use Gatsby because it is incredibly [fast](https://www.gatsbyjs.org/blog/2017-09-13-why-is-gatsby-so-fast/). As of my last lighthouse audit, this portfolio site **received a score of 97 in performance** *(using an incognito window; Applied Fast 3G, 4x CPU Slowdown).*
 
     
     This is due to a few reasons: 
@@ -21,7 +21,7 @@
     * Automatic optimizations
 
 
-2.  **Familiar <img alt="React" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png" width="25" />**
+2.  **Familiar <img alt="React" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png" width="35" />**
 
     I used React for my last project and wanted to use a familiar framework.
     By doing this, I was able to split different sections of the portfolio sites into separate components.
