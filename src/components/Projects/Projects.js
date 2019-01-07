@@ -197,6 +197,7 @@ const SelectedProject = styled.div`
 const SelectedImg = styled.img`
   {
     max-width: 60vw;
+    margin-bottom: -4vw;
   }
   @media only screen and (max-width: 860px) {
     {
@@ -208,11 +209,12 @@ const SelectedImg = styled.img`
 const LiveDemoLink = styled.a`
   {
     width: 100%;
+    font-size: 1.25rem;
     text-decoration: none;
     text-align: center;
     color: #715FB5;
     font-family: 'Merriweather', sans-serif;
-    margin-top: -2vw;
+    margin-top: 2vw;
   }
   &:hover {
     color: #2BE0F5;
@@ -392,6 +394,7 @@ export default class Projects extends React.Component {
         <SelectedProject>
         <SelectedImg src={this.state.images[this.state.selectedIndex]} alt="design mockup" />
           <LiveDemoLink href={selectedProject.liveDemo} target="_blank" rel="noopener noreferrer">Live Demo</LiveDemoLink>
+          <LiveDemoLink href={selectedProject.techStack.link} target="_blank" rel="noopener noreferrer">GitHub Link</LiveDemoLink>
           <TechStack>
           {
             selectedProject.techStack.map((stack, index) => {
