@@ -4,6 +4,8 @@ import meWithComputer from '../../images/me-with-computer-min.png'
 import twitterIcon from '../../images/icons/twitter-square.svg'
 import linkedinIcon from '../../images/icons/linkedin.svg'
 import githubIcon from '../../images/icons/github-square.svg'
+import resumeIcon from '../../images/icons/file.svg'
+import resumeFile from '../../../NathanielCollinsLeonResume.pdf'
 
 const BioContainer = styled.div`
   {
@@ -205,6 +207,9 @@ const Social = styled.div`
   a {
     width: 30px;
   }
+  a:last-of-type {
+    width: 22px;
+  }
 `;
 
 
@@ -232,6 +237,9 @@ export default class Bio extends React.Component {
               </a>
               <a href="https://github.com/nathancleon" target="_blank" rel="noopener noreferrer">
                 <img src={githubIcon} alt="github link" />
+              </a>
+              <a href={resumeFile} target="_blank" rel="noopener noreferrer">
+                <img src={resumeIcon} alt="resume link" />
               </a>
             </Social>
             <a href="mailto:nathancleon@gmail.com"><p>nathancleon@gmail.com</p></a>
