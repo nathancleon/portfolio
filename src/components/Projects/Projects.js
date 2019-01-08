@@ -394,7 +394,7 @@ export default class Projects extends React.Component {
         <SelectedProject>
         <SelectedImg src={this.state.images[this.state.selectedIndex]} alt="design mockup" />
           <LiveDemoLink href={selectedProject.liveDemo} target="_blank" rel="noopener noreferrer">Live Demo</LiveDemoLink>
-          <LiveDemoLink href={selectedProject.techStack.link} target="_blank" rel="noopener noreferrer">GitHub Link</LiveDemoLink>
+          <LiveDemoLink href={selectedProject.techStack[selectedProject.techStack.length - 1].link} target="_blank" rel="noopener noreferrer">GitHub Link</LiveDemoLink>
           <TechStack>
           {
             selectedProject.techStack.map((stack, index) => {
