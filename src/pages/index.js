@@ -21,6 +21,7 @@ const LandingWrapper = styled.div`
   @media screen and (max-width: 1024px) and (orientation: portrait) {
     {
       min-height: 80vw;
+      height: 80vw;
     }
   }
 `;
