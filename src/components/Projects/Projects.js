@@ -197,12 +197,21 @@ const SelectedProject = styled.div`
 const SelectedImg = styled.img`
   {
     max-width: 60vw;
-    margin-bottom: -4vw;
   }
   @media only screen and (max-width: 860px) {
     {
       max-width: 100vw;
     }
+  }
+`;
+
+const LinkContainer = styled.div`
+  {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: -5vw;
+    margin-bottom: 1vw;
   }
 `;
 
@@ -393,8 +402,10 @@ export default class Projects extends React.Component {
           </ProjectListContainer>
         <SelectedProject>
         <SelectedImg src={this.state.images[this.state.selectedIndex]} alt="design mockup" />
-          <LiveDemoLink href={selectedProject.liveDemo} target="_blank" rel="noopener noreferrer">Live Demo</LiveDemoLink>
-          <LiveDemoLink href={selectedProject.techStack[selectedProject.techStack.length - 1].link} target="_blank" rel="noopener noreferrer">GitHub Link</LiveDemoLink>
+          <LinkContainer>
+            <LiveDemoLink href={selectedProject.liveDemo} target="_blank" rel="noopener noreferrer">Live Demo</LiveDemoLink>
+            <LiveDemoLink href={selectedProject.techStack[selectedProject.techStack.length - 1].link} target="_blank" rel="noopener noreferrer">GitHub Link</LiveDemoLink>
+          </LinkContainer>
           <TechStack>
           {
             selectedProject.techStack.map((stack, index) => {
