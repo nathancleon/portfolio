@@ -203,6 +203,7 @@ const Social = styled.div`
     align-items: center;
     justify-content: space-around;
     width: 50%;
+    min-width: 200px;
   }
   a {
     width: 30px;

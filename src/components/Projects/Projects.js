@@ -208,7 +208,7 @@ const SelectedImg = styled.img`
 
 const LinkContainer = styled.div`
   {
-    width: 50%;
+    width: 80%;
     display: flex;
     justify-content: space-around;
     margin-top: -5vw;
