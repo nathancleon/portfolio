@@ -179,6 +179,7 @@ const SelectedProject = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
   }
   a {
     width: 80%;
@@ -245,8 +246,9 @@ const TechStack = styled.div`
     margin-left: 10%;
   }
   img {
-    width: 3vw;
-    max-height: 3vw;
+    min-width: 40px;
+    width: 3.5vw;
+    max-width: 4vw;
     cursor: pointer;
     padding: 5px;
   }
