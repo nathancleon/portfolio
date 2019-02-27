@@ -210,7 +210,7 @@ const LinkContainer = styled.div`
     width: 50%;
     display: flex;
     justify-content: space-around;
-    margin-top: -5vw;
+    margin-top: -4rem;
     margin-bottom: 1vw;
   }
 `;
@@ -247,6 +247,7 @@ const TechStack = styled.div`
   img {
     width: 3vw;
     max-height: 3vw;
+    max-width: 60px;
     cursor: pointer;
     padding: 5px;
   }
