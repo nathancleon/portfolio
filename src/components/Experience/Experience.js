@@ -13,8 +13,8 @@ const ExperienceContainer = styled.div`
     flex-direction: column;
     align-items: center;
     padding-top: 5vw;
-    padding-bottom: 5vw;
-    background-color: rgba(141,228,245,0.07);
+    padding-bottom: 8vw;
+    background-color: rgba(141,228,245,0.15);
   }
   @media only screen and (max-width: 860px) {
     {
@@ -187,9 +187,9 @@ const TechStack = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: -4vw;
-    margin-left: 10%;
   }
   img {
+<<<<<<< HEAD
     width: 3vw;
     max-height: 3vw;
     max-width: 50px;
@@ -201,6 +201,11 @@ const TechStack = styled.div`
     width: 3vw;
     max-height: 3vw;
     max-width: 50px;
+=======
+    min-width: 40px;
+    width: 4vw;
+    max-height: 5vw;
+>>>>>>> bdca73a9451572cf77cf081b3940d62b2d7566b5
     cursor: pointer;
     padding: 5px;
     margin-right: 3vw;
@@ -253,8 +258,6 @@ const HackForChangeImage = styled.div`
   img {
     width: 100%;
     border-radius: 4px;
-  }
-  img:hover {
     box-shadow: 15px 15px 20px rgba(113,95,181,0.2);
   }
   @media only screen and (max-width: 860px) {

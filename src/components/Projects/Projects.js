@@ -179,6 +179,7 @@ const SelectedProject = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
   }
   a {
     width: 80%;
@@ -207,7 +208,7 @@ const SelectedImg = styled.img`
 
 const LinkContainer = styled.div`
   {
-    width: 50%;
+    width: 80%;
     display: flex;
     justify-content: space-around;
     margin-top: -4rem;
