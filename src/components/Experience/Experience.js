@@ -189,23 +189,9 @@ const TechStack = styled.div`
     margin-top: -4vw;
   }
   img {
-<<<<<<< HEAD
     width: 3vw;
     max-height: 3vw;
     max-width: 50px;
-    cursor: pointer;
-    padding: 5px;
-    margin-right: 3vw;
-  }
-  a img {
-    width: 3vw;
-    max-height: 3vw;
-    max-width: 50px;
-=======
-    min-width: 40px;
-    width: 4vw;
-    max-height: 5vw;
->>>>>>> bdca73a9451572cf77cf081b3940d62b2d7566b5
     cursor: pointer;
     padding: 5px;
     margin-right: 3vw;

@@ -211,7 +211,7 @@ const LinkContainer = styled.div`
     width: 80%;
     display: flex;
     justify-content: space-around;
-    margin-top: -4rem;
+    margin-top: -3vw;
     margin-bottom: 1vw;
   }
 `;
@@ -254,9 +254,9 @@ const TechStack = styled.div`
   }
   @media only screen and (max-width: 860px) {
     {
-      width: 70%;
+      width: 90%;
       align-self: center;
-      margin-left: 0;
+      margin-left: 5%;
       margin-bottom: 10vw;
     }
     img {
