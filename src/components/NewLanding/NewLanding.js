@@ -18,15 +18,19 @@ export default class NewLanding extends React.Component {
             </ul>
           </Navigation>
           <BioContent>
-            <BioTextHi>Hi,</BioTextHi>
-            <BioTextLarge>
-              My name is <Name>Nathan</Name>
-            </BioTextLarge>
-            <BioTextSmall>
-              I'm a fullstack developer based in Washington, D.C.
-            </BioTextSmall>
+            <BioContentText>
+              <BioTextHi>Hi,</BioTextHi>
+              <BioTextLarge>
+                My name is <Name>Nathan</Name>
+              </BioTextLarge>
+              <BioTextSmall>
+                I'm a fullstack developer based in Washington, D.C.
+              </BioTextSmall>
+            </BioContentText>
           </BioContent>
-          <ImageOfMyself src={imgOfMyself} />
+          <LandingImageContainer>
+            <ImageOfMyself src={imgOfMyself} />
+          </LandingImageContainer>
         </ContentWrapper>
       </LandingWrapper>
     )
@@ -129,39 +133,48 @@ const BioContent = styled.div`
   width: 70%;
   min-width: 50%;
   height: 100%;
-  padding: 80px;
   z-index: 20;
 
   @media only screen and (max-width: 1024px) {
     min-width: 100%;
-    border: 1px solid red;
     height: 40%;
     left: 0;
-    h1,
-    h2,
-    span {
-      margin: 0 auto;
-    }
+    justify-content: center;
+    align-items: center;
+  }
+`
+
+const BioContentText = styled.div`
+  max-width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+  @media only screen and (max-width: 1024px) {
+    max-width: 100%;
+    padding: 0 22.5%;
   }
 `
 
 const BioTextHi = styled.h1`
   font-size: 8vw;
+  width: 100%;
   color: #fff;
 `
 
 const BioTextLarge = styled.h2`
   font-family: 'Merriweather', serif;
-  font-size: 4vw;
+  font-size: 3.5vw;
+  width: 100%;
   color: #fff;
 `
 
 const BioTextSmall = styled.h2`
   font-family: 'Merriweather', serif;
-  font-size: 3vw;
+  font-size: 2.8vw;
   color: #fff;
   margin-top: 15px;
-  width: 80%;
 `
 const Name = styled.span`
   position: relative;
@@ -178,17 +191,28 @@ const Name = styled.span`
   }
 `
 
+const LandingImageContainer = styled.div`
+  position: relative;
+  height: 100%;
+  width: 50%;
+  z-index: -1;
+  border: 1px solid red;
+  @media only screen and (max-width: 1024px) {
+    min-width: 100%;
+  }
+`
+
 const ImageOfMyself = styled.img`
-  /*TODO: Put into separate div*/
+  /*TODO: Edit image properly and reupload*/
+  max-height: 45vw;
+  min-height: 40vw;
   position: absolute;
   bottom: 0;
-  right: -15%;
-  max-height: 45vw;
-  min-height: 80%;
-  z-index: -1;
+  right: -30%;
+  z-index: -2;
+  border: 1px solid red;
   @media only screen and (max-width: 1024px) {
-    max-height: 55vw;
-    min-height: 60%;
+    min-height: 60vw;
     right: 0;
     left: 0;
     margin: 0 auto;
