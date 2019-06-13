@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import pawSvg from '../../images/paw.svg'
-import imgOfMyself from '../../images/me-with-computer.png'
+import imgOfMyself from '../../images/me-with-computer-edited.png'
 
 export default class NewLanding extends React.Component {
   render() {
@@ -89,7 +89,7 @@ const Navigation = styled.nav`
 
   ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     li {
       font-family: 'Merriweather', serif;
       list-style: none;
@@ -107,19 +107,31 @@ const Navigation = styled.nav`
   }
 
   @media only screen and (max-width: 1024px) {
-    top: 30%;
-    right: -100px;
-    width: auto;
-    max-height: 60%;
+    top: 40%;
+    left: -50px;
+    max-width: 50px;
+    height: 70%;
     ul {
       flex-direction: column;
-      height: 350px;
+      height: 300px;
       li {
-        transform: rotate(90deg);
+        transform: rotate(-90deg);
+        padding-right: 0;
+        font-size: 1.75rem;
         &:hover {
-          transform: rotate(90deg);
-          margin: 0;
+          transform: rotate(-90deg);
+          margin-left: 0;
+          margin-right: 0;
         }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    ul {
+      li {
+        font-size: 1.5rem;
+        padding-right: 0;
       }
     }
   }
@@ -137,7 +149,7 @@ const BioContent = styled.div`
 
   @media only screen and (max-width: 1024px) {
     min-width: 100%;
-    height: 40%;
+    height: 60%;
     left: 0;
     justify-content: center;
     align-items: center;
@@ -155,12 +167,23 @@ const BioContentText = styled.div`
     max-width: 100%;
     padding: 0 22.5%;
   }
+  @media only screen and (max-width: 768px) {
+    max-width: 80%;
+    padding: 0;
+  }
 `
 
 const BioTextHi = styled.h1`
   font-size: 8vw;
   width: 100%;
   color: #fff;
+
+  @media only screen and (max-width: 1024px) {
+    font-size: 3.5rem;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 3rem;
+  }
 `
 
 const BioTextLarge = styled.h2`
@@ -168,6 +191,12 @@ const BioTextLarge = styled.h2`
   font-size: 3.5vw;
   width: 100%;
   color: #fff;
+  @media only screen and (max-width: 1024px) {
+    font-size: 2rem;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `
 
 const BioTextSmall = styled.h2`
@@ -175,6 +204,12 @@ const BioTextSmall = styled.h2`
   font-size: 2.8vw;
   color: #fff;
   margin-top: 15px;
+  @media only screen and (max-width: 1024px) {
+    font-size: 1.5rem;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 1.25rem;
+  }
 `
 const Name = styled.span`
   position: relative;
@@ -196,23 +231,20 @@ const LandingImageContainer = styled.div`
   height: 100%;
   width: 50%;
   z-index: -1;
-  border: 1px solid red;
   @media only screen and (max-width: 1024px) {
     min-width: 100%;
   }
 `
 
 const ImageOfMyself = styled.img`
-  /*TODO: Edit image properly and reupload*/
-  max-height: 45vw;
+  max-height: 40vw;
   min-height: 40vw;
   position: absolute;
   bottom: 0;
-  right: -30%;
+  right: -12%;
   z-index: -2;
-  border: 1px solid red;
   @media only screen and (max-width: 1024px) {
-    min-height: 60vw;
+    min-height: 400px;
     right: 0;
     left: 0;
     margin: 0 auto;

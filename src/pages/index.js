@@ -14,7 +14,9 @@ const LandingWrapper = styled.div`
   display: flex;
   height: 100vh;
   min-height: 100vh;
+  max-height: 100vh;
   min-width: 100vw;
+  max-width: 100vw;
   margin: 0;
   padding: 0;
   background: linear-gradient(to bottom right, #ff9f93, #fc5a72);
@@ -39,10 +41,10 @@ const IndexPage = () => (
           * {
             margin: 0;
             padding: 0;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Lato', sans-serif;
             box-sizing: border-box;
           }
-          @import url('https://fonts.googleapis.com/css?family=Dancing+Script:700|Merriweather:700i|Open+Sans:400,700');
+          @import url('https://fonts.googleapis.com/css?family=Dancing+Script:700|Lato:700|Merriweather:700i&display=swap');
         `}
       />
       {/* <LandingWrapper>
