@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import pawSvg from '../../images/paw.svg'
 import imgOfMyself from '../../images/me-with-computer-edited.png'
+import BioContent from './BioContent'
 
 export default class NewLanding extends React.Component {
   render() {
@@ -17,17 +18,7 @@ export default class NewLanding extends React.Component {
               <li>Contact</li>
             </ul>
           </Navigation>
-          <BioContent>
-            <BioContentText>
-              <BioTextHi>Hi,</BioTextHi>
-              <BioTextLarge>
-                My name is <Name>Nathan</Name>
-              </BioTextLarge>
-              <BioTextSmall>
-                I'm a fullstack developer based in Washington, D.C.
-              </BioTextSmall>
-            </BioContentText>
-          </BioContent>
+          <BioContent />
           <LandingImageContainer>
             <ImageOfMyself src={imgOfMyself} />
           </LandingImageContainer>
@@ -137,95 +128,6 @@ const Navigation = styled.nav`
   }
 `
 
-const BioContent = styled.div`
-  /*TODO: Add container div for text*/
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 70%;
-  min-width: 50%;
-  height: 100%;
-  z-index: 20;
-
-  @media only screen and (max-width: 1024px) {
-    min-width: 100%;
-    height: 60%;
-    left: 0;
-    justify-content: center;
-    align-items: center;
-  }
-`
-
-const BioContentText = styled.div`
-  max-width: 90%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 80px;
-  @media only screen and (max-width: 1024px) {
-    max-width: 100%;
-    padding: 0 22.5%;
-  }
-  @media only screen and (max-width: 768px) {
-    max-width: 80%;
-    padding: 0;
-  }
-`
-
-const BioTextHi = styled.h1`
-  font-size: 8vw;
-  width: 100%;
-  color: #fff;
-
-  @media only screen and (max-width: 1024px) {
-    font-size: 3.5rem;
-  }
-  @media only screen and (max-width: 768px) {
-    font-size: 3rem;
-  }
-`
-
-const BioTextLarge = styled.h2`
-  font-family: 'Merriweather', serif;
-  font-size: 3.5vw;
-  width: 100%;
-  color: #fff;
-  @media only screen and (max-width: 1024px) {
-    font-size: 2rem;
-  }
-  @media only screen and (max-width: 768px) {
-    font-size: 1.5rem;
-  }
-`
-
-const BioTextSmall = styled.h2`
-  font-family: 'Merriweather', serif;
-  font-size: 2.8vw;
-  color: #fff;
-  margin-top: 15px;
-  @media only screen and (max-width: 1024px) {
-    font-size: 1.5rem;
-  }
-  @media only screen and (max-width: 768px) {
-    font-size: 1.25rem;
-  }
-`
-const Name = styled.span`
-  position: relative;
-  font-family: 'Merriweather', serif;
-  &:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 0.5vw;
-    border-radius: 8px;
-    background-color: #fff;
-    bottom: -4px;
-    left: 0;
-  }
-`
-
 const LandingImageContainer = styled.div`
   position: relative;
   height: 100%;
@@ -237,14 +139,14 @@ const LandingImageContainer = styled.div`
 `
 
 const ImageOfMyself = styled.img`
-  max-height: 40vw;
-  min-height: 40vw;
+  max-height: 40vh;
+  min-height: 60vh;
   position: absolute;
   bottom: 0;
-  right: -12%;
+  right: -3vw;
   z-index: -2;
   @media only screen and (max-width: 1024px) {
-    min-height: 400px;
+    min-height: 45vh;
     right: 0;
     left: 0;
     margin: 0 auto;
