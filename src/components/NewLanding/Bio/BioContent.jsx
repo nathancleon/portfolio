@@ -14,27 +14,33 @@ export default class BioContent extends React.Component {
   }
 
   componentDidMount() {
-    this.typingAnimation()
-    setTimeout(() => {
-      this.changeText()
-    }, 3750)
+    let bioTextExists = document.getElementById('bio-text')
+    if (!bioTextExists) {
+      return
+    } else {
+      this.typingAnimation()
+      setTimeout(() => {
+        this.changeText()
+      }, 3500)
+    }
   }
 
   typingAnimation() {
     let i = 0
     let text = 'My name is Nathaniel Alexander Collins León Torres Sanchez'
     let timer
+    let bioText = document.getElementById('bio-text')
 
     function typingEffect() {
       let word = text.split('')
       var loopTyping = function() {
         if (word.length > 0) {
-          document.getElementById('bio-text').innerHTML += word.shift()
+          bioText.innerHTML += word.shift()
         } else {
           deletingEffect()
           return false
         }
-        timer = setTimeout(loopTyping, 40)
+        timer = setTimeout(loopTyping, 35)
       }
       loopTyping()
     }
@@ -44,18 +50,21 @@ export default class BioContent extends React.Component {
       var loopDeleting = function() {
         if (word.length > 0) {
           word.pop()
-          document.getElementById('bio-text').innerHTML = word.join('')
+          bioText.innerHTML = word.join('')
         }
         timer = setTimeout(loopDeleting, 20)
       }
       loopDeleting()
     }
-
-    typingEffect()
+    if (!bioText) {
+      return
+    } else {
+      typingEffect()
+    }
   }
 
   changeText() {
-    document.getElementById('bio-text').innerHTML = ''
+    let bioText = document.getElementById('bio-text')
     let i = 0
     let text = `My name is Nathan`
     let timer
@@ -63,13 +72,18 @@ export default class BioContent extends React.Component {
       let word = text.split('')
       var loopTyping = function() {
         if (word.length > 0) {
-          document.getElementById('bio-text').innerHTML += word.shift()
+          bioText.innerHTML += word.shift()
         }
         timer = setTimeout(loopTyping, 40)
       }
       loopTyping()
     }
-    typingEffect()
+    if (bioText) {
+      bioText.innerHTML = ''
+      typingEffect()
+    } else {
+      return
+    }
     this.setState({
       animationComplete: true,
     })
@@ -110,7 +124,7 @@ const moveUp = keyframes`
   0% { 
     margin-bottom: -50px
   }
-  100% {
+  75% {
     margin-bottom: 0px
   }
 `

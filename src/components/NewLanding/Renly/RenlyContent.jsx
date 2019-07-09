@@ -48,7 +48,7 @@ const RenlyContentWrapper = styled.div`
 `
 
 const RenlyContentText = styled.div`
-  animation: ${fadeIn} 2s, ${moveUp} 2s;
+  animation: ${fadeIn} 3s, ${moveUp} 2s;
   width: 90%;
   height: 100%;
   display: flex;

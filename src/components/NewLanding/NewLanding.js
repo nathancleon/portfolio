@@ -5,12 +5,26 @@ import Bio from './Bio/Bio'
 import Renly from './Renly/Renly'
 
 export default class NewLanding extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      renlyVisible: false,
+    }
+  }
+
+  renderRenly() {
+    this.setState({
+      renlyVisible: true,
+    })
+  }
+
   render() {
     return (
       <LandingWrapper>
         <ContentWrapper>
-          <PawTopLeft src={pawSvg} />
-          <PawBottomRight src={pawSvg} />
+          <PawTopLeft onClick={this.renderRenly.bind(this)} src={pawSvg} />
+          <PawBottomRight onClick={this.renderRenly.bind(this)} src={pawSvg} />
           <Navigation>
             <ul>
               <li>About</li>
@@ -18,7 +32,7 @@ export default class NewLanding extends React.Component {
               <li>Contact</li>
             </ul>
           </Navigation>
-          <Renly />
+          {this.state.renlyVisible ? <Renly /> : <Bio />}
         </ContentWrapper>
       </LandingWrapper>
     )
@@ -55,8 +69,9 @@ const PawTopLeft = styled.img`
   position: absolute;
   top: -50px;
   left: -40px;
-  z-index: 2;
   transform: rotate(-36deg);
+  cursor: pointer;
+  z-index: 500;
 `
 
 const PawBottomRight = styled.img`
@@ -64,9 +79,9 @@ const PawBottomRight = styled.img`
   position: absolute;
   bottom: -50px;
   right: -40px;
-  z-index: 2;
   transform: rotate(-216deg);
-  z-index: 20;
+  z-index: 500;
+  cursor: pointer;
 `
 
 const Navigation = styled.nav`

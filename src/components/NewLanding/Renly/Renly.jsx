@@ -36,12 +36,14 @@ const ImageOfMyself = styled.img`
     margin: 0 auto;
   }
 `
-const ImageOfRenly = styled(ImageOfMyself)`
-  right: 0vw;
-  min-height: 80vh;
+const ImageOfRenly = styled.img`
+  max-height: 80vh;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -2;
   @media only screen and (max-width: 1024px) {
-    min-height: 50vh;
+    max-height: 50vh;
     right: 0;
-    margin: 0 auto;
   }
 `
