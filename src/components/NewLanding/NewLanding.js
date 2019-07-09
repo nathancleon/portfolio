@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import pawSvg from '../../images/paw.svg'
-import imgOfMyself from '../../images/me-with-computer-edited.png'
-import BioContent from './BioContent'
+import Bio from './Bio/Bio'
+import Renly from './Renly/Renly'
 
 export default class NewLanding extends React.Component {
   render() {
@@ -18,10 +18,7 @@ export default class NewLanding extends React.Component {
               <li>Contact</li>
             </ul>
           </Navigation>
-          <BioContent />
-          <LandingImageContainer>
-            <ImageOfMyself src={imgOfMyself} />
-          </LandingImageContainer>
+          <Renly />
         </ContentWrapper>
       </LandingWrapper>
     )
@@ -148,7 +145,16 @@ const ImageOfMyself = styled.img`
   @media only screen and (max-width: 1024px) {
     min-height: 45vh;
     right: 0;
-    left: 0;
+    margin: 0 auto;
+  }
+`
+
+const ImageOfRenly = styled(ImageOfMyself)`
+  right: 0vw;
+  min-height: 80vh;
+  @media only screen and (max-width: 1024px) {
+    min-height: 50vh;
+    right: 0;
     margin: 0 auto;
   }
 `
