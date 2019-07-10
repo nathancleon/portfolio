@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import pawSvg from '../../images/paw.svg'
 import Bio from './Bio/Bio'
 import Renly from './Renly/Renly'
+import About from './About/About'
 
 export default class NewLanding extends React.Component {
   constructor(props) {
@@ -10,13 +11,25 @@ export default class NewLanding extends React.Component {
 
     this.state = {
       renlyVisible: false,
+      currentPage: null,
     }
+
+    this.renderPage = this.renderPage.bind(this)
   }
 
   renderRenly() {
+    console.log('this ran')
     this.setState({
       renlyVisible: true,
+      currentPage: null,
     })
+  }
+
+  renderPage(page) {
+    this.setState({
+      currentPage: page,
+    })
+    console.log(this.state.currentPage)
   }
 
   render() {
@@ -25,14 +38,62 @@ export default class NewLanding extends React.Component {
         <ContentWrapper>
           <PawTopLeft onClick={this.renderRenly.bind(this)} src={pawSvg} />
           <PawBottomRight onClick={this.renderRenly.bind(this)} src={pawSvg} />
-          <Navigation>
-            <ul>
-              <li>About</li>
-              <li>Work</li>
-              <li>Contact</li>
-            </ul>
-          </Navigation>
-          {this.state.renlyVisible ? <Renly /> : <Bio />}
+          {this.state.currentPage === 'about' ? (
+            <>
+              <Navigation about>
+                <ul>
+                  <li>
+                    <a>About</a>
+                  </li>
+                  <li>
+                    <a>Work</a>
+                  </li>
+                  <li>
+                    <a>Contact</a>
+                  </li>
+                </ul>
+              </Navigation>
+              <About />
+            </>
+          ) : this.state.renlyVisible ? (
+            <>
+              <Navigation>
+                <ul>
+                  <li>
+                    <a href="#" onClick={() => this.renderPage('about')}>
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a>Work</a>
+                  </li>
+                  <li>
+                    <a>Contact</a>
+                  </li>
+                </ul>
+              </Navigation>
+              <Renly />
+            </>
+          ) : (
+            <>
+              <Navigation>
+                <ul>
+                  <li>
+                    <a href="#" onClick={() => this.renderPage('about')}>
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a>Work</a>
+                  </li>
+                  <li>
+                    <a>Contact</a>
+                  </li>
+                </ul>
+              </Navigation>
+              <Bio />
+            </>
+          )}
         </ContentWrapper>
       </LandingWrapper>
     )
@@ -72,6 +133,11 @@ const PawTopLeft = styled.img`
   transform: rotate(-36deg);
   cursor: pointer;
   z-index: 500;
+  @media only screen and (max-width: 400px) {
+    height: 45px;
+    top: -30px;
+    left: -25px;
+  }
 `
 
 const PawBottomRight = styled.img`
@@ -82,6 +148,11 @@ const PawBottomRight = styled.img`
   transform: rotate(-216deg);
   z-index: 500;
   cursor: pointer;
+  @media only screen and (max-width: 400px) {
+    height: 45px;
+    bottom: -30px;
+    right: -25px;
+  }
 `
 
 const Navigation = styled.nav`
@@ -94,9 +165,8 @@ const Navigation = styled.nav`
     display: flex;
     justify-content: space-between;
     li {
-      font-family: 'Merriweather', serif;
       list-style: none;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: normal;
       color: #fff;
       cursor: pointer;
@@ -105,6 +175,19 @@ const Navigation = styled.nav`
         transform: scale(1.25);
         margin-left: 10px;
         margin-right: 10px;
+      }
+      a {
+        font-family: 'Merriweather', serif;
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+    li:first-of-type {
+      transform: ${props => (props.about ? `scale(1.5)` : `scale(1)`)};
+      &:hover {
+        transform: ${props => (props.about ? `scale(1.5)` : `scale(1.25)`)};
+        margin-left: 0px;
+        margin-right: 0px;
       }
     }
   }
@@ -128,6 +211,13 @@ const Navigation = styled.nav`
           margin-right: 0;
         }
       }
+      li:first-of-type {
+        transform: rotate(-90deg);
+        font-size: ${props => (props.about ? `2.5rem` : `1.75rem`)};
+        &:hover {
+          transform: rotate(-90deg);
+        }
+      }
     }
   }
 
@@ -140,6 +230,10 @@ const Navigation = styled.nav`
         width: 100px;
         font-size: 1.5rem;
         padding-right: 0;
+      }
+      li:first-of-type {
+        transform: rotate(-90deg);
+        font-size: ${props => (props.about ? `2rem` : `1.5rem`)};
       }
     }
   }
