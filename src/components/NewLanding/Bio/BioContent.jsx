@@ -21,7 +21,7 @@ export default class BioContent extends React.Component {
       this.typingAnimation()
       setTimeout(() => {
         this.changeText()
-      }, 3500)
+      }, 3850)
     }
   }
 
@@ -40,7 +40,7 @@ export default class BioContent extends React.Component {
           deletingEffect()
           return false
         }
-        timer = setTimeout(loopTyping, 35)
+        timer = setTimeout(loopTyping, 40)
       }
       loopTyping()
     }
@@ -205,7 +205,7 @@ const BioTextLarge = styled.h2`
 `
 
 const BioTextSmall = styled.h2`
-  animation: ${fadeIn} 6s, ${moveUp} 4s;
+  animation: ${fadeIn} 4s, ${moveUp} 4s;
   font-family: 'Merriweather', serif;
   font-size: 2.8vw;
   color: #fff;

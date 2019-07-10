@@ -110,14 +110,15 @@ const Navigation = styled.nav`
   }
 
   @media only screen and (max-width: 1024px) {
-    top: 40%;
-    left: -50px;
-    max-width: 50px;
+    top: 30%;
+    left: -200px;
+    right: 0;
     height: 70%;
     ul {
       flex-direction: column;
       height: 300px;
       li {
+        text-align: center;
         transform: rotate(-90deg);
         padding-right: 0;
         font-size: 1.75rem;
@@ -131,8 +132,12 @@ const Navigation = styled.nav`
   }
 
   @media only screen and (max-width: 768px) {
+    left: -70px;
     ul {
+      height: 350px;
       li {
+        margin: auto 0;
+        width: 100px;
         font-size: 1.5rem;
         padding-right: 0;
       }
