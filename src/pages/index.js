@@ -14,9 +14,7 @@ const LandingWrapper = styled.div`
   display: flex;
   height: 100vh;
   min-height: 100vh;
-  max-height: 100vh;
   min-width: 100vw;
-  max-width: 100vw;
   margin: 0;
   padding: 0;
   background: linear-gradient(to bottom right, #ff9f93, #fc5a72);
@@ -25,7 +23,6 @@ const LandingWrapper = styled.div`
 const IndexPage = () => (
   <>
     <Helmet meta={[{ name: 'description', content: 'Sample' }]}>
-      <link href="./styles.css" rel="./styles.css" />
       <html lang="en" />
     </Helmet>
     <div>
@@ -56,6 +53,18 @@ const IndexPage = () => (
       <Experience />
       <Bio /> */}
       <LandingWrapper>
+        <SEO
+          title="Nathaniel Collins Portfolio"
+          keywords={[
+            'gatsby',
+            'portfolio',
+            'react',
+            'full stack',
+            'web developer',
+            'front end',
+            'software engineer',
+          ]}
+        />
         <NewLanding />
       </LandingWrapper>
     </div>

@@ -176,11 +176,13 @@ const BioContentText = styled.div`
   justify-content: center;
   padding: 80px;
   @media only screen and (max-width: 1024px) {
-    max-width: 100%;
+    width: 100%;
     padding: 0 22.5%;
+    z-index: 10;
+    margin-top: 5vmin;
   }
   @media only screen and (max-width: 768px) {
-    max-width: 80%;
+    width: 80%;
     padding: 0;
   }
 `

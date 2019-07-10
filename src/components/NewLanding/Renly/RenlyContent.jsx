@@ -56,11 +56,13 @@ const RenlyContentText = styled.div`
   justify-content: center;
   padding: 80px;
   @media only screen and (max-width: 1024px) {
-    max-width: 100%;
+    width: 100%;
     padding: 0 22.5%;
+    margin-top: 8vmin;
+    z-index: 10;
   }
   @media only screen and (max-width: 768px) {
-    max-width: 80%;
+    width: 90%;
     padding: 0;
   }
 `
