@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
 
 export default class BioContent extends React.Component {
+  _isMounted = false
   constructor(props) {
     super(props)
     this.state = {
@@ -14,48 +15,93 @@ export default class BioContent extends React.Component {
   }
 
   componentDidMount() {
+    this._isMounted = true
     let bioTextExists = document.getElementById('bio-text')
     if (!bioTextExists) {
       return
-    } else {
+    } else if (this._isMounted) {
       this.typingAnimation()
-      setTimeout(() => {
-        this.changeText()
-      }, 3850)
     }
   }
 
+  componentWillUnmount() {
+    this._isMounted = false
+  }
+
+  changeText() {
+    let bioText = document.getElementById('bio-text')
+    let text = `My name is Nathan`
+    let timer
+    let typing = () => {
+      let word = text.split('')
+      var loop = () => {
+        if (word.length > 0) {
+          bioText.innerHTML += word.shift()
+          timer = setTimeout(loopTyping, 40)
+        } else {
+          return
+        }
+      }
+      let loopTyping = loop.bind(this)
+      loopTyping()
+    }
+    let typingEffect = typing.bind(this)
+
+    if (bioText) {
+      bioText.innerHTML = ''
+      typingEffect()
+    } else {
+      return
+    }
+
+    this.setState({
+      animationComplete: true,
+    })
+  }
   typingAnimation() {
-    let i = 0
     let text = 'My name is Nathaniel Alexander Collins León Torres Sanchez'
     let timer
     let bioText = document.getElementById('bio-text')
-
-    function typingEffect() {
+    let typing = () => {
       let word = text.split('')
-      var loopTyping = function() {
-        if (word.length > 0) {
-          bioText.innerHTML += word.shift()
+      var loopTyping = () => {
+        if (this._isMounted) {
+          if (word.length > 0) {
+            bioText.innerHTML += word.shift()
+          } else {
+            deletingEffect()
+            return
+          }
+          timer = setTimeout(loopTyping, 40)
         } else {
-          deletingEffect()
-          return false
+          return
         }
-        timer = setTimeout(loopTyping, 40)
       }
       loopTyping()
     }
-
-    function deletingEffect() {
+    let deleting = () => {
       let word = text.split('')
-      var loopDeleting = function() {
-        if (word.length > 0) {
-          word.pop()
-          bioText.innerHTML = word.join('')
+      var loopDeleting = () => {
+        if (this._isMounted) {
+          if (word.length > 0) {
+            word.pop()
+            bioText.innerHTML = word.join('')
+          }
+          if (word.length <= 1 && bioText) {
+            bioText.innerHTML = ''
+            this.changeText()
+            return
+          }
+          timer = setTimeout(loopDeleting, 20)
+        } else {
+          return
         }
-        timer = setTimeout(loopDeleting, 20)
       }
       loopDeleting()
     }
+    let typingEffect = typing.bind(this)
+    let deletingEffect = deleting.bind(this)
+
     if (!bioText) {
       return
     } else {
@@ -63,49 +109,24 @@ export default class BioContent extends React.Component {
     }
   }
 
-  changeText() {
-    let bioText = document.getElementById('bio-text')
-    let i = 0
-    let text = `My name is Nathan`
-    let timer
-    function typingEffect() {
-      let word = text.split('')
-      var loopTyping = function() {
-        if (word.length > 0) {
-          bioText.innerHTML += word.shift()
-        }
-        timer = setTimeout(loopTyping, 40)
-      }
-      loopTyping()
-    }
-    if (bioText) {
-      bioText.innerHTML = ''
-      typingEffect()
-    } else {
-      return
-    }
-    this.setState({
-      animationComplete: true,
-    })
-  }
-
   render() {
     return (
       <BioContentWrapper>
-        {this.state.animationComplete === false ? (
-          <BioContentText>
-            <BioTextHi>Hi,</BioTextHi>
-            <BioTextLarge id="bio-text" />
-          </BioContentText>
-        ) : (
-          <BioContentText>
-            <BioTextHi>Hi,</BioTextHi>
-            <BioTextLarge id="bio-text" />
-            <BioTextSmall fade>
-              I'm a fullstack developer based in Washington, D.C.
-            </BioTextSmall>
-          </BioContentText>
-        )}
+        <BioContentText>
+          <BioTextHi>Hi,</BioTextHi>
+          {this.state.animationComplete === false ? (
+            <>
+              <BioTextLarge id="bio-text" />
+            </>
+          ) : (
+            <>
+              <BioTextLarge id="bio-text" />
+              <BioTextSmall fade>
+                I'm a fullstack developer based in Washington, D.C.
+              </BioTextSmall>
+            </>
+          )}
+        </BioContentText>
       </BioContentWrapper>
     )
   }

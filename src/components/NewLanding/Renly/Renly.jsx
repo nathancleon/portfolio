@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { keyframes } from '@emotion/core'
 import RenlyContent from './RenlyContent'
 import imgOfRenly from '../../../images/renly-blankets.png'
 
@@ -13,6 +14,20 @@ const Renly = () => (
 )
 
 export default Renly
+
+const fadeIn = keyframes`
+  from { opacity: 0 }
+  to   { opacity: 1 }
+`
+
+const moveUp = keyframes`
+  0% { 
+    margin-bottom: -20px
+  }
+  75% {
+    margin-bottom: 0px
+  }
+`
 
 const LandingImageContainer = styled.div`
   position: relative;
@@ -37,6 +52,7 @@ const ImageOfMyself = styled.img`
   }
 `
 const ImageOfRenly = styled.img`
+  animation: ${fadeIn} 3s, ${moveUp} 2s;
   max-height: 80vh;
   position: absolute;
   bottom: 0;
