@@ -8,8 +8,8 @@ const AboutContent = () => (
       <Emojis>✌️🇵🇷</Emojis>
       <AboutTextMain>Saludos!</AboutTextMain>
       <AboutTextSmall>
-        I’m a full stack developer. I grew up in Puerto Rico and I live in D.C.
-        now.
+        I’m a full-stack developer with a passion for design and accessibility.
+        I grew up in Puerto Rico, and currently reside in Washington, D.C.
       </AboutTextSmall>
       <AboutTextMini>
         Things I love: traveling, hiking, design, dogs, and national parks.
@@ -17,17 +17,39 @@ const AboutContent = () => (
       <TechStack>
         <AboutTextMini>Things I know:</AboutTextMini>
         <ul>
-          <li>react</li>
-          <li>redux</li>
-          <li>mobX</li>
-          <li>node</li>
-          <li>mongoDB</li>
-          <li>vue</li>
-          <li>jQuery</li>
-          <li>javaScript</li>
-          <li>emotion</li>
-          <li>sass</li>
-          <li>css</li>
+          <li>
+            <p>react</p>
+          </li>
+          <li>
+            <p>redux</p>
+          </li>
+          <li>
+            <p>mobX</p>
+          </li>
+          <li>
+            <p>node</p>
+          </li>
+          <li>
+            <p>mongoDB</p>
+          </li>
+          <li>
+            <p>vue</p>
+          </li>
+          <li>
+            <p>jQuery</p>
+          </li>
+          <li>
+            <p>javaScript</p>
+          </li>
+          <li>
+            <p>emotion</p>
+          </li>
+          <li>
+            <p>sass</p>
+          </li>
+          <li>
+            <p>css</p>
+          </li>
         </ul>
       </TechStack>
     </AboutContentText>
@@ -146,22 +168,29 @@ const TechStack = styled.div`
     height: auto;
     margin-top: 10px;
     li {
-      font-size: 1.25vw;
-      font-weight: bold;
       background-color: #fff;
-      padding: 2px 10px;
       border-radius: 20px;
       list-style: none;
-      color: #ff9f93;
       margin-top: 10px;
       margin-right: 10px;
+      p {
+        display: block;
+        padding: 2px 10px;
+        font-size: 1.25vw;
+        font-weight: bold;
+        background: linear-gradient(#ff9f93, #fc5a72);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
   }
   @media only screen and (max-width: 1024px) {
     ul {
       li {
-        font-size: 0.5rem;
-        padding: 2px 6px;
+        p {
+          padding: 2px 6px;
+          font-size: 0.5rem;
+        }
       }
     }
   }
@@ -169,10 +198,6 @@ const TechStack = styled.div`
   @media only screen and (max-width: 768px) {
     ul {
       margin-top: 2px;
-      li {
-        font-size: 0.5rem;
-        padding: 2px 6px;
-      }
     }
   }
 `
