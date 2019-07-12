@@ -4,15 +4,25 @@ import BioContent from './BioContent'
 import imgOfMyself from '../../../images/me-with-computer-edited.png'
 
 const Bio = () => (
-  <>
+  <BioWrapper>
     <BioContent />
     <LandingImageContainer>
       <ImageOfMyself src={imgOfMyself} />
     </LandingImageContainer>
-  </>
+  </BioWrapper>
 )
 
 export default Bio
+
+const BioWrapper = styled.div`
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  @media only screen and (max-width: 1024px) {
+    flex-direction: column;
+  }
+`
 
 const LandingImageContainer = styled.div`
   position: relative;
@@ -31,7 +41,7 @@ const ImageOfMyself = styled.img`
   right: -3vw;
   z-index: -2;
   @media only screen and (max-width: 1024px) {
-    max-height: 50vh;
+    max-height: 42vh;
     left: 0;
     margin: 0 auto;
   }

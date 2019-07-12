@@ -26,6 +26,7 @@ export default class NewLanding extends React.Component {
   }
 
   renderPage(page) {
+    console.log('ran renderPage')
     this.setState({
       currentPage: page,
     })
@@ -40,17 +41,11 @@ export default class NewLanding extends React.Component {
           <PawBottomRight onClick={this.renderRenly.bind(this)} src={pawSvg} />
           {this.state.currentPage === 'about' ? (
             <>
-              <Navigation about>
+              <Navigation about="true">
                 <ul>
-                  <li>
-                    <a>About</a>
-                  </li>
-                  <li>
-                    <a>Work</a>
-                  </li>
-                  <li>
-                    <a>Contact</a>
-                  </li>
+                  <li>About</li>
+                  <li>Work</li>
+                  <li>Contact</li>
                 </ul>
               </Navigation>
               <About />
@@ -59,17 +54,9 @@ export default class NewLanding extends React.Component {
             <>
               <Navigation>
                 <ul>
-                  <li>
-                    <a href="#" onClick={() => this.renderPage('about')}>
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a>Work</a>
-                  </li>
-                  <li>
-                    <a>Contact</a>
-                  </li>
+                  <li onClick={() => this.renderPage('about')}>About</li>
+                  <li>Work</li>
+                  <li>Contact</li>
                 </ul>
               </Navigation>
               <Renly />
@@ -78,17 +65,9 @@ export default class NewLanding extends React.Component {
             <>
               <Navigation>
                 <ul>
-                  <li>
-                    <a href="#" onClick={() => this.renderPage('about')}>
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a>Work</a>
-                  </li>
-                  <li>
-                    <a>Contact</a>
-                  </li>
+                  <li onClick={() => this.renderPage('about')}>About</li>
+                  <li>Work</li>
+                  <li>Contact</li>
                 </ul>
               </Navigation>
               <Bio />
@@ -133,7 +112,7 @@ const PawTopLeft = styled.img`
   transform: rotate(-36deg);
   cursor: pointer;
   z-index: 500;
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 768px) {
     height: 45px;
     top: -30px;
     left: -25px;
@@ -148,7 +127,7 @@ const PawBottomRight = styled.img`
   transform: rotate(-216deg);
   z-index: 500;
   cursor: pointer;
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 768px) {
     height: 45px;
     bottom: -30px;
     right: -25px;
@@ -167,43 +146,37 @@ const Navigation = styled.nav`
     li {
       list-style: none;
       font-size: 1.8rem;
+      font-family: 'Merriweather', serif;
       font-weight: normal;
       color: #fff;
       cursor: pointer;
-      padding-right: 40px;
       &:hover {
         transform: scale(1.25);
-        margin-left: 10px;
-        margin-right: 10px;
-      }
-      a {
-        font-family: 'Merriweather', serif;
-        text-decoration: none;
-        color: #fff;
       }
     }
     li:first-of-type {
-      transform: ${props => (props.about ? `scale(1.5)` : `scale(1)`)};
+      transform: ${props =>
+        props.about === 'true' ? `scale(1.5)` : `scale(1)`};
+      margin-right: ${props => (props.about === 'true' ? `10px` : `0`)};
       &:hover {
-        transform: ${props => (props.about ? `scale(1.5)` : `scale(1.25)`)};
+        transform: ${props =>
+          props.about === 'true' ? `scale(1.5)` : `scale(1.25)`};
         margin-left: 0px;
-        margin-right: 0px;
       }
     }
   }
 
   @media only screen and (max-width: 1024px) {
     top: 30%;
-    left: -200px;
+    left: -70px;
     right: 0;
-    height: 70%;
+    height: 300px;
     ul {
+      height: 100%;
       flex-direction: column;
-      height: 300px;
       li {
-        text-align: center;
+        width: 100px;
         transform: rotate(-90deg);
-        padding-right: 0;
         font-size: 1.75rem;
         &:hover {
           transform: rotate(-90deg);
@@ -213,7 +186,6 @@ const Navigation = styled.nav`
       }
       li:first-of-type {
         transform: rotate(-90deg);
-        font-size: ${props => (props.about ? `2.5rem` : `1.75rem`)};
         &:hover {
           transform: rotate(-90deg);
         }
@@ -222,18 +194,12 @@ const Navigation = styled.nav`
   }
 
   @media only screen and (max-width: 768px) {
-    left: -70px;
     ul {
-      height: 350px;
       li {
-        margin: auto 0;
-        width: 100px;
         font-size: 1.5rem;
-        padding-right: 0;
       }
       li:first-of-type {
         transform: rotate(-90deg);
-        font-size: ${props => (props.about ? `2rem` : `1.5rem`)};
       }
     }
   }

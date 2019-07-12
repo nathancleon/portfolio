@@ -53,13 +53,14 @@ const ImageOfMyself = styled.img`
 `
 const ImageOfRenly = styled.img`
   animation: ${fadeIn} 3s, ${moveUp} 2s;
-  max-height: 80vh;
+  max-height: 65vh;
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: -2;
   @media only screen and (max-width: 1024px) {
     max-height: 50vh;
+    max-width: 75vw;
     right: 0;
   }
 `
