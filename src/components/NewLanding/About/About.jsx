@@ -42,6 +42,7 @@ const AboutWrapper = styled.div`
   height: 100%;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
+    justify-content: space-around;
   }
   @media only screen and (max-width: 420px) {
     padding: 10px 0;
@@ -57,14 +58,13 @@ const LandingImageContainer = styled.div`
   width: 45%;
   z-index: -10;
   @media only screen and (max-width: 1024px) {
+    order: 1;
     min-width: 100%;
-    margin-top: 40px;
   }
 
   @media only screen and (max-width: 768px) {
-    order: 1;
-    margin-top: -50px;
-    margin-bottom: -10%;
+    height: auto;
+    margin-top: 10px;
   }
 `
 
@@ -89,10 +89,9 @@ const Polaroid = styled.div`
   z-index: -100;
 
   @media only screen and (max-width: 1024px) {
-    max-width: 280px;
+    max-width: 230px;
     min-width: 40%;
-    min-height: 60%;
-    max-height: 400px;
+    max-height: 350px;
     margin-right: 0;
     transform: rotate(0deg);
   }
@@ -102,8 +101,8 @@ const Polaroid = styled.div`
 `
 
 const ImageOfMyself = styled.img`
-  width: 95%;
-  max-width: 95%;
+  width: 99%;
+  max-width: 99%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   margin: auto;

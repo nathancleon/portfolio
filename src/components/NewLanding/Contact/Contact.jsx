@@ -1,19 +1,19 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
-import RenlyContent from './RenlyContent'
-import imgOfRenly from '../../../images/renly-blankets.png'
+import imgOfRenly from '../../../images/renly-edit-gray.png'
+import ContactContent from './ContactContent'
 
-const Renly = () => (
-  <>
-    <RenlyContent />
+const Contact = () => (
+  <Wrapper>
+    <ContactContent />
     <LandingImageContainer>
       <ImageOfRenly src={imgOfRenly} />
     </LandingImageContainer>
-  </>
+  </Wrapper>
 )
 
-export default Renly
+export default Contact
 
 const fadeIn = keyframes`
   from { opacity: 0 }
@@ -29,38 +29,45 @@ const moveUp = keyframes`
   }
 `
 
-const LandingImageContainer = styled.div`
+const Wrapper = styled.div`
+  display: flex;
   position: relative;
+  justify-content: space-between;
+  width: 100%;
   height: 100%;
-  width: 50%;
-  z-index: -1;
   @media only screen and (max-width: 1024px) {
-    min-width: 100%;
+    flex-direction: column;
   }
 `
 
-const ImageOfMyself = styled.img`
-  max-height: 70vh;
-  position: absolute;
-  bottom: 0;
-  right: -3vw;
-  z-index: -2;
+const LandingImageContainer = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 45%;
+  z-index: -10;
   @media only screen and (max-width: 1024px) {
-    max-height: 50vh;
-    left: 0;
-    margin: 0 auto;
+    order: 1;
+    min-width: 100%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    height: auto;
+    margin-top: 10px;
   }
 `
+
 const ImageOfRenly = styled.img`
   animation: ${fadeIn} 3s;
   max-height: 75vh;
   position: absolute;
   bottom: 0;
-  right: 0;
+  margin-left: 2vw;
   z-index: -2;
   @media only screen and (max-width: 1024px) {
-    max-height: 50vh;
-    max-width: 75vw;
-    right: 0;
+    max-height: 40vh;
+    margin-left: 2.5vw;
   }
 `

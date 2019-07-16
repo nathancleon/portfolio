@@ -3,11 +3,6 @@ import Helmet from 'react-helmet'
 import { Global, css } from '@emotion/core'
 import SEO from '../components/seo'
 import styled from '@emotion/styled'
-import MyselfLanding from '../components/MyselfLanding'
-import RenlyLanding from '../components/RenlyLanding'
-import Projects from '../components/Projects/Projects'
-import Experience from '../components/Experience/Experience'
-import Bio from '../components/Bio/Bio'
 import NewLanding from '../components/NewLanding/NewLanding'
 
 const LandingWrapper = styled.div`

@@ -4,6 +4,7 @@ import pawSvg from '../../images/paw.svg'
 import Bio from './Bio/Bio'
 import Renly from './Renly/Renly'
 import About from './About/About'
+import Contact from './Contact/Contact'
 
 export default class NewLanding extends React.Component {
   constructor(props) {
@@ -43,12 +44,23 @@ export default class NewLanding extends React.Component {
             <>
               <Navigation about="true">
                 <ul>
-                  <li>About</li>
+                  <li onClick={() => this.renderPage('about')}>About</li>
+                  <li>Work</li>
+                  <li onClick={() => this.renderPage('contact')}>Contact</li>
+                </ul>
+              </Navigation>
+              <About />
+            </>
+          ) : this.state.currentPage === 'contact' ? (
+            <>
+              <Navigation contact="true">
+                <ul>
+                  <li onClick={() => this.renderPage('about')}>About</li>
                   <li>Work</li>
                   <li>Contact</li>
                 </ul>
               </Navigation>
-              <About />
+              <Contact />
             </>
           ) : this.state.renlyVisible ? (
             <>
@@ -56,7 +68,7 @@ export default class NewLanding extends React.Component {
                 <ul>
                   <li onClick={() => this.renderPage('about')}>About</li>
                   <li>Work</li>
-                  <li>Contact</li>
+                  <li onClick={() => this.renderPage('contact')}>Contact</li>
                 </ul>
               </Navigation>
               <Renly />
@@ -67,7 +79,7 @@ export default class NewLanding extends React.Component {
                 <ul>
                   <li onClick={() => this.renderPage('about')}>About</li>
                   <li>Work</li>
-                  <li>Contact</li>
+                  <li onClick={() => this.renderPage('contact')}>Contact</li>
                 </ul>
               </Navigation>
               <Bio />
@@ -98,9 +110,9 @@ const ContentWrapper = styled.div`
   z-index: 1;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
-    height: 85%;
-    min-width: 80%;
-    max-width: 80%;
+    height: 89%;
+    min-width: 85%;
+    max-width: 85%;
   }
 `
 
@@ -112,7 +124,7 @@ const PawTopLeft = styled.img`
   transform: rotate(-36deg);
   cursor: pointer;
   z-index: 500;
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     height: 45px;
     top: -30px;
     left: -25px;
@@ -127,7 +139,7 @@ const PawBottomRight = styled.img`
   transform: rotate(-216deg);
   z-index: 500;
   cursor: pointer;
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     height: 45px;
     bottom: -30px;
     right: -25px;
@@ -164,42 +176,24 @@ const Navigation = styled.nav`
         margin-left: 0px;
       }
     }
-  }
-
-  @media only screen and (max-width: 1024px) {
-    top: 30%;
-    left: -70px;
-    right: 0;
-    height: 300px;
-    ul {
-      height: 100%;
-      flex-direction: column;
-      li {
-        width: 100px;
-        transform: rotate(-90deg);
-        font-size: 1.75rem;
-        &:hover {
-          transform: rotate(-90deg);
-          margin-left: 0;
-          margin-right: 0;
-        }
-      }
-      li:first-of-type {
-        transform: rotate(-90deg);
-        &:hover {
-          transform: rotate(-90deg);
-        }
+    li:nth-of-type(3) {
+      transform: ${props =>
+        props.contact === 'true' ? `scale(1.5)` : `scale(1)`};
+      margin-left: ${props => (props.contact === 'true' ? `10px` : `0`)};
+      &:hover {
+        transform: ${props =>
+          props.contact === 'true' ? `scale(1.5)` : `scale(1.25)`};
       }
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
+    top: -25px;
+    right: 5%;
+    width: 220px;
     ul {
       li {
-        font-size: 1.5rem;
-      }
-      li:first-of-type {
-        transform: rotate(-90deg);
+        font-size: 1rem;
       }
     }
   }

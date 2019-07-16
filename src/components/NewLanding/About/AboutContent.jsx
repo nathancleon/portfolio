@@ -87,11 +87,13 @@ const AboutContentWrapper = styled.div`
     left: 0;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5vmin;
+    order: 2;
   }
 
   @media only screen and (max-width: 768px) {
-    order: 2;
-    margin-bottom: 30px;
+    margin-top: 2vmin;
+    margin-bottom: 10px;
   }
 `
 
@@ -171,7 +173,7 @@ const TechStack = styled.div`
       background-color: #fff;
       border-radius: 20px;
       list-style: none;
-      margin-top: 10px;
+      margin-top: 15px;
       margin-right: 10px;
       p {
         display: block;
