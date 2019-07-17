@@ -80,8 +80,6 @@ const Polaroid = styled.div`
   height: auto;
   min-width: 380px;
   background-color: #efefef;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
   transform: rotate(8deg);
   margin-right: 4vw;
   padding: 1vw 1vw 4vw 1vw;
@@ -89,22 +87,19 @@ const Polaroid = styled.div`
   z-index: -100;
 
   @media only screen and (max-width: 1024px) {
-    max-width: 230px;
-    min-width: 40%;
-    max-height: 350px;
+    max-width: 300px;
+    min-width: 20%;
     margin-right: 0;
     transform: rotate(0deg);
   }
-  @media only screen and (max-width: 400px) {
-    min-width: 70%;
+  @media only screen and (max-width: 768px) {
+    max-width: 230px;
   }
 `
 
 const ImageOfMyself = styled.img`
   width: 99%;
   max-width: 99%;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
   margin: auto;
   margin-bottom: 20px;
   z-index: -2;
@@ -131,6 +126,9 @@ const PolaroidDate = styled.p`
   @media only screen and (max-width: 1024px) {
     font-size: 1rem;
   }
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `
 const PolaroidLocation = styled.p`
   font-size: 2vmin;
@@ -138,5 +136,8 @@ const PolaroidLocation = styled.p`
   color: #555;
   @media only screen and (max-width: 1024px) {
     font-size: 0.75rem;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 10px;
   }
 `

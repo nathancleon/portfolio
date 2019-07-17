@@ -194,6 +194,25 @@ const Navigation = styled.nav`
     ul {
       li {
         font-size: 1rem;
+        &:first-of-type {
+          transform: ${props =>
+            props.about === 'true' ? `scale(1)` : `scale(1)`};
+          margin-right: ${props => (props.about === 'true' ? `0` : `0`)};
+          &:hover {
+            transform: ${props =>
+              props.about === 'true' ? `scale(1)` : `scale(1)`};
+            margin-left: 0px;
+          }
+        }
+        &:nth-of-type(3) {
+          transform: ${props =>
+            props.contact === 'true' ? `scale(1)` : `scale(1)`};
+          margin-left: ${props => (props.contact === 'true' ? `0` : `0`)};
+          &:hover {
+            transform: ${props =>
+              props.contact === 'true' ? `scale(1)` : `scale(1)`};
+          }
+        }
       }
     }
   }

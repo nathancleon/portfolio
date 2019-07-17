@@ -142,10 +142,10 @@ const fadeOut = keyframes`
 `
 
 const moveUp = keyframes`
-  0% { 
+ from { 
     margin-bottom: -50px
   }
-  75% {
+  to {
     margin-bottom: 0px
   }
 `
@@ -183,6 +183,10 @@ const BioContentText = styled.div`
   }
   @media only screen and (max-width: 768px) {
     width: 80%;
+    padding: 0;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 90%;
     padding: 0;
   }
 `

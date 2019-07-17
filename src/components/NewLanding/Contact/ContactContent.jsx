@@ -71,11 +71,11 @@ const moveUp = keyframes`
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 70%;
   min-width: 50%;
   height: 100%;
   z-index: 20;
+  margin-top: -5vmin;
 
   @media only screen and (max-width: 1024px) {
     min-width: 100%;
@@ -83,6 +83,7 @@ const ContentWrapper = styled.div`
     left: 0;
     justify-content: center;
     align-items: center;
+    margin-top: 4vmin;
   }
 `
 
@@ -110,11 +111,11 @@ const TextMain = styled.div`
   justify-content: center;
   position: relative;
   width: 80%;
-  padding: 10px 20px;
+  padding: 10px 10px;
   background-color: #fff;
   border-radius: 50px;
   h1 {
-    font-size: 5vw;
+    font-size: 7vmin;
     width: auto;
     background: linear-gradient(#ff9f93, #fc5a72);
     -webkit-background-clip: text;
@@ -122,7 +123,7 @@ const TextMain = styled.div`
     margin-right: 15px;
   }
   img {
-    width: 4vw;
+    width: 5.5vmin;
     margin-top: 5px;
     transform: rotate(10deg);
     background: linear-gradient(#ff9f93, #fc5a72);
@@ -175,23 +176,25 @@ const ContactLinks = styled.ul`
     a {
       color: #fff;
       text-decoration: none;
-      font-size: 2.5vw;
+      font-size: 4vmin;
       font-family: 'Merriweather', sans-serif;
     }
     img {
       position: absolute;
       left: -15%;
-      top: 0;
-      width: 2.5vw;
+      top: 6%;
+      width: 4vmin;
     }
   }
 
   @media only screen and (max-width: 768px) {
-    margin-left: 0;
+    margin-left: 15%;
     li {
-      font-size: 14px;
+      a {
+        font-size: 18px;
+      }
       img {
-        width: 14px;
+        width: 18px;
       }
     }
   }
