@@ -35,6 +35,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 100%;
+  z-index: 1;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
     justify-content: space-around;
