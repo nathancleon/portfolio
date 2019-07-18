@@ -31,13 +31,12 @@ export default class BioContent extends React.Component {
   changeText() {
     let bioText = document.getElementById('bio-text')
     let text = `My name is Nathan`
-    let timer
     let typing = () => {
       let word = text.split('')
       var loop = () => {
         if (word.length > 0) {
           bioText.innerHTML += word.shift()
-          timer = setTimeout(loopTyping, 40)
+          setTimeout(loopTyping, 40)
         } else {
           return
         }
@@ -60,7 +59,6 @@ export default class BioContent extends React.Component {
   }
   typingAnimation() {
     let text = 'My name is Nathaniel Alexander Collins León Torres Sanchez'
-    let timer
     let bioText = document.getElementById('bio-text')
     let typing = () => {
       let word = text.split('')
@@ -72,7 +70,7 @@ export default class BioContent extends React.Component {
             deletingEffect()
             return
           }
-          timer = setTimeout(loopTyping, 40)
+          setTimeout(loopTyping, 35)
         } else {
           return
         }
@@ -92,7 +90,7 @@ export default class BioContent extends React.Component {
             this.changeText()
             return
           }
-          timer = setTimeout(loopDeleting, 20)
+          setTimeout(loopDeleting, 20)
         } else {
           return
         }
@@ -142,11 +140,11 @@ const fadeOut = keyframes`
 `
 
 const moveUp = keyframes`
- from { 
-    margin-bottom: -50px
+  0% { 
+    transform: translateY(20px);
   }
-  to {
-    margin-bottom: 0px
+  100% {
+    transform: translateY(0);
   }
 `
 

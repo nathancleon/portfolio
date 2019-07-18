@@ -19,6 +19,7 @@ const BioWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  z-index: -10;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
   }

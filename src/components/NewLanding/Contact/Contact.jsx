@@ -22,10 +22,10 @@ const fadeIn = keyframes`
 
 const moveUp = keyframes`
   0% { 
-    margin-bottom: -20px
+    transform: translateY(20px);
   }
-  75% {
-    margin-bottom: 0px
+  100% {
+    transform: translateY(0);
   }
 `
 
@@ -37,6 +37,7 @@ const Wrapper = styled.div`
   height: 100%;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
+    justify-content: space-around;
   }
 `
 
@@ -54,7 +55,7 @@ const LandingImageContainer = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    height: auto;
+    height: 75vh;
     margin-top: 10px;
   }
 `
@@ -64,7 +65,6 @@ const ImageOfRenly = styled.img`
   max-height: 75vh;
   position: absolute;
   bottom: 0;
-  margin-left: 2vw;
   z-index: -2;
   @media only screen and (max-width: 1024px) {
     max-height: 40vh;

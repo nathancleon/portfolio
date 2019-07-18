@@ -65,10 +65,10 @@ const fadeIn = keyframes`
 
 const moveUp = keyframes`
   0% { 
-    margin-bottom: -50px
+    transform: translateY(20px);
   }
   75% {
-    margin-bottom: 0px
+    transform: translateY(0);
   }
 `
 

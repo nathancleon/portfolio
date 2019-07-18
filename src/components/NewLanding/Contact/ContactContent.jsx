@@ -61,49 +61,48 @@ const fadeIn = keyframes`
 
 const moveUp = keyframes`
   0% { 
-    margin-bottom: -50px
+    transform: translateY(20px);
   }
-  75% {
-    margin-bottom: 0px
+  100% {
+    transform: translateY(0);
   }
 `
 
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 0;
+  left: 0;
   width: 70%;
   min-width: 50%;
   height: 100%;
   z-index: 20;
-  margin-top: -5vmin;
-
+  animation: ${fadeIn} 3s, ${moveUp} 2s;
   @media only screen and (max-width: 1024px) {
     min-width: 100%;
-    height: 60%;
     left: 0;
     justify-content: center;
     align-items: center;
-    margin-top: 4vmin;
   }
 `
 
 const ContentText = styled.div`
-  animation: ${fadeIn} 3s, ${moveUp} 2s;
   width: 90%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px;
+  padding: 40px;
   @media only screen and (max-width: 1024px) {
     width: 100%;
-    margin-top: 6vmin;
+    height: 100%;
+    margin-top: 8vmin;
     z-index: 10;
   }
   @media only screen and (max-width: 768px) {
     padding: 0;
-    margin-top: -5vmin;
+    margin-top: 0;
   }
 `
 const TextMain = styled.div`
