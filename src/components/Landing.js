@@ -21,6 +21,21 @@ export default class NewLanding extends React.Component {
               <li />
               <li>D.C.</li>
             </HeroText>
+            <Navigation>
+              <ul>
+                <li>
+                  <a href="#about">About</a>
+                </li>
+                <li />
+                <li>
+                  <a href="#work">Work</a>
+                </li>
+                <li />
+                <li>
+                  <a href="#contact">Contact</a>
+                </li>
+              </ul>
+            </Navigation>
           </HeroTextContainer>
         </ContentWrapper>
       </LandingWrapper>
@@ -115,5 +130,37 @@ const HeroText = styled.ul`
   }
   @media only screen and (max-width: 1200px) {
     margin-right: 20vw;
+  }
+`
+
+const Navigation = styled.nav`
+  position: absolute;
+  min-width: 250px;
+  max-width: 34vw;
+  height: 62vw;
+  transform: rotate(-90deg);
+  ul {
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    li {
+      a {
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #444;
+      }
+      list-style: none;
+      &:nth-of-type(2),
+      &:nth-of-type(4) {
+        display: inline-block;
+        background-color: #444;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin: auto 0;
+      }
+    }
   }
 `
