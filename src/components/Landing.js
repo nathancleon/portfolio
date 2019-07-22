@@ -10,8 +10,8 @@ export default class NewLanding extends React.Component {
     return (
       <LandingWrapper>
         <ContentWrapper>
-          <h1>Nathan Collins León</h1>
-          <h2>Nathan Collins León</h2>
+          <NameLarge>Nathan Collins León</NameLarge>
+          <NameSmall>Nathan Collins León</NameSmall>
           <img src={ImgOfMyself} alt="" />
           <HeroTextContainer>
             <HeroText>
@@ -37,6 +37,11 @@ export default class NewLanding extends React.Component {
               </ul>
             </Navigation>
           </HeroTextContainer>
+          <DeveloperTextContainer>
+            <h2>Developer</h2>
+            <h2>Developer</h2>
+            <h2>Developer</h2>
+          </DeveloperTextContainer>
         </ContentWrapper>
       </LandingWrapper>
     )
@@ -72,25 +77,27 @@ const ContentWrapper = styled.div`
     max-height: 85%;
     z-index: 10;
   }
-  h1 {
-    position: absolute;
-    top: -7.4vw;
-    font-size: 7.96vw;
-    font-weight: 800;
-    font-style: italic;
-    color: #eee;
-    width: 110%;
-  }
-  h2 {
-    position: absolute;
-    top: -3.5vw;
-    font-size: 5vw;
-    font-weight: 800;
-    font-style: italic;
-    color: #444;
-    width: 100%;
-    text-align: center;
-  }
+`
+
+const NameLarge = styled.h1`
+  position: absolute;
+  top: -7.4vw;
+  font-size: 7.96vw;
+  font-weight: 800;
+  font-style: italic;
+  color: #eee;
+  width: 110%;
+`
+
+const NameSmall = styled.h2`
+  position: absolute;
+  top: -3.5vw;
+  font-size: 5vw;
+  font-weight: 800;
+  font-style: italic;
+  color: #444;
+  width: 100%;
+  text-align: center;
 `
 
 const HeroTextContainer = styled.div`
@@ -161,6 +168,38 @@ const Navigation = styled.nav`
         border-radius: 50%;
         margin: auto 0;
       }
+    }
+  }
+`
+
+const DeveloperTextContainer = styled.div`
+  position: absolute;
+  right: -14vw;
+  bottom: 30vh;
+  height: 8vw;
+  max-width: 40vw;
+  transform: rotate(-90deg);
+  h2 {
+    font-size: 12vh;
+    font-weight: 800;
+    color: #a20505;
+    &:nth-of-type(2),
+    &:last-of-type {
+      margin-top: -3.5vw;
+    }
+
+    &:nth-of-type(2) {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #a20505;
+      margin-left: 1px;
+    }
+
+    &:last-of-type {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #a20505;
+      margin-left: 1px;
     }
   }
 `
