@@ -3,16 +3,16 @@ import Helmet from 'react-helmet'
 import { Global, css } from '@emotion/core'
 import SEO from '../components/seo'
 import styled from '@emotion/styled'
-import NewLanding from '../components/NewLanding/NewLanding'
+import Landing from '../components/Landing'
 
 const LandingWrapper = styled.div`
   display: flex;
   height: 100vh;
+  width: 100vw;
   min-height: 100vh;
   min-width: 100vw;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom right, #ff9f93, #fc5a72);
 `
 
 const IndexPage = () => (
@@ -33,10 +33,10 @@ const IndexPage = () => (
           * {
             margin: 0;
             padding: 0;
-            font-family: 'Lato', sans-serif;
+            font-family: 'Raleway', sans-serif;
             box-sizing: border-box;
           }
-          @import url('https://fonts.googleapis.com/css?family=Dancing+Script:700|Lato:700|Merriweather:700i&display=swap');
+          @import url('https://fonts.googleapis.com/css?family=Bitter:700|Raleway:300,700,800,800i&display=swap');
         `}
       />
       {/* <LandingWrapper>
@@ -60,7 +60,7 @@ const IndexPage = () => (
             'software engineer',
           ]}
         />
-        <NewLanding />
+        <Landing />
       </LandingWrapper>
     </div>
   </>

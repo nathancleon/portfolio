@@ -24,7 +24,7 @@ const moveUp = keyframes`
   0% { 
     margin-bottom: -20px
   }
-  75% {
+  100% {
     margin-bottom: 0px
   }
 `

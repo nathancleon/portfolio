@@ -5,6 +5,7 @@ import Bio from './Bio/Bio'
 import Renly from './Renly/Renly'
 import About from './About/About'
 import Contact from './Contact/Contact'
+import Work from './Work/Work'
 
 export default class NewLanding extends React.Component {
   constructor(props) {
@@ -44,8 +45,8 @@ export default class NewLanding extends React.Component {
             <>
               <Navigation about="true">
                 <ul>
-                  <li onClick={() => this.renderPage('about')}>About</li>
-                  <li>Work</li>
+                  <li>About</li>
+                  <li onClick={() => this.renderPage('work')}>Work</li>
                   <li onClick={() => this.renderPage('contact')}>Contact</li>
                 </ul>
               </Navigation>
@@ -56,18 +57,29 @@ export default class NewLanding extends React.Component {
               <Navigation contact="true">
                 <ul>
                   <li onClick={() => this.renderPage('about')}>About</li>
-                  <li>Work</li>
+                  <li onClick={() => this.renderPage('work')}>Work</li>
                   <li>Contact</li>
                 </ul>
               </Navigation>
               <Contact />
+            </>
+          ) : this.state.currentPage === 'work' ? (
+            <>
+              <Navigation work="true">
+                <ul>
+                  <li onClick={() => this.renderPage('about')}>About</li>
+                  <li>Work</li>
+                  <li onClick={() => this.renderPage('contact')}>Contact</li>
+                </ul>
+              </Navigation>
+              <Work />
             </>
           ) : this.state.renlyVisible ? (
             <>
               <Navigation>
                 <ul>
                   <li onClick={() => this.renderPage('about')}>About</li>
-                  <li>Work</li>
+                  <li onClick={() => this.renderPage('work')}>Work</li>
                   <li onClick={() => this.renderPage('contact')}>Contact</li>
                 </ul>
               </Navigation>
@@ -78,7 +90,7 @@ export default class NewLanding extends React.Component {
               <Navigation>
                 <ul>
                   <li onClick={() => this.renderPage('about')}>About</li>
-                  <li>Work</li>
+                  <li onClick={() => this.renderPage('work')}>Work</li>
                   <li onClick={() => this.renderPage('contact')}>Contact</li>
                 </ul>
               </Navigation>
@@ -165,24 +177,33 @@ const Navigation = styled.nav`
       &:hover {
         transform: scale(1.25);
       }
-    }
-    li:first-of-type {
-      transform: ${props =>
-        props.about === 'true' ? `scale(1.5)` : `scale(1)`};
-      margin-right: ${props => (props.about === 'true' ? `10px` : `0`)};
-      &:hover {
+      &:first-of-type {
         transform: ${props =>
-          props.about === 'true' ? `scale(1.5)` : `scale(1.25)`};
-        margin-left: 0px;
+          props.about === 'true' ? `scale(1.5)` : `scale(1)`};
+        margin-right: ${props => (props.about === 'true' ? `10px` : `0`)};
+        &:hover {
+          transform: ${props =>
+            props.about === 'true' ? `scale(1.5)` : `scale(1.25)`};
+          margin-left: 0px;
+        }
       }
-    }
-    li:nth-of-type(3) {
-      transform: ${props =>
-        props.contact === 'true' ? `scale(1.5)` : `scale(1)`};
-      margin-left: ${props => (props.contact === 'true' ? `10px` : `0`)};
-      &:hover {
+      &:nth-of-type(2) {
         transform: ${props =>
-          props.contact === 'true' ? `scale(1.5)` : `scale(1.25)`};
+          props.work === 'true' ? `scale(1.5)` : `scale(1)`};
+        margin-left: ${props => (props.contact === 'true' ? `10px` : `0`)};
+        &:hover {
+          transform: ${props =>
+            props.work === 'true' ? `scale(1.5)` : `scale(1.25)`};
+        }
+      }
+      &:nth-of-type(3) {
+        transform: ${props =>
+          props.contact === 'true' ? `scale(1.5)` : `scale(1)`};
+        margin-left: ${props => (props.contact === 'true' ? `10px` : `0`)};
+        &:hover {
+          transform: ${props =>
+            props.contact === 'true' ? `scale(1.5)` : `scale(1.25)`};
+        }
       }
     }
   }
@@ -202,6 +223,15 @@ const Navigation = styled.nav`
             transform: ${props =>
               props.about === 'true' ? `scale(1)` : `scale(1)`};
             margin-left: 0px;
+          }
+        }
+        &:nth-of-type(2) {
+          transform: ${props =>
+            props.work === 'true' ? `scale(1)` : `scale(1)`};
+          margin-left: ${props => (props.contact === 'true' ? `0` : `0`)};
+          &:hover {
+            transform: ${props =>
+              props.work === 'true' ? `scale(1)` : `scale(1)`};
           }
         }
         &:nth-of-type(3) {

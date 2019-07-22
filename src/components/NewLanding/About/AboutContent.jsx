@@ -67,7 +67,7 @@ const moveUp = keyframes`
   0% { 
     transform: translateY(20px);
   }
-  75% {
+  100% {
     transform: translateY(0);
   }
 `

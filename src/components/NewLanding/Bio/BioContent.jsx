@@ -193,6 +193,9 @@ const BioTextHi = styled.h1`
   font-size: 8vw;
   width: 100%;
   color: #fff;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: white;
   @media only screen and (max-width: 1024px) {
     font-size: 3.5rem;
   }
