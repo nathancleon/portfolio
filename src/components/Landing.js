@@ -13,6 +13,15 @@ export default class NewLanding extends React.Component {
           <h1>Nathan Collins León</h1>
           <h2>Nathan Collins León</h2>
           <img src={ImgOfMyself} alt="" />
+          <HeroTextContainer>
+            <HeroText>
+              <li>Fullstack</li>
+              <li />
+              <li>Frontend</li>
+              <li />
+              <li>D.C.</li>
+            </HeroText>
+          </HeroTextContainer>
         </ContentWrapper>
       </LandingWrapper>
     )
@@ -30,8 +39,8 @@ const LandingWrapper = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   position: relative;
-  min-width: 80%;
-  height: 80%;
+  min-width: 75%;
+  height: 75%;
   margin-top: 5%;
   background-color: #eee;
   @media only screen and (max-width: 1024px) {
@@ -40,18 +49,18 @@ const ContentWrapper = styled.div`
     min-width: 85%;
     max-width: 85%;
   }
-
   img {
     position: absolute;
     bottom: 0;
     right: 5%;
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 85%;
+    max-height: 85%;
+    z-index: 10;
   }
   h1 {
     position: absolute;
-    top: -7.9vw;
-    font-size: 8.48vw;
+    top: -7.4vw;
+    font-size: 7.96vw;
     font-weight: 800;
     font-style: italic;
     color: #eee;
@@ -66,5 +75,45 @@ const ContentWrapper = styled.div`
     color: #444;
     width: 100%;
     text-align: center;
+  }
+`
+
+const HeroTextContainer = styled.div`
+  position: absolute;
+  left: -6%;
+  top: 34%;
+  width: 58vw;
+  height: 42%;
+  background-color: #a20505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media only screen and (max-width: 1200px) {
+    left: -12%;
+  }
+`
+
+const HeroText = styled.ul`
+  display: flex;
+  justify-content: space-around;
+  min-width: 60%;
+  margin-right: 15vw;
+  li {
+    position: relative;
+    font-size: 1.25rem;
+    font-family: 'Bitter', serif;
+    color: #fff;
+    list-style: none;
+    &:nth-of-type(2),
+    &:nth-of-type(4) {
+      background-color: #fff;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin: auto 0;
+    }
+  }
+  @media only screen and (max-width: 1200px) {
+    margin-right: 20vw;
   }
 `
