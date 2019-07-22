@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import ImgOfMyself from '../images/me-cropped-grainy.png'
+import LocationIcon from '../images/icons/map-marker-alt.svg'
 
 export default class NewLanding extends React.Component {
   constructor(props) {
@@ -12,14 +13,17 @@ export default class NewLanding extends React.Component {
         <ContentWrapper>
           <NameLarge>Nathan Collins León</NameLarge>
           <NameSmall>Nathan Collins León</NameSmall>
-          <img src={ImgOfMyself} alt="" />
+          <ImageOfMyself src={ImgOfMyself} alt="" />
           <HeroTextContainer>
             <HeroText>
               <li>Fullstack</li>
               <li />
               <li>Frontend</li>
               <li />
-              <li>D.C.</li>
+              <li>
+                <img src={LocationIcon} alt="" />
+                D.C.
+              </li>
             </HeroText>
             <Navigation>
               <ul>
@@ -69,14 +73,15 @@ const ContentWrapper = styled.div`
     min-width: 85%;
     max-width: 85%;
   }
-  img {
-    position: absolute;
-    bottom: 0;
-    right: 5%;
-    max-width: 85%;
-    max-height: 85%;
-    z-index: 10;
-  }
+`
+
+const ImageOfMyself = styled.img`
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  max-width: 85%;
+  max-height: 85%;
+  z-index: 10;
 `
 
 const NameLarge = styled.h1`
@@ -133,6 +138,10 @@ const HeroText = styled.ul`
       height: 8px;
       border-radius: 50%;
       margin: auto 0;
+    }
+    &:last-of-type img {
+      width: 0.7rem;
+      margin-right: 10px;
     }
   }
   @media only screen and (max-width: 1200px) {
