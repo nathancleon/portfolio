@@ -5,17 +5,6 @@ import SEO from '../components/seo'
 import styled from '@emotion/styled'
 import Landing from '../components/Landing'
 
-const LandingWrapper = styled.div`
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  min-height: 100vh;
-  min-width: 100vw;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-`
-
 const IndexPage = () => (
   <>
     <Helmet meta={[{ name: 'description', content: 'Sample' }]}>
@@ -48,7 +37,7 @@ const IndexPage = () => (
       {/* <Projects />
       <Experience />
       <Bio /> */}
-      <LandingWrapper>
+      <>
         <SEO
           title="Nathaniel Collins Portfolio"
           keywords={[
@@ -62,7 +51,7 @@ const IndexPage = () => (
           ]}
         />
         <Landing />
-      </LandingWrapper>
+      </>
     </div>
   </>
 )
