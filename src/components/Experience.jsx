@@ -5,8 +5,8 @@ import MentalNoteImg from '../images/mentalnotemockup.png'
 
 const Experience = () => (
   <Wrapper>
-    <ContentWrapper id="about">
-      <HeaderText>Experience</HeaderText>
+    <ContentWrapper>
+      <HeaderText id="experience">Experience</HeaderText>
       <InnerContentWrapper>
         <InnerContentText>
           <InnerContentHeader>
@@ -126,8 +126,10 @@ const ProjectImg = styled.img`
 
 const ExperienceText = styled.div`
   position: absolute;
-  right: -15.5vw;
-  bottom: 30vh;
+  right: -13.5vw;
+  bottom: 0;
+  top: 0;
+  margin: auto 0;
   height: 8vw;
   max-width: 40vw;
   transform: rotate(-90deg);
@@ -145,7 +147,7 @@ const ExperienceText = styled.div`
 
     &:nth-of-type(2),
     &:last-of-type {
-      margin-top: -3.4vw;
+      margin-top: -3.2vw;
     }
 
     &:nth-of-type(2) {

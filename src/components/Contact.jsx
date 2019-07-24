@@ -1,40 +1,30 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import MyselfWithComputer from '../images/me-with-computer-edited.png'
+import RenlyWithBlankets from '../images/renly-blankets.png'
 
-const About = () => (
+const Contact = () => (
   <Wrapper>
     <ContentWrapper>
-      <HeaderText id="about">About</HeaderText>
+      <HeaderText id="contact">Contact</HeaderText>
       <InnerContentWrapper>
         <InnerContentText>
-          <h3>My name is Nathan Collins León</h3>
-          <p>
-            I’m a fullstack developer with a passion for design and
-            accessibility. I grew up in Puerto Rico, and currently reside in
-            Washington, D.C.
-          </p>
-          <p>
-            Things I love: national parks, traveling, UI/UX, dogs, and autumn
-            (best season).
-          </p>
-          <p>
-            Things I know: react, redux, mobX, vue, node, mongoDB, jQuery,
-            javaScript, emotion, sass, css, html.
-          </p>
+          <h2>
+            <a href="">Here's my resumé</a>
+          </h2>
+          <h3>I work hard so my dog Renly can live a good (and cozy) life.</h3>
         </InnerContentText>
-        <ImgOfMyself src={MyselfWithComputer} alt="" />
-        <AboutText>
-          <h3>About</h3>
-          <h3>About</h3>
-          <h3>About</h3>
-        </AboutText>
+        <ImgOfRenly src={RenlyWithBlankets} alt="" />
+        <ContactText>
+          <h3>Contact</h3>
+          <h3>Contact</h3>
+          <h3>Contact</h3>
+        </ContactText>
       </InnerContentWrapper>
     </ContentWrapper>
   </Wrapper>
 )
 
-export default About
+export default Contact
 
 const Wrapper = styled.div`
   display: flex;
@@ -42,10 +32,10 @@ const Wrapper = styled.div`
   align-items: center;
   position: relative;
   width: 100vw;
-  height: 130vh;
+  height: 110vh;
   background-color: #a20505;
   margin-top: 20vh;
-  padding: 10vh 0;
+  padding-top: 20vh;
   &:before {
     content: '';
     position: absolute;
@@ -105,11 +95,18 @@ const InnerContentWrapper = styled.div`
 const InnerContentText = styled.div`
   display: flex;
   flex-direction: column;
-  align-self: center;
-  width: 45%;
+  width: 50%;
+  h2 {
+    margin-bottom: 5vmin;
+    a {
+      font-size: 4.5vw;
+      font-style: italic;
+      color: #fff;
+    }
+  }
   h3 {
-    font-size: 2vw;
-    font-family: 'Bitter', serif;
+    font-size: 2.5vw;
+    font-style: italic;
     color: #fff;
   }
   p {
@@ -121,19 +118,19 @@ const InnerContentText = styled.div`
   }
 `
 
-const ImgOfMyself = styled.img`
+const ImgOfRenly = styled.img`
   position: absolute;
   bottom: 0;
-  right: -2vw;
-  width: 40vw;
+  right: 0;
+  width: 33vw;
   min-width: 50vmin;
   filter: drop-shadow(10px 0px 10px rgba(0, 0, 0, 0.4));
   z-index: 100;
 `
 
-const AboutText = styled.div`
+const ContactText = styled.div`
   position: absolute;
-  right: -7.5vw;
+  right: -10.5vw;
   bottom: 0;
   top: 0;
   margin: auto 0;

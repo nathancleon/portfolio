@@ -187,7 +187,9 @@ const Navigation = styled.nav`
 const DeveloperTextContainer = styled.div`
   position: absolute;
   right: -14vw;
-  bottom: 30vh;
+  bottom: 0;
+  top: 0;
+  margin: auto 0;
   height: 8vw;
   max-width: 40vw;
   transform: rotate(-90deg);
