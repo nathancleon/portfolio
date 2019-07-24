@@ -67,10 +67,8 @@ const Wrapper = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   position: relative;
-  width: 85vw;
-  max-width: 85vw;
-  height: 70vh;
-  max-height: 70vh;
+  width: 85%;
+  height: 70%;
   border: 1px solid #fff;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;

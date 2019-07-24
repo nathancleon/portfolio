@@ -77,7 +77,7 @@ const ImageOfMyself = styled.img`
   position: absolute;
   bottom: 0;
   right: 5%;
-  max-width: 85%;
+  max-width: 70%;
   max-height: 85%;
   z-index: 10;
 `

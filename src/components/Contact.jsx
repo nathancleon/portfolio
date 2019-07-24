@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import RenlyWithBlankets from '../images/renly-blankets.png'
+import Resume from '../images/NathanielCollinsLeonResume.pdf'
 
 const Contact = () => (
   <Wrapper>
@@ -9,9 +10,11 @@ const Contact = () => (
       <InnerContentWrapper>
         <InnerContentText>
           <h2>
-            <a href="">Here's my resumé</a>
+            <a href={Resume} target="_blank">
+              Here's my resumé
+            </a>
           </h2>
-          <h3>I work hard so my dog Renly can live a good (and cozy) life.</h3>
+          <p>I work hard so my dog Renly can live a good (and cozy) life.</p>
         </InnerContentText>
         <ImgOfRenly src={RenlyWithBlankets} alt="" />
         <ContactText>
@@ -44,23 +47,13 @@ const Wrapper = styled.div`
     border-right: 0 solid transparent;
     border-bottom: 20vh solid #a20505;
   }
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: -20vh;
-    border-left: 0 solid transparent;
-    border-right: 100vw solid transparent;
-    border-top: 20vh solid #a20505;
-  }
 `
 
 const ContentWrapper = styled.div`
   display: flex;
   position: relative;
-  width: 85vw;
-  max-width: 85vw;
-  height: 70vh;
-  max-height: 70vh;
+  width: 85%;
+  height: 70%;
   border: 1px solid #fff;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
@@ -97,7 +90,7 @@ const InnerContentText = styled.div`
   flex-direction: column;
   width: 50%;
   h2 {
-    margin-bottom: 5vmin;
+    margin-bottom: 2vmin;
     a {
       font-size: 4.5vw;
       font-style: italic;
@@ -107,14 +100,14 @@ const InnerContentText = styled.div`
   h3 {
     font-size: 2.5vw;
     font-style: italic;
+    font-weight: 300;
     color: #fff;
   }
   p {
-    font-size: 1.5vw;
+    font-size: 2.5vw;
     font-weight: 300;
-    line-height: 2vw;
     color: #fff;
-    margin-top: 15px;
+    margin-top: 5px;
   }
 `
 

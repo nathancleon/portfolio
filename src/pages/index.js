@@ -2,7 +2,6 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Global, css } from '@emotion/core'
 import SEO from '../components/seo'
-import styled from '@emotion/styled'
 import Landing from '../components/Landing'
 
 const IndexPage = () => (
