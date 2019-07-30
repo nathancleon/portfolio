@@ -2,6 +2,9 @@ import React from 'react'
 import styled from '@emotion/styled'
 import RenlyWithBlankets from '../images/renly-blankets.png'
 import Resume from '../images/NathanielCollinsLeonResume.pdf'
+import Twitter from '../images/icons/twitter-square.svg'
+import LinkedIn from '../images/icons/linkedin.svg'
+import GitHub from '../images/icons/github-square.svg'
 
 const Contact = () => (
   <Wrapper>
@@ -23,6 +26,17 @@ const Contact = () => (
           <h3>Contact</h3>
         </ContactText>
       </InnerContentWrapper>
+      <ContactIcons>
+        <a href="https://www.twitter.com/nathancleon" target="_blank">
+          <img src={Twitter} alt="" />
+        </a>
+        <a href="https://www.linkedin.com/in/nathancleon" target="_blank">
+          <img src={LinkedIn} alt="" />
+        </a>
+        <a href="https://www.github.com/nathancleon" target="_blank">
+          <img src={GitHub} alt="" />
+        </a>
+      </ContactIcons>
     </ContentWrapper>
   </Wrapper>
 )
@@ -157,6 +171,26 @@ const ContactText = styled.div`
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: #fff;
       z-index: 3;
+    }
+  }
+`
+
+const ContactIcons = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: 20vh;
+  left: -1vw;
+  a {
+    margin-bottom: 2vw;
+    text-decoration: none;
+    color: #fff;
+    img {
+      background-color: #a20505;
+      width: 2vw;
     }
   }
 `
