@@ -211,7 +211,7 @@ const LinkContainer = styled.div`
     width: 80%;
     display: flex;
     justify-content: space-around;
-    margin-top: -5vw;
+    margin-top: -3vw;
     margin-bottom: 1vw;
   }
 `;
@@ -246,17 +246,17 @@ const TechStack = styled.div`
     margin-left: 10%;
   }
   img {
-    min-width: 40px;
-    width: 3.5vw;
-    max-width: 4vw;
+    width: 3vw;
+    max-height: 3vw;
+    max-width: 60px;
     cursor: pointer;
     padding: 5px;
   }
   @media only screen and (max-width: 860px) {
     {
-      width: 70%;
+      width: 90%;
       align-self: center;
-      margin-left: 0;
+      margin-left: 5%;
       margin-bottom: 10vw;
     }
     img {
