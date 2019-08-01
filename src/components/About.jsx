@@ -24,7 +24,10 @@ const About = () => (
             javaScript, emotion, sass, css, html.
           </p>
         </InnerContentText>
-        <ImgOfMyself src={MyselfWithComputer} alt="" />
+        <ImgOfMyself
+          src={MyselfWithComputer}
+          alt="Nathan Collins Leon with a computer"
+        />
         <AboutText>
           <h3>About</h3>
           <h3>About</h3>

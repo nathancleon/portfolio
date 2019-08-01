@@ -9,7 +9,7 @@ const Hero = () => (
     <ContentWrapper>
       <NameLarge>Nathan Collins León</NameLarge>
       <NameSmall>Nathan Collins León</NameSmall>
-      <ImageOfMyself src={ImgOfMyself} alt="" />
+      <ImageOfMyself src={ImgOfMyself} alt="Nathan Collins Leon" />
       <HeroTextContainer>
         <HeroText>
           <li>Fullstack</li>
@@ -17,7 +17,7 @@ const Hero = () => (
           <li>Frontend</li>
           <li />
           <li>
-            <img src={LocationIcon} alt="" />
+            <img src={LocationIcon} alt="location symbol" />
             D.C.
           </li>
         </HeroText>
@@ -143,7 +143,7 @@ const ImageOfMyself = styled.img`
   z-index: 10;
 `
 
-const NameLarge = styled.h1`
+const NameLarge = styled.h2`
   position: absolute;
   top: -7.4vw;
   font-size: 7.96vw;
@@ -154,7 +154,7 @@ const NameLarge = styled.h1`
   animation: ${moveUpBigText} 1s;
 `
 
-const NameSmall = styled.h2`
+const NameSmall = styled.h1`
   position: absolute;
   top: -3.5vw;
   font-size: 5vw;

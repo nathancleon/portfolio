@@ -122,7 +122,10 @@ export default class Experience extends React.Component {
               </TechStack>
             </InnerContentText>
             <ProjectImgContainer>
-              <img src={selectedProject.image} alt="" />
+              <img
+                src={selectedProject.image}
+                alt="desktop and mobile view of the project"
+              />
               <ProjectLinks>
                 {selectedProject.liveDemo ? (
                   <a href={selectedProject.liveDemo}>Live Demo</a>

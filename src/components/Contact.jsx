@@ -19,7 +19,10 @@ const Contact = () => (
           </h2>
           <p>I work hard so my dog Renly can live a good (and cozy) life.</p>
         </InnerContentText>
-        <ImgOfRenly src={RenlyWithBlankets} alt="" />
+        <ImgOfRenly
+          src={RenlyWithBlankets}
+          alt="my dog renly covered in blankets"
+        />
         <ContactText>
           <h3>Contact</h3>
           <h3>Contact</h3>
@@ -27,14 +30,26 @@ const Contact = () => (
         </ContactText>
       </InnerContentWrapper>
       <ContactIcons>
-        <a href="https://www.twitter.com/nathancleon" target="_blank">
-          <img src={Twitter} alt="" />
+        <a
+          href="https://www.twitter.com/nathancleon"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={Twitter} alt="twitter" />
         </a>
-        <a href="https://www.linkedin.com/in/nathancleon" target="_blank">
-          <img src={LinkedIn} alt="" />
+        <a
+          href="https://www.linkedin.com/in/nathancleon"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={LinkedIn} alt="linked in" />
         </a>
-        <a href="https://www.github.com/nathancleon" target="_blank">
-          <img src={GitHub} alt="" />
+        <a
+          href="https://www.github.com/nathancleon"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={GitHub} alt="git hub" />
         </a>
       </ContactIcons>
     </ContentWrapper>
