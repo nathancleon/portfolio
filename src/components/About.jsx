@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { keyframes } from '@emotion/core'
 import MyselfWithComputer from '../images/me-with-computer-edited.png'
 
 const About = () => (
@@ -35,6 +36,15 @@ const About = () => (
 )
 
 export default About
+
+const skewUp = keyframes`
+from {
+  transform: translate3d(0, 100px, 0) scale(0) skewY(6deg);
+}
+to {
+  transform: translate3d(0) scale(1) skewY(0deg);
+}
+`
 
 const Wrapper = styled.div`
   display: flex;
@@ -76,6 +86,7 @@ const ContentWrapper = styled.div`
     min-width: 85%;
     max-width: 85%;
   }
+  animation: ${skewUp} 1s;
 `
 
 const HeaderText = styled.h1`
@@ -85,6 +96,7 @@ const HeaderText = styled.h1`
   font-size: 18vmin;
   font-style: italic;
   color: #fff;
+  max-width: 50vw;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: #fff;

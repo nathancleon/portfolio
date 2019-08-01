@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import ImgOfMyself from '../images/me-cropped-grainy.png'
+import { keyframes } from '@emotion/core'
+import ImgOfMyself from '../images/me-cropped-grainy-min.png'
 import LocationIcon from '../images/icons/map-marker-alt.svg'
 
 const Hero = () => (
@@ -47,6 +48,66 @@ const Hero = () => (
 
 export default Hero
 
+const skewUp = keyframes`
+from {
+  transform: translate3d(0, 200px, 0) skewY(6deg);
+}
+to {
+  transform: translate3d(0) skewY(0deg);
+}`
+
+const fadeIn = keyframes`
+  from { opacity: 0 }
+  to   { opacity: 1 }
+`
+const fadeInDelayed = keyframes`
+  0% { opacity: 0 }
+  50% { opacity: 0 }
+  100%   { opacity: 1 }
+`
+
+const fadeInImage = keyframes`
+  0% { opacity: 0 }
+  75% { opacity: 0 }
+  100%   { opacity: 1 }
+`
+
+const moveUp = keyframes`
+  from { 
+    transform: translateY(80px);
+  }
+  to{
+    transform: translateY(0);
+  }
+`
+
+const moveUpBigText = keyframes`
+  from { 
+    transform: translateY(200px) scale(0.5) ;
+  }
+  to{
+    transform: translateY(0) scale(1);
+  }
+`
+
+const scaleX = keyframes`
+  0% { 
+    transform: scaleX(0);
+  }
+  100%{
+    transform: scaleX(1);
+  }
+`
+
+const moveUpRotated = keyframes`
+from { 
+  transform: rotate(-90deg) translateY(40px);
+}
+to{
+  transform: rotate(-90deg) translateY(0);
+}
+`
+
 const LandingWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -77,8 +138,8 @@ const ImageOfMyself = styled.img`
   position: absolute;
   bottom: 0;
   right: 5%;
-  max-width: 70%;
-  max-height: 85%;
+  width: 50vw;
+  max-width: 80%;
   z-index: 10;
 `
 
@@ -90,6 +151,7 @@ const NameLarge = styled.h1`
   font-style: italic;
   color: #eee;
   width: 110%;
+  animation: ${moveUpBigText} 1s;
 `
 
 const NameSmall = styled.h2`
@@ -101,6 +163,7 @@ const NameSmall = styled.h2`
   color: #444;
   width: 100%;
   text-align: center;
+  animation: ${fadeInDelayed} 0.5s, ${moveUp} 1s;
 `
 
 const HeroTextContainer = styled.div`
@@ -113,6 +176,8 @@ const HeroTextContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  transform-origin: 100% 50%;
+  animation: ${fadeIn} 2s, ${scaleX} 1s;
   @media only screen and (max-width: 1200px) {
     left: -12%;
   }
@@ -123,6 +188,7 @@ const HeroText = styled.ul`
   justify-content: space-around;
   min-width: 60%;
   margin-right: 15vw;
+  animation: ${fadeInDelayed} 1.5s;
   li {
     position: relative;
     font-size: 1.25rem;
@@ -153,6 +219,7 @@ const Navigation = styled.nav`
   min-width: 240px;
   height: 62vw;
   transform: rotate(-90deg);
+  animation: ${fadeInDelayed} 1.5s;
   ul {
     height: 20px;
     display: flex;
@@ -193,6 +260,7 @@ const DeveloperTextContainer = styled.div`
   height: 8vw;
   max-width: 40vw;
   transform: rotate(-90deg);
+  animation: ${fadeIn} 2s, ${moveUpRotated} 1s;
   h2 {
     font-size: 12vh;
     font-weight: 800;

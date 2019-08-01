@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import RenlyWithBlankets from '../images/renly-blankets.png'
+import RenlyWithBlankets from '../images/renly-blankets-min.png'
 import Resume from '../images/NathanielCollinsLeonResume.pdf'
 import Twitter from '../images/icons/twitter-square.svg'
 import LinkedIn from '../images/icons/linkedin.svg'
