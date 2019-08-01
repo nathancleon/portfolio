@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
-import MyselfWithComputer from '../images/me-with-computer-edited.png'
+import MyselfWithComputer from '../images/me-with-computer-edited-compressed.png'
 
 const About = () => (
   <Wrapper>
@@ -137,7 +137,7 @@ const InnerContentText = styled.div`
 const ImgOfMyself = styled.img`
   position: absolute;
   bottom: 0;
-  right: -2vw;
+  right: -4vw;
   width: 40vw;
   min-width: 50vmin;
   filter: drop-shadow(10px 0px 10px rgba(0, 0, 0, 0.4));

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
-import ImgOfMyself from '../images/me-cropped-grainy-min.png'
+import ImgOfMyself from '../images/me-cropped-grainy-compressed3.png'
 import LocationIcon from '../images/icons/map-marker-alt.svg'
 
 const Hero = () => (
