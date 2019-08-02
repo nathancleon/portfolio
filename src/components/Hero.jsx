@@ -109,6 +109,7 @@ to{
 `
 
 const LandingWrapper = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,7 +117,8 @@ const LandingWrapper = styled.div`
   width: 100vw;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
+  z-index: 500;
 `
 
 const ContentWrapper = styled.div`
@@ -128,9 +130,9 @@ const ContentWrapper = styled.div`
   background-color: #eee;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
-    height: 89%;
-    min-width: 85%;
-    max-width: 85%;
+    height: 75%;
+    min-width: 65%;
+    margin-bottom: 15vh;
   }
 `
 
@@ -141,6 +143,12 @@ const ImageOfMyself = styled.img`
   width: 50vw;
   max-width: 80%;
   z-index: 10;
+  @media only screen and (max-width: 1024px) {
+    min-width: 100%;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
 `
 
 const NameLarge = styled.h2`
@@ -152,6 +160,10 @@ const NameLarge = styled.h2`
   color: #eee;
   width: 110%;
   animation: ${moveUpBigText} 1s;
+  @media only screen and (max-width: 1024px) {
+    top: -6.4vw;
+    font-size: 6.9vw;
+  }
 `
 
 const NameSmall = styled.h1`
@@ -163,7 +175,12 @@ const NameSmall = styled.h1`
   color: #444;
   width: 100%;
   text-align: center;
+  z-index: 50;
   animation: ${fadeInDelayed} 0.5s, ${moveUp} 1s;
+  @media only screen and (max-width: 1024px) {
+    top: -4.2vw;
+    font-size: 4.5vw;
+  }
 `
 
 const HeroTextContainer = styled.div`
@@ -181,6 +198,13 @@ const HeroTextContainer = styled.div`
   @media only screen and (max-width: 1200px) {
     left: -12%;
   }
+
+  @media only screen and (max-width: 1024px) {
+    min-width: 120vw;
+    top: 0;
+    left: -30%;
+    height: 10%;
+  }
 `
 
 const HeroText = styled.ul`
@@ -195,13 +219,13 @@ const HeroText = styled.ul`
     font-family: 'Bitter', serif;
     color: #fff;
     list-style: none;
+    margin: auto 0;
     &:nth-of-type(2),
     &:nth-of-type(4) {
       background-color: #fff;
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      margin: auto 0;
     }
     &:last-of-type img {
       width: 0.7rem;
@@ -210,6 +234,24 @@ const HeroText = styled.ul`
   }
   @media only screen and (max-width: 1200px) {
     margin-right: 20vw;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    min-width: 50%;
+    margin-right: 15vw;
+    height: 3vh;
+    li {
+      font-size: 2vw;
+      margin: auto 0;
+      &:nth-of-type(2),
+      &:nth-of-type(4) {
+        width: 1vw;
+        height: 1vw;
+      }
+      &:last-of-type img {
+        width: 1.15vw;
+      }
+    }
   }
 `
 
@@ -249,6 +291,12 @@ const Navigation = styled.nav`
       }
     }
   }
+
+  @media only screen and (max-width: 1024px) {
+    height: 20px;
+    margin-top: 35vh;
+    margin-left: -35%;
+  }
 `
 
 const DeveloperTextContainer = styled.div`
@@ -282,6 +330,27 @@ const DeveloperTextContainer = styled.div`
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: #a20505;
       margin-left: 1px;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    right: 0;
+    left: 0;
+    top: 94%;
+    margin: 0 auto;
+    transform: rotate(0deg);
+    animation: ${fadeIn} 2s, ${moveUp} 1s;
+    z-index: 500;
+    h2 {
+      font-size: 8vw;
+      &:nth-of-type(2),
+      &:last-of-type {
+        margin-top: -6.5vmin;
+      }
     }
   }
 `
