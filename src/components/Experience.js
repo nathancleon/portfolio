@@ -92,7 +92,9 @@ export default class Experience extends React.Component {
   componentDidMount() {
     let projectCycle = () => this.cycleThroughProjects()
     this._isMounted = true
-    this.intervalId = setInterval(projectCycle, 5000)
+    setTimeout(() => {
+      this.intervalId = setInterval(projectCycle, 5000)
+    }, 1000)
   }
 
   componentWillUnmount() {
@@ -150,11 +152,16 @@ export default class Experience extends React.Component {
 
 const skewUp = keyframes`
 from {
-  transform: translate3d(0, 100px, 0) scale(0) skewY(6deg);
+  transform: translate3d(0, 100px, 0) skewY(6deg);
 }
 to {
-  transform: translate3d(0) scale(1) skewY(0deg);
+  transform: translate3d(0) skewY(0deg);
 }
+`
+
+const fadeIn = keyframes`
+  from { opacity: 0 }
+  to   { opacity: 1 }
 `
 
 const Wrapper = styled.section`
@@ -175,7 +182,7 @@ const ContentWrapper = styled.div`
   width: 85%;
   height: 70%;
   border: 1px solid #444;
-  animation: ${skewUp} 1s;
+  animation: ${fadeIn} 2s, ${skewUp} 1s;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
     height: 89%;

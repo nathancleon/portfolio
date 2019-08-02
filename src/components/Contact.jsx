@@ -63,11 +63,16 @@ export default Contact
 
 const skewUp = keyframes`
 from {
-  transform: translate3d(0, 100px, 0) scale(0) skewY(6deg);
+  transform: translate3d(0, 100px, 0) skewY(6deg);
 }
 to {
-  transform: translate3d(0) scale(1) skewY(0deg);
+  transform: translate3d(0) skewY(0deg);
 }
+`
+
+const fadeIn = keyframes`
+  from { opacity: 0 }
+  to   { opacity: 1 }
 `
 
 const Wrapper = styled.section`
@@ -96,7 +101,7 @@ const ContentWrapper = styled.div`
   width: 85%;
   height: 70%;
   border: 1px solid #fff;
-  animation: ${skewUp} 1s;
+  animation: ${fadeIn} 2s, ${skewUp} 1s;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
     height: 89%;
