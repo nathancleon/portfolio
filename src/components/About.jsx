@@ -87,8 +87,8 @@ const Wrapper = styled.section`
 const ContentWrapper = styled.div`
   display: flex;
   position: relative;
-  width: 85%;
-  height: 70%;
+  width: 80%;
+  height: 60%;
   border: 1px solid #fff;
   animation: ${fadeIn} 2s, ${skewUp} 1s;
   @media only screen and (max-width: 1024px) {
@@ -119,7 +119,7 @@ const InnerContentWrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 5vw;
+  padding: 0 5vw;
 `
 
 const InnerContentText = styled.div`
@@ -128,7 +128,7 @@ const InnerContentText = styled.div`
   align-self: center;
   width: 45%;
   h3 {
-    font-size: 2vw;
+    font-size: 3vmin;
     font-family: 'Bitter', serif;
     color: #fff;
   }
@@ -145,7 +145,7 @@ const ImgOfMyself = styled.img`
   position: absolute;
   bottom: 0;
   right: -4vw;
-  width: 40vw;
+  width: 38vw;
   min-width: 50vmin;
   filter: drop-shadow(10px 0px 10px rgba(0, 0, 0, 0.4));
   z-index: 100;
@@ -162,7 +162,7 @@ const AboutText = styled.div`
   transform: rotate(-90deg);
   h3 {
     position: relative;
-    font-size: 12vh;
+    font-size: 10vh;
     font-weight: 800;
     color: #fff;
 
@@ -172,7 +172,7 @@ const AboutText = styled.div`
 
     &:nth-of-type(2),
     &:last-of-type {
-      margin-top: -4.5vw;
+      margin-top: -6.5vmin;
     }
 
     &:nth-of-type(2) {

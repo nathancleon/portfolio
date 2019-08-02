@@ -98,8 +98,9 @@ const Wrapper = styled.section`
 const ContentWrapper = styled.div`
   display: flex;
   position: relative;
-  width: 85%;
-  height: 70%;
+  width: 80%;
+  height: 60%;
+  padding: 2vw;
   border: 1px solid #fff;
   animation: ${fadeIn} 2s, ${skewUp} 1s;
   @media only screen and (max-width: 1024px) {
@@ -129,26 +130,20 @@ const InnerContentWrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 5vw;
+  padding: 0 5vw;
 `
 
 const InnerContentText = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
   h2 {
     margin-bottom: 2vmin;
     a {
-      font-size: 4.5vw;
+      font-size: 4vw;
       font-style: italic;
       color: #fff;
     }
-  }
-  h3 {
-    font-size: 2.5vw;
-    font-style: italic;
-    font-weight: 300;
-    color: #fff;
   }
   p {
     font-size: 2.5vw;
@@ -162,15 +157,15 @@ const ImgOfRenly = styled.img`
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 33vw;
-  min-width: 50vmin;
+  width: 28vw;
+  min-width: 40vmin;
   filter: drop-shadow(10px 0px 10px rgba(0, 0, 0, 0.4));
   z-index: 100;
 `
 
 const ContactText = styled.div`
   position: absolute;
-  right: -10.5vw;
+  right: -8.5vw;
   bottom: 0;
   top: 0;
   margin: auto 0;
@@ -179,7 +174,7 @@ const ContactText = styled.div`
   transform: rotate(-90deg);
   h3 {
     position: relative;
-    font-size: 12vh;
+    font-size: 8vh;
     font-weight: 800;
     color: #fff;
 
@@ -189,7 +184,7 @@ const ContactText = styled.div`
 
     &:nth-of-type(2),
     &:last-of-type {
-      margin-top: -4.5vw;
+      margin-top: -4.5vmin;
     }
 
     &:nth-of-type(2) {

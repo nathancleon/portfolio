@@ -253,7 +253,7 @@ const Navigation = styled.nav`
 
 const DeveloperTextContainer = styled.div`
   position: absolute;
-  right: -14vw;
+  right: -13vw;
   bottom: 0;
   top: 0;
   margin: auto 0;
@@ -262,12 +262,12 @@ const DeveloperTextContainer = styled.div`
   transform: rotate(-90deg);
   animation: ${fadeIn} 2s, ${moveUpRotated} 1s;
   h2 {
-    font-size: 12vh;
+    font-size: 10vh;
     font-weight: 800;
     color: #a20505;
     &:nth-of-type(2),
     &:last-of-type {
-      margin-top: -3.5vw;
+      margin-top: -6vmin;
     }
 
     &:nth-of-type(2) {

@@ -129,10 +129,22 @@ export default class Experience extends React.Component {
                 />
                 <ProjectLinks>
                   {selectedProject.liveDemo ? (
-                    <a href={selectedProject.liveDemo}>Live Demo</a>
+                    <a
+                      href={selectedProject.liveDemo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Live Demo
+                    </a>
                   ) : null}
                   {selectedProject.gitHub ? (
-                    <a href={selectedProject.gitHub}>GitHub Link</a>
+                    <a
+                      href={selectedProject.gitHub}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub Link
+                    </a>
                   ) : null}
                 </ProjectLinks>
               </ProjectImgContainer>
@@ -179,8 +191,8 @@ const Wrapper = styled.section`
 const ContentWrapper = styled.div`
   display: flex;
   position: relative;
-  width: 85%;
-  height: 70%;
+  width: 80%;
+  height: 60%;
   border: 1px solid #444;
   animation: ${fadeIn} 2s, ${skewUp} 1s;
   @media only screen and (max-width: 1024px) {
@@ -210,7 +222,7 @@ const InnerContentWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 5vw;
+  padding: 2vw;
 `
 
 const InnerContentHeader = styled.div`
@@ -218,14 +230,14 @@ const InnerContentHeader = styled.div`
   width: 50vw;
   display: flex;
   align-items: center;
-  margin-left: -7vw;
+  margin-left: -5vw;
   margin-top: 3vmin;
   background-color: #a20505;
   h3 {
     font-size: 2vw;
     font-family: 'Bitter', serif;
     color: #fff;
-    margin-left: 7vw;
+    margin-left: 5vw;
   }
 `
 
@@ -275,16 +287,18 @@ const ProjectImgContainer = styled.div`
   img {
     width: 55vw;
     filter: drop-shadow(20px 12px 20px rgba(0, 0, 0, 0.6));
-    z-index: 1000;
+    z-index: 50;
   }
 `
 
 const ProjectLinks = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 45%;
-  right: 10vw;
   margin-left: 6vw;
+  margin-top: -4vh;
+  z-index: 60;
   a {
     color: #444;
     font-size: 2vw;
@@ -305,7 +319,7 @@ const ExperienceText = styled.div`
 
   h3 {
     position: relative;
-    font-size: 10vh;
+    font-size: 8vh;
     font-weight: 800;
     color: #a20505;
 
@@ -315,7 +329,7 @@ const ExperienceText = styled.div`
 
     &:nth-of-type(2),
     &:last-of-type {
-      margin-top: -3.2vw;
+      margin-top: -4.8vmin;
     }
 
     &:nth-of-type(2) {
@@ -341,7 +355,7 @@ const SliderNavigation = styled.div`
   justify-content: center;
   position: absolute;
   height: 30px;
-  bottom: -100px;
+  bottom: -50px;
   left: 0;
   right: 0;
   img {
