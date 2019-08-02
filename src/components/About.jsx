@@ -64,7 +64,7 @@ const Wrapper = styled.section`
   &:before {
     content: '';
     position: absolute;
-    top: -20vh;
+    top: -19.9vh;
     border-left: 100vw solid transparent;
     border-right: 0 solid transparent;
     border-bottom: 20vh solid #a20505;
@@ -72,7 +72,7 @@ const Wrapper = styled.section`
   &:after {
     content: '';
     position: absolute;
-    bottom: -20vh;
+    bottom: -19.9vh;
     border-left: 0 solid transparent;
     border-right: 100vw solid transparent;
     border-top: 20vh solid #a20505;

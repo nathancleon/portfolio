@@ -336,7 +336,9 @@ const SliderNavigation = styled.div`
   display: flex;
   justify-content: center;
   position: absolute;
-  bottom: -5vh;
+  height: 30px;
+  bottom: -100px;
+  border: 1px solid red;
   left: 0;
   right: 0;
   img {
