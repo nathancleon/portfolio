@@ -109,7 +109,7 @@ export default class Experience extends React.Component {
       <Wrapper id="experience">
         {this.props.inView ? (
           <ContentWrapper>
-            <HeaderText id="experience">Experience</HeaderText>
+            <HeaderText>Experience</HeaderText>
             <InnerContentWrapper>
               <InnerContentText>
                 <InnerContentHeader>

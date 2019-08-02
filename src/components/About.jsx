@@ -7,7 +7,7 @@ const About = ({ inView }) => (
   <Wrapper id="about">
     {inView ? (
       <ContentWrapper>
-        <HeaderText id="about">About</HeaderText>
+        <HeaderText>About</HeaderText>
         <InnerContentWrapper>
           <InnerContentText>
             <h3>My name is Nathan Collins León</h3>

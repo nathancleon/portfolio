@@ -11,7 +11,7 @@ const Contact = ({ inView }) => (
   <Wrapper id="contact">
     {inView ? (
       <ContentWrapper>
-        <HeaderText id="contact">Contact</HeaderText>
+        <HeaderText>Contact</HeaderText>
         <InnerContentWrapper>
           <InnerContentText>
             <h2>
