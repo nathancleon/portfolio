@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
-import MentalNoteImg from '../images/mentalnotemockup.png'
-import SproutLogImg from '../images/sproutlog-mockup.png'
-import BarkLocal from '../images/barklocal-mockup.png'
+import MentalNoteImg from '../images/mentalnotemockup-compressed.png'
+import SproutLogImg from '../images/sproutlog-mockup-compressed.png'
+import BarkLocal from '../images/barklocal-mockup-compressed.png'
 import CircleSvg from '../images/icons/circle.svg'
 import CircleOutlineSvg from '../images/icons/circle-outline.svg'
 
