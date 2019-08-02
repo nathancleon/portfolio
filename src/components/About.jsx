@@ -3,38 +3,40 @@ import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
 import MyselfWithComputer from '../images/me-with-computer-edited-compressed.png'
 
-const About = () => (
-  <Wrapper>
-    <ContentWrapper>
-      <HeaderText id="about">About</HeaderText>
-      <InnerContentWrapper>
-        <InnerContentText>
-          <h3>My name is Nathan Collins León</h3>
-          <p>
-            I’m a fullstack developer with a passion for design and
-            accessibility. I grew up in Puerto Rico, and currently reside in
-            Washington, D.C.
-          </p>
-          <p>
-            Things I love: national parks, traveling, UI/UX, dogs, and autumn
-            (best season).
-          </p>
-          <p>
-            Things I know: react, redux, mobX, vue, node, mongoDB, jQuery,
-            javaScript, emotion, sass, css, html.
-          </p>
-        </InnerContentText>
-        <ImgOfMyself
-          src={MyselfWithComputer}
-          alt="Nathan Collins Leon with a computer"
-        />
-        <AboutText>
-          <h3>About</h3>
-          <h3>About</h3>
-          <h3>About</h3>
-        </AboutText>
-      </InnerContentWrapper>
-    </ContentWrapper>
+const About = ({ inView }) => (
+  <Wrapper id="about-section">
+    {inView ? (
+      <ContentWrapper>
+        <HeaderText id="about">About</HeaderText>
+        <InnerContentWrapper>
+          <InnerContentText>
+            <h3>My name is Nathan Collins León</h3>
+            <p>
+              I’m a fullstack developer with a passion for design and
+              accessibility. I grew up in Puerto Rico, and currently reside in
+              Washington, D.C.
+            </p>
+            <p>
+              Things I love: national parks, traveling, UI/UX, dogs, and autumn
+              (best season).
+            </p>
+            <p>
+              Things I know: react, redux, mobX, vue, node, mongoDB, jQuery,
+              javaScript, emotion, sass, css, html.
+            </p>
+          </InnerContentText>
+          <ImgOfMyself
+            src={MyselfWithComputer}
+            alt="Nathan Collins Leon with a computer"
+          />
+          <AboutText>
+            <h3>About</h3>
+            <h3>About</h3>
+            <h3>About</h3>
+          </AboutText>
+        </InnerContentWrapper>
+      </ContentWrapper>
+    ) : null}
   </Wrapper>
 )
 
@@ -49,7 +51,7 @@ to {
 }
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;

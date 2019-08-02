@@ -1,64 +1,76 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { keyframes } from '@emotion/core'
 import RenlyWithBlankets from '../images/renly-blankets-compressed.png'
 import Resume from '../images/NathanielCollinsLeonResume.pdf'
 import Twitter from '../images/icons/twitter-square.svg'
 import LinkedIn from '../images/icons/linkedin.svg'
 import GitHub from '../images/icons/github-square.svg'
 
-const Contact = () => (
-  <Wrapper>
-    <ContentWrapper>
-      <HeaderText id="contact">Contact</HeaderText>
-      <InnerContentWrapper>
-        <InnerContentText>
-          <h2>
-            <a href={Resume} target="_blank">
-              Here's my resumé
-            </a>
-          </h2>
-          <p>I work hard so my dog Renly can live a good (and cozy) life.</p>
-        </InnerContentText>
-        <ImgOfRenly
-          src={RenlyWithBlankets}
-          alt="my dog renly covered in blankets"
-        />
-        <ContactText>
-          <h3>Contact</h3>
-          <h3>Contact</h3>
-          <h3>Contact</h3>
-        </ContactText>
-      </InnerContentWrapper>
-      <ContactIcons>
-        <a
-          href="https://www.twitter.com/nathancleon"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={Twitter} alt="twitter" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/nathancleon"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={LinkedIn} alt="linked in" />
-        </a>
-        <a
-          href="https://www.github.com/nathancleon"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={GitHub} alt="git hub" />
-        </a>
-      </ContactIcons>
-    </ContentWrapper>
+const Contact = ({ inView }) => (
+  <Wrapper id="contact-section">
+    {inView ? (
+      <ContentWrapper>
+        <HeaderText id="contact">Contact</HeaderText>
+        <InnerContentWrapper>
+          <InnerContentText>
+            <h2>
+              <a href={Resume} target="_blank">
+                Here's my resumé
+              </a>
+            </h2>
+            <p>I work hard so my dog Renly can live a good (and cozy) life.</p>
+          </InnerContentText>
+          <ImgOfRenly
+            src={RenlyWithBlankets}
+            alt="my dog renly covered in blankets"
+          />
+          <ContactText>
+            <h3>Contact</h3>
+            <h3>Contact</h3>
+            <h3>Contact</h3>
+          </ContactText>
+        </InnerContentWrapper>
+        <ContactIcons>
+          <a
+            href="https://www.twitter.com/nathancleon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Twitter} alt="twitter" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nathancleon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={LinkedIn} alt="linked in" />
+          </a>
+          <a
+            href="https://www.github.com/nathancleon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={GitHub} alt="git hub" />
+          </a>
+        </ContactIcons>
+      </ContentWrapper>
+    ) : null}
   </Wrapper>
 )
 
 export default Contact
 
-const Wrapper = styled.div`
+const skewUp = keyframes`
+from {
+  transform: translate3d(0, 100px, 0) scale(0) skewY(6deg);
+}
+to {
+  transform: translate3d(0) scale(1) skewY(0deg);
+}
+`
+
+const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,6 +96,7 @@ const ContentWrapper = styled.div`
   width: 85%;
   height: 70%;
   border: 1px solid #fff;
+  animation: ${skewUp} 1s;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
     height: 89%;

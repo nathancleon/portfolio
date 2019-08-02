@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { keyframes } from '@emotion/core'
 import MentalNoteImg from '../images/mentalnotemockup.png'
 import SproutLogImg from '../images/sproutlog-mockup.png'
 import BarkLocal from '../images/barklocal-mockup.png'
@@ -106,49 +107,60 @@ export default class Experience extends React.Component {
     const selectedProject = this.state.projects[this.state.selectedIndex]
     const sliderDots = this.generateDots()
     return (
-      <Wrapper>
-        <ContentWrapper>
-          <HeaderText id="experience">Experience</HeaderText>
-          <InnerContentWrapper>
-            <InnerContentText>
-              <InnerContentHeader>
-                <h3>{selectedProject.title}</h3>
-              </InnerContentHeader>
-              <p>{selectedProject.description}</p>
-              <TechStack>
-                {selectedProject.techStack.map((tech, index) => (
-                  <li key={index}>{tech}</li>
-                ))}
-              </TechStack>
-            </InnerContentText>
-            <ProjectImgContainer>
-              <img
-                src={selectedProject.image}
-                alt="desktop and mobile view of the project"
-              />
-              <ProjectLinks>
-                {selectedProject.liveDemo ? (
-                  <a href={selectedProject.liveDemo}>Live Demo</a>
-                ) : null}
-                {selectedProject.gitHub ? (
-                  <a href={selectedProject.gitHub}>GitHub Link</a>
-                ) : null}
-              </ProjectLinks>
-            </ProjectImgContainer>
-            <SliderNavigation>{sliderDots}</SliderNavigation>
-            <ExperienceText>
-              <h3>Experience</h3>
-              <h3>Experience</h3>
-              <h3>Experience</h3>
-            </ExperienceText>
-          </InnerContentWrapper>
-        </ContentWrapper>
+      <Wrapper id="experience-section">
+        {this.props.inView ? (
+          <ContentWrapper>
+            <HeaderText id="experience">Experience</HeaderText>
+            <InnerContentWrapper>
+              <InnerContentText>
+                <InnerContentHeader>
+                  <h3>{selectedProject.title}</h3>
+                </InnerContentHeader>
+                <p>{selectedProject.description}</p>
+                <TechStack>
+                  {selectedProject.techStack.map((tech, index) => (
+                    <li key={index}>{tech}</li>
+                  ))}
+                </TechStack>
+              </InnerContentText>
+              <ProjectImgContainer>
+                <img
+                  src={selectedProject.image}
+                  alt="desktop and mobile view of the project"
+                />
+                <ProjectLinks>
+                  {selectedProject.liveDemo ? (
+                    <a href={selectedProject.liveDemo}>Live Demo</a>
+                  ) : null}
+                  {selectedProject.gitHub ? (
+                    <a href={selectedProject.gitHub}>GitHub Link</a>
+                  ) : null}
+                </ProjectLinks>
+              </ProjectImgContainer>
+              <SliderNavigation>{sliderDots}</SliderNavigation>
+              <ExperienceText>
+                <h3>Experience</h3>
+                <h3>Experience</h3>
+                <h3>Experience</h3>
+              </ExperienceText>
+            </InnerContentWrapper>
+          </ContentWrapper>
+        ) : null}
       </Wrapper>
     )
   }
 }
 
-const Wrapper = styled.div`
+const skewUp = keyframes`
+from {
+  transform: translate3d(0, 100px, 0) scale(0) skewY(6deg);
+}
+to {
+  transform: translate3d(0) scale(1) skewY(0deg);
+}
+`
+
+const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,6 +178,7 @@ const ContentWrapper = styled.div`
   width: 85%;
   height: 70%;
   border: 1px solid #444;
+  animation: ${skewUp} 1s;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
     height: 89%;
