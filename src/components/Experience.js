@@ -106,7 +106,7 @@ export default class Experience extends React.Component {
     const selectedProject = this.state.projects[this.state.selectedIndex]
     const sliderDots = this.generateDots()
     return (
-      <Wrapper id="experience-section">
+      <Wrapper id="experience">
         {this.props.inView ? (
           <ContentWrapper>
             <HeaderText id="experience">Experience</HeaderText>

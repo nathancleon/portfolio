@@ -18,21 +18,15 @@ class Landing extends React.Component {
   componentDidMount() {
     const io = new IntersectionObserver(entries => {
       for (const entry of entries) {
-        if (entry.isIntersecting && entry.target.id === 'about-section') {
+        if (entry.isIntersecting && entry.target.id === 'about') {
           this.setState({
             aboutIsInView: true,
           })
-        } else if (
-          entry.isIntersecting &&
-          entry.target.id === 'experience-section'
-        ) {
+        } else if (entry.isIntersecting && entry.target.id === 'experience') {
           this.setState({
             experienceIsInView: true,
           })
-        } else if (
-          entry.isIntersecting &&
-          entry.target.id === 'contact-section'
-        ) {
+        } else if (entry.isIntersecting && entry.target.id === 'contact') {
           console.warn('contact logic ran')
           this.setState({
             contactIsInView: true,

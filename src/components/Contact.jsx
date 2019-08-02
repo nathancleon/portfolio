@@ -8,7 +8,7 @@ import LinkedIn from '../images/icons/linkedin.svg'
 import GitHub from '../images/icons/github-square.svg'
 
 const Contact = ({ inView }) => (
-  <Wrapper id="contact-section">
+  <Wrapper id="contact">
     {inView ? (
       <ContentWrapper>
         <HeaderText id="contact">Contact</HeaderText>

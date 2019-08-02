@@ -4,7 +4,7 @@ import { keyframes } from '@emotion/core'
 import MyselfWithComputer from '../images/me-with-computer-edited-compressed.png'
 
 const About = ({ inView }) => (
-  <Wrapper id="about-section">
+  <Wrapper id="about">
     {inView ? (
       <ContentWrapper>
         <HeaderText id="about">About</HeaderText>
