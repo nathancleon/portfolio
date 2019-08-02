@@ -48,7 +48,6 @@ export default class Experience extends React.Component {
   }
 
   selectProject(event) {
-    console.log(event.target)
     this.setState({
       selectedIndex: event.target.id,
     })
@@ -81,13 +80,11 @@ export default class Experience extends React.Component {
   }
 
   cycleThroughProjects() {
-    console.log('cycle ran')
     if (this.state.selectedIndex === this.state.projects.length - 1) {
       this.setState({
         selectedIndex: 0,
       })
     } else {
-      console.log('cycle ran2')
       this.setState({ selectedIndex: this.state.selectedIndex + 1 })
     }
   }
@@ -338,7 +335,6 @@ const SliderNavigation = styled.div`
   position: absolute;
   height: 30px;
   bottom: -100px;
-  border: 1px solid red;
   left: 0;
   right: 0;
   img {

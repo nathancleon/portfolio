@@ -18,7 +18,6 @@ class Landing extends React.Component {
   componentDidMount() {
     const io = new IntersectionObserver(entries => {
       for (const entry of entries) {
-        console.log(entry.target.id)
         if (entry.isIntersecting && entry.target.id === 'about-section') {
           this.setState({
             aboutIsInView: true,
