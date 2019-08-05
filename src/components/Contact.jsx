@@ -107,13 +107,13 @@ const ContentWrapper = styled.div`
   display: flex;
   position: relative;
   width: 80%;
-  height: 60%;
+  height: 75%;
   padding: 2vw;
   border: 1px solid #fff;
   animation: ${fadeIn} 2s, ${skewUp} 1s;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
-    height: 80%;
+    height: 70%;
     min-width: 85%;
     max-width: 85%;
   }
@@ -199,7 +199,7 @@ const ImgOfRenly = styled.img`
     min-width: 55vmin;
   }
   @media only screen and (max-width: 600px) {
-    min-width: 75vmin;
+    min-width: 70vmin;
   }
 `
 

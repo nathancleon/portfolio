@@ -65,6 +65,7 @@ const Wrapper = styled.section`
   height: 130vh;
   background-color: #a20505;
   margin-top: 20vh;
+  margin-bottom: 20vh;
   padding: 10vh 0;
   &:before {
     content: '';
@@ -77,21 +78,23 @@ const Wrapper = styled.section`
   &:after {
     content: '';
     position: absolute;
-    bottom: -19.9vh;
+    bottom: -19.99vh;
     border-left: 0 solid transparent;
     border-right: 100vw solid transparent;
     border-top: 20vh solid #a20505;
   }
   @media only screen and (max-width: 1024px) {
-    margin-top: 10vh;
     &:before {
-      top: -9.9vh;
+      top: -9.99vh;
       border-bottom: 10vh solid #a20505;
     }
     &:after {
-      bottom: -9.9vh;
+      bottom: -9.99vh;
       border-top: 10vh solid #a20505;
     }
+  }
+  @media only screen and (max-width: 600px) {
+    margin-top: 0;
   }
 `
 
