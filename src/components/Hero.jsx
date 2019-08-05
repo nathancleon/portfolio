@@ -137,8 +137,7 @@ const ContentWrapper = styled.div`
   @media only screen and (max-width: 600px) {
     height: 55%;
     min-width: 85%;
-    margin-top: -25vh;
-    margin-bottom: 0;
+    margin-top: -15vh;
   }
 `
 

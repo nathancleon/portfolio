@@ -224,17 +224,15 @@ const HeaderText = styled.h1`
   background-color: #fff;
   padding: 0 10px;
   @media only screen and (max-width: 1024px) {
-    top: -15vmin;
+    top: -26vmin;
     left: 0;
     right: 0;
     display: inline-block;
     text-align: center;
-    font-size: 9vmin;
+    font-size: 18vmin;
     -webkit-text-stroke-width: 2px;
   }
   @media only screen and (max-width: 420px) {
-    top: -26vmin;
-    font-size: 18vmin;
     -webkit-text-stroke-width: 1px;
   }
 `

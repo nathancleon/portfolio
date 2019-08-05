@@ -82,6 +82,17 @@ const Wrapper = styled.section`
     border-right: 100vw solid transparent;
     border-top: 20vh solid #a20505;
   }
+  @media only screen and (max-width: 1024px) {
+    margin-top: 10vh;
+    &:before {
+      top: -9.9vh;
+      border-bottom: 10vh solid #a20505;
+    }
+    &:after {
+      bottom: -9.9vh;
+      border-top: 10vh solid #a20505;
+    }
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -96,6 +107,7 @@ const ContentWrapper = styled.div`
     align-items: center;
     height: 70%;
     min-width: 75%;
+    margin-top: -10vh;
   }
 `
 
