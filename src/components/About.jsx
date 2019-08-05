@@ -113,12 +113,12 @@ const HeaderText = styled.h1`
   background-color: #a20505;
   padding: 0 10px;
   @media only screen and (max-width: 1024px) {
-    font-size: 12vmin;
+    top: -8vmin;
     left: 0;
     right: 0;
-    top: -8vmin;
     margin: 0 auto;
-    max-width: 38vmin;
+    max-width: 50%;
+    font-size: 12vmin;
     -webkit-text-stroke-width: 2px;
   }
 `
@@ -135,6 +135,9 @@ const InnerContentWrapper = styled.div`
     align-items: flex-start;
     justify-content: center;
     padding: 0;
+  }
+  @media only screen and (max-width: 600px) {
+    width: 90%;
   }
 `
 
@@ -165,6 +168,23 @@ const InnerContentText = styled.div`
       font-size: 12px;
       line-height: 20px;
       margin-top: 5px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    h3 {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    p {
+      font-size: 12px;
+      line-height: 15px;
+      margin-top: 5px;
+    }
+  }
+  @media only screen and (max-width: 320px) {
+    p {
+      font-size: 10px;
     }
   }
 `

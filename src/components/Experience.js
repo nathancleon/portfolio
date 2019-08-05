@@ -203,6 +203,12 @@ const ContentWrapper = styled.div`
     height: auto;
     border: none;
   }
+  @media only screen and (max-width: 600px) {
+    height: 580px;
+  }
+  @media only screen and (max-width: 320px) {
+    height: 500px;
+  }
 `
 
 const HeaderText = styled.h1`
@@ -218,14 +224,18 @@ const HeaderText = styled.h1`
   background-color: #fff;
   padding: 0 10px;
   @media only screen and (max-width: 1024px) {
-    display: flex;
     top: -15vmin;
     left: 0;
     right: 0;
-    margin: 0 auto;
-    width: 48vw;
+    display: inline-block;
+    text-align: center;
     font-size: 9vmin;
     -webkit-text-stroke-width: 2px;
+  }
+  @media only screen and (max-width: 420px) {
+    top: -26vmin;
+    font-size: 18vmin;
+    -webkit-text-stroke-width: 1px;
   }
 `
 
@@ -264,6 +274,9 @@ const InnerContentText = styled.div`
       line-height: 18px;
     }
   }
+  @media only screen and (max-width: 420px) {
+    height: 300px;
+  }
 `
 
 const InnerContentHeader = styled.div`
@@ -293,7 +306,7 @@ const InnerContentHeader = styled.div`
 const TechStack = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  max-width: 70%;
+  max-width: 90%;
   margin-top: 10px;
   li {
     display: inline-block;
@@ -334,6 +347,7 @@ const ProjectImgContainer = styled.div`
     padding: 2vw;
     img {
       width: 90%;
+      filter: drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.3));
     }
   }
 `
@@ -358,6 +372,9 @@ const ProjectLinks = styled.div`
     a {
       font-size: 1rem;
     }
+  }
+  @media only screen and (max-width: 600px) {
+    margin-top: 5px;
   }
 `
 
@@ -431,7 +448,10 @@ const SliderNavigation = styled.div`
   img {
     width: 20px;
     cursor: pointer;
-    margin-right: 25px;
+    &:nth-of-type(2) {
+      margin-right: 25px;
+      margin-left: 25px;
+    }
   }
   @media only screen and (max-width: 1024px) {
     bottom: -30px;

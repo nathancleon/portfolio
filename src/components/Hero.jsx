@@ -134,6 +134,12 @@ const ContentWrapper = styled.div`
     min-width: 65%;
     margin-bottom: 15vh;
   }
+  @media only screen and (max-width: 600px) {
+    height: 55%;
+    min-width: 85%;
+    margin-top: -25vh;
+    margin-bottom: 0;
+  }
 `
 
 const ImageOfMyself = styled.img`
@@ -160,9 +166,17 @@ const NameLarge = styled.h2`
   color: #eee;
   width: 110%;
   animation: ${moveUpBigText} 1s;
+  z-index: -10;
   @media only screen and (max-width: 1024px) {
     top: -6.4vw;
     font-size: 6.9vw;
+  }
+  @media only screen and (max-width: 600px) {
+    width: 180%;
+    left: -34vw;
+    text-align: center;
+    top: -10vw;
+    font-size: 10.65vw;
   }
 `
 
@@ -181,6 +195,10 @@ const NameSmall = styled.h1`
     top: -4.2vw;
     font-size: 4.5vw;
   }
+  @media only screen and (max-width: 600px) {
+    top: -6vmin;
+    font-size: 6.5vw;
+  }
 `
 
 const HeroTextContainer = styled.div`
@@ -198,7 +216,6 @@ const HeroTextContainer = styled.div`
   @media only screen and (max-width: 1200px) {
     left: -12%;
   }
-
   @media only screen and (max-width: 1024px) {
     min-width: 120vw;
     top: 0;
@@ -253,6 +270,23 @@ const HeroText = styled.ul`
       }
     }
   }
+  @media only screen and (max-width: 600px) {
+    margin-right: -14vw;
+    li {
+      font-size: 10px;
+      margin: auto 0;
+      &:nth-of-type(2),
+      &:nth-of-type(4) {
+        width: 5px;
+        height: 5px;
+      }
+      &:last-of-type img {
+        height: 8px;
+        width: auto;
+        margin-right: 5px;
+      }
+    }
+  }
 `
 
 const Navigation = styled.nav`
@@ -263,7 +297,7 @@ const Navigation = styled.nav`
   transform: rotate(-90deg);
   animation: ${fadeInDelayed} 1.5s;
   ul {
-    height: 20px;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -296,6 +330,10 @@ const Navigation = styled.nav`
     height: 20px;
     margin-top: 35vh;
     margin-left: -35%;
+  }
+  @media only screen and (max-width: 600px) {
+    margin-top: 25vh;
+    margin-left: -31%;
   }
 `
 
@@ -347,6 +385,16 @@ const DeveloperTextContainer = styled.div`
     z-index: 500;
     h2 {
       font-size: 8vw;
+      &:nth-of-type(2),
+      &:last-of-type {
+        margin-top: -6.5vmin;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    h2 {
+      font-size: 14vw;
       &:nth-of-type(2),
       &:last-of-type {
         margin-top: -6.5vmin;

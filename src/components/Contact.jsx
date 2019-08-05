@@ -105,7 +105,7 @@ const ContentWrapper = styled.div`
   animation: ${fadeIn} 2s, ${skewUp} 1s;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
-    height: 89%;
+    height: 80%;
     min-width: 85%;
     max-width: 85%;
   }
@@ -123,6 +123,16 @@ const HeaderText = styled.h1`
   -webkit-text-stroke-color: #fff;
   background-color: #a20505;
   padding: 0 10px;
+  @media only screen and (max-width: 1024px) {
+    font-size: 12vmin;
+    left: 0;
+    right: 0;
+    top: -8vmin;
+    max-width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    -webkit-text-stroke-width: 2px;
+  }
 `
 
 const InnerContentWrapper = styled.div`
@@ -131,6 +141,9 @@ const InnerContentWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding: 0 5vw;
+  @media only screen and (max-width: 1024px) {
+    align-items: flex-start;
+  }
 `
 
 const InnerContentText = styled.div`
@@ -151,6 +164,19 @@ const InnerContentText = styled.div`
     color: #fff;
     margin-top: 5px;
   }
+  @media only screen and (max-width: 1024px) {
+    width: 100%;
+    margin-top: 6vh;
+    h2 {
+      text-align: center;
+      a {
+        font-size: 6vmin;
+      }
+    }
+    p {
+      font-size: 4vmin;
+    }
+  }
 `
 
 const ImgOfRenly = styled.img`
@@ -161,6 +187,12 @@ const ImgOfRenly = styled.img`
   min-width: 40vmin;
   filter: drop-shadow(10px 0px 10px rgba(0, 0, 0, 0.4));
   z-index: 100;
+  @media only screen and (max-width: 1024px) {
+    min-width: 55vmin;
+  }
+  @media only screen and (max-width: 600px) {
+    min-width: 75vmin;
+  }
 `
 
 const ContactText = styled.div`
@@ -201,6 +233,9 @@ const ContactText = styled.div`
       z-index: 3;
     }
   }
+  @media only screen and (max-width: 1024px) {
+    display: none;
+  }
 `
 
 const ContactIcons = styled.div`
@@ -219,6 +254,15 @@ const ContactIcons = styled.div`
     img {
       background-color: #a20505;
       width: 2vw;
+    }
+  }
+  @media only screen and (max-width: 1024px) {
+    left: -3.5vw;
+    a {
+      margin-bottom: 4vh;
+      img {
+        width: 7vmin;
+      }
     }
   }
 `
