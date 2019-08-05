@@ -93,9 +93,9 @@ const ContentWrapper = styled.div`
   animation: ${fadeIn} 2s, ${skewUp} 1s;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
-    height: 89%;
-    min-width: 85%;
-    max-width: 85%;
+    align-items: center;
+    height: 70%;
+    min-width: 75%;
   }
 `
 
@@ -112,6 +112,15 @@ const HeaderText = styled.h1`
   -webkit-text-stroke-color: #fff;
   background-color: #a20505;
   padding: 0 10px;
+  @media only screen and (max-width: 1024px) {
+    font-size: 12vmin;
+    left: 0;
+    right: 0;
+    top: -8vmin;
+    margin: 0 auto;
+    max-width: 38vmin;
+    -webkit-text-stroke-width: 2px;
+  }
 `
 
 const InnerContentWrapper = styled.div`
@@ -120,6 +129,13 @@ const InnerContentWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding: 0 5vw;
+  @media only screen and (max-width: 1024px) {
+    width: 80%;
+    height: 50%;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0;
+  }
 `
 
 const InnerContentText = styled.div`
@@ -139,6 +155,18 @@ const InnerContentText = styled.div`
     color: #fff;
     margin-top: 15px;
   }
+  @media only screen and (max-width: 1024px) {
+    width: 95%;
+    h3 {
+      font-size: 20px;
+      margin-top: 2vmin;
+    }
+    p {
+      font-size: 12px;
+      line-height: 20px;
+      margin-top: 5px;
+    }
+  }
 `
 
 const ImgOfMyself = styled.img`
@@ -149,6 +177,14 @@ const ImgOfMyself = styled.img`
   min-width: 50vmin;
   filter: drop-shadow(10px 0px 10px rgba(0, 0, 0, 0.4));
   z-index: 100;
+  @media only screen and (max-width: 1024px) {
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 100%;
+    width: 40vh;
+    min-width: 30vmin;
+  }
 `
 
 const AboutText = styled.div`
@@ -187,6 +223,25 @@ const AboutText = styled.div`
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: #fff;
       z-index: 3;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: 0;
+    left: 0;
+    min-width: 100%;
+    top: 94%;
+    transform: rotate(0deg);
+    z-index: 500;
+    h3 {
+      font-size: 8vh;
+      &:nth-of-type(2),
+      &:last-of-type {
+        margin-top: -4.5vmin;
+      }
     }
   }
 `

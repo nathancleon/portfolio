@@ -93,7 +93,7 @@ export default class Experience extends React.Component {
     let projectCycle = () => this.cycleThroughProjects()
     this._isMounted = true
     setTimeout(() => {
-      this.intervalId = setInterval(projectCycle, 5000)
+      this.intervalId = setInterval(projectCycle, 6000)
     }, 1000)
   }
 
@@ -186,6 +186,9 @@ const Wrapper = styled.section`
   background-color: #fff;
   margin-top: 20vh;
   padding: 10vh 0;
+  @media only screen and (max-width: 1024px) {
+    padding: 0;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -196,10 +199,9 @@ const ContentWrapper = styled.div`
   border: 1px solid #444;
   animation: ${fadeIn} 2s, ${skewUp} 1s;
   @media only screen and (max-width: 1024px) {
-    flex-direction: column;
-    height: 89%;
-    min-width: 85%;
-    max-width: 85%;
+    width: 100%;
+    height: auto;
+    border: none;
   }
 `
 
@@ -215,6 +217,16 @@ const HeaderText = styled.h1`
   -webkit-text-stroke-color: #a20505;
   background-color: #fff;
   padding: 0 10px;
+  @media only screen and (max-width: 1024px) {
+    display: flex;
+    top: -15vmin;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 48vw;
+    font-size: 9vmin;
+    -webkit-text-stroke-width: 2px;
+  }
 `
 
 const InnerContentWrapper = styled.div`
@@ -223,21 +235,9 @@ const InnerContentWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding: 2vw;
-`
-
-const InnerContentHeader = styled.div`
-  height: 10vh;
-  width: 50vw;
-  display: flex;
-  align-items: center;
-  margin-left: -5vw;
-  margin-top: 3vmin;
-  background-color: #a20505;
-  h3 {
-    font-size: 2vw;
-    font-family: 'Bitter', serif;
-    color: #fff;
-    margin-left: 5vw;
+  @media only screen and (max-width: 1024px) {
+    flex-direction: column;
+    padding: 0;
   }
 `
 
@@ -254,6 +254,39 @@ const InnerContentText = styled.div`
     color: #444;
     margin-top: 15px;
     width: 80%;
+  }
+  @media only screen and (max-width: 1024px) {
+    width: 100%;
+    margin-top: 0;
+    p {
+      margin-left: 5vw;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+`
+
+const InnerContentHeader = styled.div`
+  height: 10vh;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  margin-left: -5vw;
+  margin-top: 3vmin;
+  background-color: #a20505;
+  h3 {
+    font-size: 2vw;
+    font-family: 'Bitter', serif;
+    color: #fff;
+    margin-left: 5vw;
+  }
+  @media only screen and (max-width: 1024px) {
+    height: 8vh;
+    width: 100%;
+    margin: 0;
+    h3 {
+      font-size: 2rem;
+    }
   }
 `
 
@@ -274,6 +307,12 @@ const TechStack = styled.ul`
     margin-right: 5px;
     margin-top: 5px;
   }
+  @media only screen and (max-width: 1024px) {
+    margin-left: 5vw;
+    li {
+      font-size: 12px;
+    }
+  }
 `
 
 const ProjectImgContainer = styled.div`
@@ -289,20 +328,36 @@ const ProjectImgContainer = styled.div`
     filter: drop-shadow(20px 12px 20px rgba(0, 0, 0, 0.6));
     z-index: 50;
   }
+  @media only screen and (max-width: 1024px) {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    padding: 2vw;
+    img {
+      width: 90%;
+    }
+  }
 `
 
 const ProjectLinks = styled.div`
   position: relative;
   display: flex;
-  justify-content: space-between;
-  width: 45%;
+  justify-content: center;
+  width: 100%;
   margin-left: 6vw;
   margin-top: -4vh;
   z-index: 60;
   a {
     color: #444;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-style: italic;
+    margin-right: 25px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    margin-top: -2vh;
+    a {
+      font-size: 1rem;
+    }
   }
 `
 
@@ -348,6 +403,21 @@ const ExperienceText = styled.div`
       z-index: 3;
     }
   }
+
+  @media only screen and (max-width: 1024px) {
+    right: 0;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    top: 130%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: rotate(0deg);
+    h3 {
+      font-size: 7vh;
+    }
+  }
 `
 
 const SliderNavigation = styled.div`
@@ -362,5 +432,11 @@ const SliderNavigation = styled.div`
     width: 20px;
     cursor: pointer;
     margin-right: 25px;
+  }
+  @media only screen and (max-width: 1024px) {
+    bottom: -30px;
+    img {
+      width: 15px;
+    }
   }
 `
