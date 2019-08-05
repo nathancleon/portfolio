@@ -81,7 +81,7 @@ const Wrapper = styled.section`
   align-items: center;
   position: relative;
   width: 100vw;
-  height: 110vh;
+  height: 100vh;
   background-color: #a20505;
   margin-top: 20vh;
   padding-top: 20vh;
@@ -92,6 +92,14 @@ const Wrapper = styled.section`
     border-left: 100vw solid transparent;
     border-right: 0 solid transparent;
     border-bottom: 20vh solid #a20505;
+  }
+  @media only screen and (max-width: 1024px) {
+    margin-top: 10vh;
+    padding-top: 0;
+    &:before {
+      top: -9.9vh;
+      border-bottom: 10vh solid #a20505;
+    }
   }
 `
 

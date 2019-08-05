@@ -43,6 +43,7 @@ export default class Experience extends React.Component {
         },
       ],
       selectedIndex: 0,
+      fade: null,
       intervalId: null,
     }
   }
@@ -93,8 +94,8 @@ export default class Experience extends React.Component {
     let projectCycle = () => this.cycleThroughProjects()
     this._isMounted = true
     setTimeout(() => {
-      this.intervalId = setInterval(projectCycle, 6000)
-    }, 1000)
+      this.intervalId = setInterval(projectCycle, 7000)
+    }, 6000)
   }
 
   componentWillUnmount() {
@@ -111,50 +112,52 @@ export default class Experience extends React.Component {
           <ContentWrapper>
             <HeaderText>Experience</HeaderText>
             <InnerContentWrapper>
-              <InnerContentText>
-                <InnerContentHeader>
-                  <h3>{selectedProject.title}</h3>
-                </InnerContentHeader>
-                <p>{selectedProject.description}</p>
-                <TechStack>
-                  {selectedProject.techStack.map((tech, index) => (
-                    <li key={index}>{tech}</li>
-                  ))}
-                </TechStack>
-              </InnerContentText>
-              <ProjectImgContainer>
-                <img
-                  src={selectedProject.image}
-                  alt="desktop and mobile view of the project"
-                />
-                <ProjectLinks>
-                  {selectedProject.liveDemo ? (
-                    <a
-                      href={selectedProject.liveDemo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Live Demo
-                    </a>
-                  ) : null}
-                  {selectedProject.gitHub ? (
-                    <a
-                      href={selectedProject.gitHub}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GitHub Link
-                    </a>
-                  ) : null}
-                </ProjectLinks>
-              </ProjectImgContainer>
-              <SliderNavigation>{sliderDots}</SliderNavigation>
-              <ExperienceText>
-                <h3>Experience</h3>
-                <h3>Experience</h3>
-                <h3>Experience</h3>
-              </ExperienceText>
+              <InnerContent key={this.state.selectedIndex}>
+                <InnerContentText>
+                  <InnerContentHeader>
+                    <h3>{selectedProject.title}</h3>
+                  </InnerContentHeader>
+                  <p>{selectedProject.description}</p>
+                  <TechStack>
+                    {selectedProject.techStack.map((tech, index) => (
+                      <li key={index}>{tech}</li>
+                    ))}
+                  </TechStack>
+                </InnerContentText>
+                <ProjectImgContainer>
+                  <img
+                    src={selectedProject.image}
+                    alt="desktop and mobile view of the project"
+                  />
+                  <ProjectLinks>
+                    {selectedProject.liveDemo ? (
+                      <a
+                        href={selectedProject.liveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live Demo
+                      </a>
+                    ) : null}
+                    {selectedProject.gitHub ? (
+                      <a
+                        href={selectedProject.gitHub}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        GitHub Link
+                      </a>
+                    ) : null}
+                  </ProjectLinks>
+                </ProjectImgContainer>
+              </InnerContent>
             </InnerContentWrapper>
+            <SliderNavigation>{sliderDots}</SliderNavigation>
+            <ExperienceText>
+              <h3>Experience</h3>
+              <h3>Experience</h3>
+              <h3>Experience</h3>
+            </ExperienceText>
           </ContentWrapper>
         ) : null}
       </Wrapper>
@@ -176,6 +179,16 @@ const fadeIn = keyframes`
   to   { opacity: 1 }
 `
 
+const slideIn = keyframes`
+from { transform: translateX(-300px)}
+  to   { transform: translateX(0)}
+`
+
+const fadeOut = keyframes`
+  from { opacity: 1 }
+  to   { opacity: 0 }
+`
+
 const Wrapper = styled.section`
   display: flex;
   justify-content: center;
@@ -184,7 +197,8 @@ const Wrapper = styled.section`
   width: 100vw;
   height: 130vh;
   background-color: #fff;
-  margin-top: 20vh;
+  margin-top: 10vh;
+  margin-bottom: 20vh;
   padding: 10vh 0;
   @media only screen and (max-width: 1024px) {
     padding: 0;
@@ -243,10 +257,14 @@ const InnerContentWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding: 2vw;
+  z-index: 5;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
     padding: 0;
   }
+`
+const InnerContent = styled(InnerContentWrapper)`
+  animation: ${fadeIn} 2s ease, ${slideIn} 1s ease;
 `
 
 const InnerContentText = styled.div`
@@ -335,16 +353,15 @@ const ProjectImgContainer = styled.div`
   position: relative;
   margin-left: -8vw;
   img {
-    width: 55vw;
+    width: 100%;
     filter: drop-shadow(20px 12px 20px rgba(0, 0, 0, 0.6));
     z-index: 50;
   }
   @media only screen and (max-width: 1024px) {
-    margin-top: 4vh;
-    margin-bottom: 4vh;
-    padding: 2vw;
+    margin-left: 0;
     img {
-      width: 90%;
+      width: 100%;
+      margin-left: -3vw;
       filter: drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.3));
     }
   }
@@ -355,18 +372,21 @@ const ProjectLinks = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-left: 6vw;
+  margin-left: 8vw;
   margin-top: -4vh;
   z-index: 60;
   a {
     color: #444;
     font-size: 1.5vw;
     font-style: italic;
-    margin-right: 25px;
+    &:first-of-type {
+      margin-right: 25px;
+    }
   }
-
   @media only screen and (max-width: 1024px) {
     margin-top: -2vh;
+    margin-left: 0;
+    width: auto;
     a {
       font-size: 1rem;
     }
