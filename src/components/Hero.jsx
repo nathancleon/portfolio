@@ -149,6 +149,7 @@ const ImageOfMyself = styled.img`
   max-width: 80%;
   z-index: 10;
   @media only screen and (max-width: 1024px) {
+    animation: ${fadeIn} 1s;
     min-width: 100%;
     right: 0;
     left: 0;
@@ -189,7 +190,7 @@ const NameSmall = styled.h1`
   width: 100%;
   text-align: center;
   z-index: 50;
-  animation: ${fadeInDelayed} 0.5s, ${moveUp} 1s;
+  animation: ${fadeIn} 2.5s;
   @media only screen and (max-width: 1024px) {
     top: -4.2vw;
     font-size: 4.5vw;
@@ -211,7 +212,7 @@ const HeroTextContainer = styled.div`
   align-items: center;
   justify-content: center;
   transform-origin: 100% 50%;
-  animation: ${fadeIn} 2s, ${scaleX} 1s;
+  animation: ${scaleX} 1s;
   @media only screen and (max-width: 1200px) {
     left: -12%;
   }
