@@ -196,7 +196,7 @@ const ImgOfRenly = styled.img`
   filter: drop-shadow(10px 0px 10px rgba(0, 0, 0, 0.4));
   z-index: 100;
   @media only screen and (max-width: 1024px) {
-    min-width: 55vmin;
+    min-width: 52vmin;
   }
   @media only screen and (max-width: 600px) {
     min-width: 70vmin;
