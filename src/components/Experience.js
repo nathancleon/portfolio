@@ -254,6 +254,7 @@ const InnerContentWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  min-height: 70vh;
   padding: 2vw;
   z-index: 5;
   @media only screen and (max-width: 1024px) {
