@@ -209,7 +209,7 @@ const ContentWrapper = styled.div`
   width: 80%;
   height: 60%;
   border: 1px solid #444;
-  animation: ${fadeIn} 2s, ${skewUp} 1s;
+  animation: ${fadeIn} 3s, ${skewUp} 1s;
   @media only screen and (max-width: 1024px) {
     width: 100%;
     height: auto;
@@ -363,6 +363,9 @@ const ProjectImgContainer = styled.div`
       margin-left: -3vw;
       filter: drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.3));
     }
+  }
+  @media only screen and (max-width: 600px) {
+    margin-top: 10px;
   }
 `
 

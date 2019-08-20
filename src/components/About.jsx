@@ -85,11 +85,11 @@ const Wrapper = styled.section`
   }
   @media only screen and (max-width: 1024px) {
     &:before {
-      top: -9.99vh;
+      top: -9.95vh;
       border-bottom: 10vh solid #a20505;
     }
     &:after {
-      bottom: -9.99vh;
+      bottom: -9.95vh;
       border-top: 10vh solid #a20505;
     }
   }

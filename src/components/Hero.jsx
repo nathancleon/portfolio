@@ -146,7 +146,6 @@ const ImageOfMyself = styled.img`
   bottom: 0;
   right: 5%;
   width: 50vw;
-  max-width: 80%;
   z-index: 10;
   @media only screen and (max-width: 1024px) {
     animation: ${fadeIn} 1s;

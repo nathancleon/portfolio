@@ -88,7 +88,7 @@ const Wrapper = styled.section`
   &:before {
     content: '';
     position: absolute;
-    top: -19.9vh;
+    top: -19.5vh;
     border-left: 100vw solid transparent;
     border-right: 0 solid transparent;
     border-bottom: 20vh solid #a20505;
