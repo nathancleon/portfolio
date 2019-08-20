@@ -197,11 +197,6 @@ const InnerContentText = styled.div`
       margin-top: 5px;
     }
   }
-  @media only screen and (max-width: 320px) {
-    p {
-      font-size: 10px;
-    }
-  }
 `
 
 const ImgOfMyself = styled.img`
