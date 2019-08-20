@@ -13,7 +13,7 @@ const About = ({ inView }) => (
             <h3>My name is Nathan Collins León</h3>
             <p>
               I’m a fullstack developer with a passion for design and
-              accessibility. I grew up in Puerto Rico, and currently reside in
+              accessibility. I grew up in Puerto Rico and currently reside in
               Washington, D.C.
             </p>
             <p>

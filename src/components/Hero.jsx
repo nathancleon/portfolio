@@ -226,8 +226,7 @@ const HeroTextContainer = styled.div`
 const HeroText = styled.ul`
   display: flex;
   justify-content: space-around;
-  min-width: 60%;
-  margin-right: 15vw;
+  min-width: 50%;
   animation: ${fadeInDelayed} 1.5s;
   li {
     position: relative;
