@@ -192,9 +192,14 @@ const InnerContentText = styled.div`
       margin-top: 10px;
     }
     p {
-      font-size: 12px;
+      font-size: 13px;
       line-height: 15px;
       margin-top: 5px;
+    }
+  }
+  @media only screen and (max-width: 320px) {
+    p {
+      font-size: 11px;
     }
   }
 `
