@@ -226,7 +226,8 @@ const HeroTextContainer = styled.div`
 const HeroText = styled.ul`
   display: flex;
   justify-content: space-around;
-  min-width: 50%;
+  min-width: 60%;
+  margin-right: 15vw;
   animation: ${fadeInDelayed} 1.5s;
   li {
     position: relative;
@@ -269,7 +270,7 @@ const HeroText = styled.ul`
     }
   }
   @media only screen and (max-width: 600px) {
-    margin-right: -14vw;
+    margin-right: -15vw;
     li {
       font-size: 10px;
       margin: auto 0;
