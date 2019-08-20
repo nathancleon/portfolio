@@ -88,16 +88,16 @@ const Wrapper = styled.section`
   &:before {
     content: '';
     position: absolute;
-    top: -19.5vh;
-    border-left: 100vw solid transparent;
+    top: -19.7vh;
+    border-left: 103vw solid transparent;
     border-right: 0 solid transparent;
-    border-bottom: 20vh solid #a20505;
+    border-bottom: 19.9vh solid #a20505;
   }
   @media only screen and (max-width: 1024px) {
     margin-top: 10vh;
     padding-top: 0;
     &:before {
-      top: -9.9vh;
+      top: -9.8vh;
       border-bottom: 10vh solid #a20505;
     }
   }

@@ -70,10 +70,10 @@ const Wrapper = styled.section`
   &:before {
     content: '';
     position: absolute;
-    top: -19.9vh;
-    border-left: 100vw solid transparent;
+    top: -19.7vh;
+    border-left: 103vw solid transparent;
     border-right: 0 solid transparent;
-    border-bottom: 20vh solid #a20505;
+    border-bottom: 19.9vh solid #a20505;
   }
   &:after {
     content: '';
@@ -85,7 +85,7 @@ const Wrapper = styled.section`
   }
   @media only screen and (max-width: 1024px) {
     &:before {
-      top: -9.95vh;
+      top: -9.93vh;
       border-bottom: 10vh solid #a20505;
     }
     &:after {
