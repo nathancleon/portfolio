@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import Hero from './Hero'
 import About from './About'
+import Freelance from './Freelance'
 import Experience from './Experience'
 import Contact from './Contact'
 
@@ -11,6 +12,7 @@ class Landing extends React.Component {
     this.state = {
       aboutIsInView: false,
       experienceIsInView: false,
+      projectsIsInView: false,
       contactIsInView: false,
     }
   }
@@ -25,6 +27,10 @@ class Landing extends React.Component {
         } else if (entry.isIntersecting && entry.target.id === 'experience') {
           this.setState({
             experienceIsInView: true,
+          })
+        } else if (entry.isIntersecting && entry.target.id === 'projects') {
+          this.setState({
+            projectsIsInView: true,
           })
         } else if (entry.isIntersecting && entry.target.id === 'contact') {
           console.warn('contact logic ran')
@@ -43,6 +49,7 @@ class Landing extends React.Component {
       <Wrapper>
         <Hero />
         <About inView={this.state.aboutIsInView} />
+        <Freelance inView={this.state.experienceIsInView} />
         <Experience inView={this.state.experienceIsInView} />
         <Contact inView={this.state.contactIsInView} />
       </Wrapper>

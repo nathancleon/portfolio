@@ -1,162 +1,40 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
-import MentalNoteImg from '../images/mentalnotemockup-compressed.png'
-import SproutLogImg from '../images/sproutlog-mockup-compressed.png'
-import BarkLocal from '../images/barklocal-mockup-compressed.png'
-import CircleSvg from '../images/icons/circle.svg'
-import CircleOutlineSvg from '../images/icons/circle-outline.svg'
+import GreenRoof from '../images/greenroofdiagnostics.svg'
+import MuteSix from '../images/mutesix.webp'
+import Tagflix from '../images/tagflix.svg'
 
-export default class Experience extends React.Component {
+export default class Projects extends React.Component {
   _isMounted = false
   constructor(props) {
     super(props)
-
-    this.state = {
-      projects: [
-        {
-          title: 'MentalNote',
-          description:
-            'Mental Note is an online mental health tracker. The intention is to log how you’re doing every day. You can track your progress over time on the dashboard and view analytics on your mental health over the course of weeks, months, and years.',
-          techStack: ['react', 'redux', 'node', 'mocha', 'chai', 'jest'],
-          liveDemo: 'https://mentalnote.herokuapp.com/',
-          gitHub: 'https://github.com/nathancleon/self-journal',
-          image: MentalNoteImg,
-        },
-        {
-          title: 'SproutLog',
-          description:
-            "Sprout Log is a plant log where you can take notes on each of your plants and keep track of the health of your plant by logging when you watered the plant and keeping track of it's sun exposure.",
-          techStack: ['jQuery', 'node', 'mocha', 'chai'],
-          liveDemo: 'https://sprout-log.herokuapp.com/',
-          gitHub: 'https://github.com/nathancleon/sprout-log-app',
-          image: SproutLogImg,
-        },
-        {
-          title: 'Bark Local',
-          description:
-            'Bark Local is a simple app to find dog parks by utilizing the Google Maps and Foursquare APIs. Enter your zipcode to find dog parks near you!',
-          techStack: ['jQuery', 'node', 'mocha', 'chai'],
-          liveDemo: 'https://sprout-log.herokuapp.com/',
-          gitHub: 'https://github.com/nathancleon/sprout-log-app',
-          image: BarkLocal,
-        },
-      ],
-      selectedIndex: 0,
-      fade: null,
-      intervalId: null,
-    }
-  }
-
-  selectProject(event) {
-    this.setState({
-      selectedIndex: event.target.id,
-    })
-    clearInterval(this.intervalId)
-  }
-
-  generateDots() {
-    let dots = []
-    for (let i = 0; i < this.state.projects.length; i++) {
-      dots.push(
-        <img
-          key={i}
-          id={i}
-          alt="navigation dot"
-          onClick={this.selectProject.bind(this)}
-          src={CircleOutlineSvg}
-        />
-      )
-    }
-    dots[this.state.selectedIndex] = (
-      <img
-        key={this.state.selectedIndex}
-        id={this.state.selectedIndex}
-        alt="selected navigation dot"
-        onClick={this.selectProject.bind(this)}
-        src={CircleSvg}
-      />
-    )
-    return dots
-  }
-
-  cycleThroughProjects() {
-    if (this.state.selectedIndex === this.state.projects.length - 1) {
-      this.setState({
-        selectedIndex: 0,
-      })
-    } else {
-      this.setState({ selectedIndex: this.state.selectedIndex + 1 })
-    }
-  }
-
-  componentDidMount() {
-    let projectCycle = () => this.cycleThroughProjects()
-    this._isMounted = true
-    setTimeout(() => {
-      this.intervalId = setInterval(projectCycle, 7000)
-    }, 6000)
-  }
-
-  componentWillUnmount() {
-    this._isMounted = false
-    clearInterval(this.intervalId)
   }
 
   render() {
-    const selectedProject = this.state.projects[this.state.selectedIndex]
-    const sliderDots = this.generateDots()
     return (
-      <Wrapper id="projects">
+      <Wrapper id="experience">
         {this.props.inView ? (
           <ContentWrapper>
-            <HeaderText>Projects</HeaderText>
+            <HeaderText>Freelance</HeaderText>
             <InnerContentWrapper>
-              <InnerContent key={this.state.selectedIndex}>
+              <InnerContent>
                 <InnerContentText>
                   <InnerContentHeader>
-                    <h3>{selectedProject.title}</h3>
+                    <h3>Clients I've Worked With</h3>
                   </InnerContentHeader>
-                  <p>{selectedProject.description}</p>
-                  <TechStack>
-                    {selectedProject.techStack.map((tech, index) => (
-                      <li key={index}>{tech}</li>
-                    ))}
-                  </TechStack>
                 </InnerContentText>
                 <ProjectImgContainer>
-                  <img
-                    src={selectedProject.image}
-                    alt="desktop and mobile view of the project"
-                  />
-                  <ProjectLinks>
-                    {selectedProject.liveDemo ? (
-                      <a
-                        href={selectedProject.liveDemo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Live Demo
-                      </a>
-                    ) : null}
-                    {selectedProject.gitHub ? (
-                      <a
-                        href={selectedProject.gitHub}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        GitHub Link
-                      </a>
-                    ) : null}
-                  </ProjectLinks>
+                  <img src={Tagflix} alt="tagflix logo" />
+                  <img src={MuteSix} alt="mutesix logo" />
+                  <img src={GreenRoof} alt="greenroof logo" />
                 </ProjectImgContainer>
               </InnerContent>
             </InnerContentWrapper>
-            <SliderNavigation>{sliderDots}</SliderNavigation>
             <ExperienceText>
-              <h3>Projects</h3>
-              <h3>Projects</h3>
-              <h3>Projects</h3>
+              <h3>Freelance</h3>
+              <h3>Freelance</h3>
+              <h3>Freelance</h3>
             </ExperienceText>
           </ContentWrapper>
         ) : null}
@@ -197,10 +75,17 @@ const Wrapper = styled.section`
   width: 100vw;
   height: 130vh;
   background-color: #fff;
-  margin-bottom: 20vh;
+  margin-bottom: -20vh;
   @media only screen and (max-width: 1024px) {
     padding: 0;
-    height: 100vh;
+    height: 80vh;
+    margin-top: 30vh;
+    margin-bottom: 0;
+  }
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+    height: 30vh;
+    margin-bottom: 10vh;
   }
 `
 
@@ -208,7 +93,7 @@ const ContentWrapper = styled.div`
   display: flex;
   position: relative;
   width: 80%;
-  height: 60%;
+  height: 40%;
   border: 1px solid #444;
   animation: ${fadeIn} 3s, ${skewUp} 1s;
   @media only screen and (max-width: 1024px) {
@@ -217,10 +102,10 @@ const ContentWrapper = styled.div`
     border: none;
   }
   @media only screen and (max-width: 600px) {
-    height: 580px;
-  }
-  @media only screen and (max-width: 320px) {
-    height: 500px;
+    width: 100%;
+    height: auto;
+    border: none;
+    margin-top: 10vh;
   }
 `
 
@@ -252,10 +137,10 @@ const HeaderText = styled.h1`
 
 const InnerContentWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 70vh;
   padding: 2vw;
   z-index: 5;
   @media only screen and (max-width: 1024px) {
@@ -271,7 +156,7 @@ const InnerContentText = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 9vmin;
+  margin-top: 4vmin;
   width: 45%;
   p {
     font-size: 1.25vw;
@@ -289,9 +174,6 @@ const InnerContentText = styled.div`
       font-size: 14px;
       line-height: 18px;
     }
-  }
-  @media only screen and (max-width: 420px) {
-    height: 300px;
   }
 `
 
@@ -315,6 +197,11 @@ const InnerContentHeader = styled.div`
     margin: 0;
     h3 {
       font-size: 2rem;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    h3 {
+      font-size: 1.5rem;
     }
   }
 `
@@ -345,24 +232,21 @@ const TechStack = styled.ul`
 `
 
 const ProjectImgContainer = styled.div`
+  width: 90%;
   display: flex;
-  flex-direction: column;
-  align-self: center;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   position: relative;
-  margin-left: -8vw;
+  margin-top: 5vh;
   img {
-    width: 100%;
-    filter: drop-shadow(20px 12px 20px rgba(0, 0, 0, 0.6));
+    width: 20vmin;
     z-index: 50;
   }
   @media only screen and (max-width: 1024px) {
-    margin-left: 0;
+    width: 100%;
     img {
-      width: 100%;
+      width: 20vmin;
       margin-left: -3vw;
-      filter: drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.3));
     }
   }
   @media only screen and (max-width: 600px) {
@@ -402,7 +286,7 @@ const ProjectLinks = styled.div`
 
 const ExperienceText = styled.div`
   position: absolute;
-  right: -9vw;
+  right: -10vw;
   bottom: 0;
   top: 0;
   margin: auto 0;
@@ -423,7 +307,7 @@ const ExperienceText = styled.div`
 
     &:nth-of-type(2),
     &:last-of-type {
-      margin-top: -4.8vmin;
+      margin-top: -3.8vmin;
     }
 
     &:nth-of-type(2) {
