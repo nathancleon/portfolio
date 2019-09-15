@@ -218,7 +218,7 @@ const HeroTextContainer = styled.div`
   @media only screen and (max-width: 1024px) {
     min-width: 120vw;
     top: 0;
-    left: -32%;
+    left: -30%;
     height: 10%;
   }
 `
@@ -328,11 +328,11 @@ const Navigation = styled.nav`
   @media only screen and (max-width: 1024px) {
     height: 20px;
     margin-top: 35vh;
-    margin-left: -34%;
+    margin-left: -35%;
   }
   @media only screen and (max-width: 600px) {
     margin-top: 25vh;
-    margin-left: -29%;
+    margin-left: -31%;
   }
 `
 
