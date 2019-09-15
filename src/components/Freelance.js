@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
 import GreenRoof from '../images/greenroofdiagnostics.svg'
-import MuteSix from '../images/mutesix.webp'
+import MuteSix from '../images/mutesix.png'
 import Tagflix from '../images/tagflix.svg'
 
 export default class Projects extends React.Component {
