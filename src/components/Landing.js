@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import Hero from './Hero'
 import About from './About'
 import Freelance from './Freelance'
-import Experience from './Experience'
+import Projects from './Projects'
 import Contact from './Contact'
 
 class Landing extends React.Component {
@@ -50,7 +50,7 @@ class Landing extends React.Component {
         <Hero />
         <About inView={this.state.aboutIsInView} />
         <Freelance inView={this.state.experienceIsInView} />
-        <Experience inView={this.state.experienceIsInView} />
+        <Projects inView={this.state.projectsIsInView} />
         <Contact inView={this.state.contactIsInView} />
       </Wrapper>
     )

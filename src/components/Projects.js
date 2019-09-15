@@ -7,7 +7,7 @@ import BarkLocal from '../images/barklocal-mockup-compressed.png'
 import CircleSvg from '../images/icons/circle.svg'
 import CircleOutlineSvg from '../images/icons/circle-outline.svg'
 
-export default class Experience extends React.Component {
+export default class Projects extends React.Component {
   _isMounted = false
   constructor(props) {
     super(props)
