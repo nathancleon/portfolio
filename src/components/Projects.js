@@ -196,7 +196,7 @@ const Wrapper = styled.section`
   position: relative;
   width: 100vw;
   background-color: #fff;
-  margin-bottom: 20vh;
+  margin-bottom: 25vh;
   @media only screen and (max-width: 1024px) {
     padding: 0;
   }

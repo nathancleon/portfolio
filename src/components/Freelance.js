@@ -79,7 +79,7 @@ const Wrapper = styled.section`
   @media only screen and (max-width: 1024px) {
     padding: 0;
     height: 80vh;
-    margin-top: 30vh;
+    margin-top: 15vh;
     margin-bottom: 0;
   }
   @media only screen and (max-width: 600px) {
