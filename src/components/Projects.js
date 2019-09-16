@@ -195,12 +195,10 @@ const Wrapper = styled.section`
   align-items: center;
   position: relative;
   width: 100vw;
-  height: 130vh;
   background-color: #fff;
   margin-bottom: 20vh;
   @media only screen and (max-width: 1024px) {
     padding: 0;
-    height: 100vh;
   }
 `
 
@@ -260,6 +258,7 @@ const InnerContentWrapper = styled.div`
   z-index: 5;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
+    justify-content: space-around;
     padding: 0;
   }
 `
@@ -289,9 +288,6 @@ const InnerContentText = styled.div`
       font-size: 14px;
       line-height: 18px;
     }
-  }
-  @media only screen and (max-width: 420px) {
-    height: 300px;
   }
 `
 
@@ -388,7 +384,6 @@ const ProjectLinks = styled.div`
   }
   @media only screen and (max-width: 1024px) {
     margin-top: -4vh;
-    margin-bottom: 2vh;
     margin-left: 0;
     width: auto;
     a {
@@ -453,7 +448,7 @@ const SliderNavigation = styled.div`
   justify-content: center;
   position: absolute;
   height: 30px;
-  bottom: -50px;
+  bottom: -35px;
   left: 0;
   right: 0;
   img {
@@ -465,7 +460,6 @@ const SliderNavigation = styled.div`
     }
   }
   @media only screen and (max-width: 1024px) {
-    bottom: -30px;
     img {
       width: 15px;
     }
