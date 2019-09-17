@@ -5,43 +5,37 @@ import GreenRoof from '../images/greenroofdiagnostics.svg'
 import MuteSix from '../images/mutesix.png'
 import Tagflix from '../images/tagflix.svg'
 
-export default class Projects extends React.Component {
-  _isMounted = false
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-      <Wrapper id="experience">
-        {this.props.inView ? (
-          <ContentWrapper>
-            <HeaderText>Freelance</HeaderText>
-            <InnerContentWrapper>
-              <InnerContent>
-                <InnerContentText>
-                  <InnerContentHeader>
-                    <h3>Clients I've Worked With</h3>
-                  </InnerContentHeader>
-                </InnerContentText>
-                <ProjectImgContainer>
-                  <img src={Tagflix} alt="tagflix logo" />
-                  <img src={MuteSix} alt="mutesix logo" />
-                  <img src={GreenRoof} alt="greenroof logo" />
-                </ProjectImgContainer>
-              </InnerContent>
-            </InnerContentWrapper>
-            <ExperienceText>
-              <h3>Freelance</h3>
-              <h3>Freelance</h3>
-              <h3>Freelance</h3>
-            </ExperienceText>
-          </ContentWrapper>
-        ) : null}
-      </Wrapper>
-    )
-  }
+const Projects = ({ inView }) => {
+  return (
+    <Wrapper id="experience">
+      {inView ? (
+        <ContentWrapper>
+          <HeaderText>Freelance</HeaderText>
+          <InnerContentWrapper>
+            <InnerContent>
+              <InnerContentText>
+                <InnerContentHeader>
+                  <h3>Clients I've Worked With</h3>
+                </InnerContentHeader>
+              </InnerContentText>
+              <ProjectImgContainer>
+                <img src={Tagflix} alt="tagflix logo" />
+                <img src={MuteSix} alt="mutesix logo" />
+                <img src={GreenRoof} alt="greenroof logo" />
+              </ProjectImgContainer>
+            </InnerContent>
+          </InnerContentWrapper>
+          <ExperienceText>
+            <h3>Freelance</h3>
+            <h3>Freelance</h3>
+            <h3>Freelance</h3>
+          </ExperienceText>
+        </ContentWrapper>
+      ) : null}
+    </Wrapper>
+  )
 }
+export default Projects
 
 const skewUp = keyframes`
 from {
@@ -122,7 +116,7 @@ const HeaderText = styled.h1`
   background-color: #fff;
   padding: 0 10px;
   @media only screen and (max-width: 1024px) {
-    top: -26vmin;
+    top: -22vmin;
     left: 0;
     right: 0;
     display: inline-block;
@@ -149,7 +143,7 @@ const InnerContentWrapper = styled.div`
   }
 `
 const InnerContent = styled(InnerContentWrapper)`
-  animation: ${fadeIn} 2s ease, ${slideIn} 1s ease;
+  animation: ${fadeIn} 3s ease, ${slideIn} 1s ease;
 `
 
 const InnerContentText = styled.div`
@@ -286,7 +280,7 @@ const ProjectLinks = styled.div`
 
 const ExperienceText = styled.div`
   position: absolute;
-  right: -10vw;
+  right: -10.5vw;
   bottom: 0;
   top: 0;
   margin: auto 0;
@@ -307,7 +301,7 @@ const ExperienceText = styled.div`
 
     &:nth-of-type(2),
     &:last-of-type {
-      margin-top: -3.8vmin;
+      margin-top: -4.8vmin;
     }
 
     &:nth-of-type(2) {

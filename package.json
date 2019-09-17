@@ -8,7 +8,7 @@
     "@emotion/styled": "^10.0.4",
     "emotion": "^10.0.4",
     "emotion-server": "^10.0.4",
-    "gatsby": "^2.9.1",
+    "gatsby": "^2.15.16",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-emotion": "^3.0.1",
     "gatsby-plugin-manifest": "^2.0.9",
@@ -18,9 +18,9 @@
     "gatsby-source-filesystem": "^2.0.39",
     "gatsby-transformer-sharp": "^2.1.8",
     "prop-types": "^15.6.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-helmet": "^5.2.0"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1"
   },
   "keywords": [
     "gatsby"

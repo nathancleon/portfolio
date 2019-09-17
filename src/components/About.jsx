@@ -1,44 +1,61 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import { keyframes } from '@emotion/core'
 import MyselfWithComputer from '../images/me-with-computer-edited-compressed.png'
 
-const About = ({ inView }) => (
-  <Wrapper id="about">
-    {inView ? (
-      <ContentWrapper>
-        <HeaderText>About</HeaderText>
-        <InnerContentWrapper>
-          <InnerContentText>
-            <h3>My name is Nathan Collins León</h3>
-            <p>
-              I’m a fullstack developer with a passion for design and
-              accessibility. I grew up in Puerto Rico and currently reside in
-              Washington, D.C.
-            </p>
-            <p>
-              Things I love: national parks, traveling, UI/UX, dogs, and autumn
-              (best season).
-            </p>
-            <p>
-              Things I know: react, redux, mobX, vue, node, mongoDB, jQuery,
-              javaScript, emotion, sass, css, html.
-            </p>
-          </InnerContentText>
-          <ImgOfMyself
-            src={MyselfWithComputer}
-            alt="Nathan Collins Leon with a computer"
-          />
-          <AboutText>
-            <h3>About</h3>
-            <h3>About</h3>
-            <h3>About</h3>
-          </AboutText>
-        </InnerContentWrapper>
-      </ContentWrapper>
-    ) : null}
-  </Wrapper>
-)
+const About = ({ inView }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      imageOfMyself: file(
+        relativePath: { eq: "me-with-computer-edited-compressed.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+  return (
+    <Wrapper id="about">
+      {inView ? (
+        <ContentWrapper>
+          <HeaderText>About</HeaderText>
+          <InnerContentWrapper>
+            <InnerContentText>
+              <h3>My name is Nathan Collins León</h3>
+              <p>
+                I’m a fullstack developer with a passion for design and
+                accessibility. I grew up in Puerto Rico and currently reside in
+                Washington, D.C.
+              </p>
+              <p>
+                Things I love: national parks, traveling, UI/UX, dogs, and
+                autumn (best season).
+              </p>
+              <p>
+                Things I know: react, redux, mobX, vue, node, mongoDB, jQuery,
+                javaScript, emotion, sass, css, html.
+              </p>
+            </InnerContentText>
+            <ImgOfMyself
+              fluid={data.imageOfMyself.childImageSharp.fluid}
+              alt="Nathan Collins Leon with a computer"
+            />
+            <AboutText>
+              <h3>About</h3>
+              <h3>About</h3>
+              <h3>About</h3>
+            </AboutText>
+          </InnerContentWrapper>
+        </ContentWrapper>
+      ) : null}
+    </Wrapper>
+  )
+}
 
 export default About
 
@@ -140,16 +157,14 @@ const HeaderText = styled.h1`
 
 const InnerContentWrapper = styled.div`
   display: flex;
-  align-items: center;
   width: 100%;
   height: 100%;
-  padding: 0 5vw;
+  align-items: flex-end;
   @media only screen and (max-width: 1024px) {
+    padding: 2vw;
     width: 80%;
-    height: 50%;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 0;
+    flex-direction: column;
+    justify-content: space-between;
   }
   @media only screen and (max-width: 600px) {
     width: 90%;
@@ -161,6 +176,8 @@ const InnerContentText = styled.div`
   flex-direction: column;
   align-self: center;
   width: 45%;
+  padding: 2vw;
+  padding-left: 4vw;
   h3 {
     font-size: 3vmin;
     font-family: 'Bitter', serif;
@@ -174,6 +191,9 @@ const InnerContentText = styled.div`
     margin-top: 15px;
   }
   @media only screen and (max-width: 1024px) {
+    padding: 0;
+    padding-left: 0;
+    margin-top: 5vmin;
     width: 95%;
     h3 {
       font-size: 20px;
@@ -204,21 +224,25 @@ const InnerContentText = styled.div`
   }
 `
 
-const ImgOfMyself = styled.img`
+const ImgOfMyself = styled(Img)`
   position: absolute;
   bottom: 0;
   right: -4vw;
-  width: 38vw;
+  width: 30vw;
   min-width: 50vmin;
   filter: drop-shadow(10px 0px 10px rgba(0, 0, 0, 0.4));
   z-index: 100;
   @media only screen and (max-width: 1024px) {
     right: 0;
     left: 0;
+    bottom: -2vw;
     margin: 0 auto;
     width: 100%;
-    width: 40vh;
+    width: 38vh;
     min-width: 30vmin;
+  }
+  @media only screen and (max-width: 320px) {
+    width: 35vh;
   }
 `
 

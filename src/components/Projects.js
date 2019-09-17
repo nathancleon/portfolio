@@ -235,7 +235,7 @@ const HeaderText = styled.h1`
   background-color: #fff;
   padding: 0 10px;
   @media only screen and (max-width: 1024px) {
-    top: -26vmin;
+    top: -20vmin;
     left: 0;
     right: 0;
     display: inline-block;
@@ -263,7 +263,7 @@ const InnerContentWrapper = styled.div`
   }
 `
 const InnerContent = styled(InnerContentWrapper)`
-  animation: ${fadeIn} 2s ease, ${slideIn} 1s ease;
+  animation: ${fadeIn} 3s ease, ${slideIn} 1s ease;
 `
 
 const InnerContentText = styled.div`

@@ -1,53 +1,74 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import { keyframes } from '@emotion/core'
 import ImgOfMyself from '../images/me-cropped-grainy-compressed3.png'
 import LocationIcon from '../images/icons/map-marker-alt.svg'
 
-const Hero = () => (
-  <LandingWrapper>
-    <ContentWrapper>
-      <NameLarge>Nathan Collins León</NameLarge>
-      <NameSmall>Nathan Collins León</NameSmall>
-      <ImageOfMyself src={ImgOfMyself} alt="Nathan Collins Leon" />
-      <HeroTextContainer>
-        <HeroText>
-          <li>Fullstack</li>
-          <li />
-          <li>Frontend</li>
-          <li />
-          <li>
-            <img src={LocationIcon} alt="location symbol" />
-            D.C.
-          </li>
-        </HeroText>
-        <Navigation>
-          <ul>
-            <li>
-              <a href="#about">About</a>
-            </li>
+const Hero = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      imageOfMyself: file(relativePath: { eq: "me-cropped-grainy.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+  return (
+    <LandingWrapper>
+      <ContentWrapper>
+        <NameLarge>Nathan Collins León</NameLarge>
+        <NameSmall>Nathan Collins León</NameSmall>
+        <ImageOfMyself
+          fluid={data.imageOfMyself.childImageSharp.fluid}
+          alt="Nathan Collins Leon"
+        />
+        <HeroTextContainer>
+          <HeroText>
+            <li>Fullstack</li>
+            <li />
+            <li>Frontend</li>
             <li />
             <li>
-              <a href="#experience">Experience</a>
+              <img src={LocationIcon} alt="location symbol" />
+              D.C.
             </li>
-            <li />
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </Navigation>
-      </HeroTextContainer>
-      <DeveloperTextContainer>
-        <h2>Developer</h2>
-        <h2>Developer</h2>
-        <h2>Developer</h2>
-      </DeveloperTextContainer>
-    </ContentWrapper>
-  </LandingWrapper>
-)
+          </HeroText>
+          <Navigation>
+            <ul>
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li />
+              <li>
+                <a href="#experience">Experience</a>
+              </li>
+              <li />
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+              <li />
+              <li>
+                <a href="#">Blog</a>
+              </li>
+            </ul>
+          </Navigation>
+        </HeroTextContainer>
+        <DeveloperTextContainer>
+          <h2>Developer</h2>
+          <h2>Developer</h2>
+          <h2>Developer</h2>
+        </DeveloperTextContainer>
+      </ContentWrapper>
+    </LandingWrapper>
+  )
+}
 
 export default Hero
-
 const skewUp = keyframes`
 from {
   transform: translate3d(0, 200px, 0) skewY(6deg);
@@ -141,8 +162,8 @@ const ContentWrapper = styled.div`
   }
 `
 
-const ImageOfMyself = styled.img`
-  position: absolute;
+const ImageOfMyself = styled(Img)`
+  position: absolute !important;
   bottom: 0;
   right: 5%;
   width: 50vw;
@@ -291,7 +312,7 @@ const HeroText = styled.ul`
 const Navigation = styled.nav`
   position: absolute;
   max-width: 30vw;
-  min-width: 240px;
+  min-width: 320px;
   height: 62vw;
   transform: rotate(-90deg);
   animation: ${fadeInDelayed} 1.5s;
@@ -314,13 +335,15 @@ const Navigation = styled.nav`
       }
       list-style: none;
       &:nth-of-type(2),
-      &:nth-of-type(4) {
+      &:nth-of-type(4),
+      &:nth-of-type(6) {
         display: inline-block;
         background-color: #444;
         width: 5px;
         height: 5px;
         border-radius: 50%;
         margin: auto 0;
+        margin-bottom: 5px;
       }
     }
   }
@@ -333,6 +356,25 @@ const Navigation = styled.nav`
   @media only screen and (max-width: 600px) {
     margin-top: 25vh;
     margin-left: -31%;
+  }
+  @media only screen and (max-width: 420px) {
+    min-width: 230px;
+    margin-top: 25vh;
+    margin-left: -31%;
+    ul {
+      li {
+        a {
+          font-size: 0.75rem;
+        }
+        &:nth-of-type(2),
+        &:nth-of-type(4),
+        &:nth-of-type(6) {
+          width: 3px;
+          height: 3px;
+          margin-bottom: 6px;
+        }
+      }
+    }
   }
 `
 
