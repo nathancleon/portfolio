@@ -20,7 +20,6 @@ export default class NewLanding extends React.Component {
   }
 
   renderRenly() {
-    console.log('this ran')
     this.setState({
       renlyVisible: true,
       currentPage: null,
@@ -28,11 +27,9 @@ export default class NewLanding extends React.Component {
   }
 
   renderPage(page) {
-    console.log('ran renderPage')
     this.setState({
       currentPage: page,
     })
-    console.log(this.state.currentPage)
   }
 
   render() {

@@ -33,7 +33,6 @@ class Landing extends React.Component {
             projectsIsInView: true,
           })
         } else if (entry.isIntersecting && entry.target.id === 'contact') {
-          console.warn('contact logic ran')
           this.setState({
             contactIsInView: true,
           })

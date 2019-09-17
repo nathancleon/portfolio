@@ -45,6 +45,10 @@ export default class Projects extends React.Component {
       selectedIndex: 0,
       fade: null,
       intervalId: null,
+      touchStartValX: null,
+      touchStartValY: null,
+      touchMoveValX: null,
+      touchMoveValY: null,
     }
   }
 
@@ -90,6 +94,60 @@ export default class Projects extends React.Component {
     }
   }
 
+  getInitialTouchValue(event) {
+    this.setState({
+      touchStartValX: event.touches[0].clientX,
+      touchStartValY: event.touches[0].clientY,
+    })
+  }
+
+  swipeThroughProjects(event) {
+    this.setState({
+      touchMoveValX: event.touches[0].clientX,
+      touchMoveValY: event.touches[0].clientY,
+    })
+
+    let xDiff = this.state.touchStartValX - this.state.touchMoveValX
+    let yDiff = this.state.touchStartValY - this.state.touchMoveValY
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+      if (xDiff > 0) {
+        //swipe right
+        clearInterval(this.intervalId)
+        if (this.state.selectedIndex === this.state.projects.length - 1) {
+          this.setState({
+            selectedIndex: 0,
+          })
+        } else {
+          this.setState({ selectedIndex: this.state.selectedIndex + 1 })
+        }
+      } else {
+        //swipe left
+        clearInterval(this.intervalId)
+        if (this.state.selectedIndex === 0) {
+          this.setState({
+            selectedIndex: 0,
+          })
+        } else {
+          this.setState({ selectedIndex: this.state.selectedIndex - 1 })
+        }
+      }
+    } else {
+      if (yDiff > 0) {
+        return
+      } else {
+        return
+      }
+    }
+  }
+
+  clearTouchEvent() {
+    this.setState({
+      touchStartVal: null,
+      touchMoveVal: null,
+    })
+  }
+
   componentDidMount() {
     let projectCycle = () => this.cycleThroughProjects()
     this._isMounted = true
@@ -109,7 +167,11 @@ export default class Projects extends React.Component {
     return (
       <Wrapper id="projects">
         {this.props.inView ? (
-          <ContentWrapper>
+          <ContentWrapper
+            onTouchStart={event => this.getInitialTouchValue(event)}
+            onTouchMove={event => this.swipeThroughProjects(event)}
+            onTouchEnd={() => this.clearTouchEvent()}
+          >
             <HeaderText>Projects</HeaderText>
             <InnerContentWrapper>
               <InnerContent key={this.state.selectedIndex}>
