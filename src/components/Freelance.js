@@ -15,7 +15,7 @@ const Projects = ({ inView }) => {
             <InnerContent>
               <InnerContentText>
                 <InnerContentHeader>
-                  <h3>Clients I've Worked With</h3>
+                  <h3>Companies I've Worked With</h3>
                 </InnerContentHeader>
               </InnerContentText>
               <ProjectImgContainer>
@@ -190,12 +190,12 @@ const InnerContentHeader = styled.div`
     width: 100%;
     margin: 0;
     h3 {
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
   }
   @media only screen and (max-width: 600px) {
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
   }
 `
