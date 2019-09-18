@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { keyframes } from '@emotion/core'
 import RenlyWithBlankets from '../images/renly-blankets-compressed.png'
-import Resume from '../images/NathanielCollinsLeonResume.pdf'
+import Resume from '../images/NathanCollinsLeonResume.pdf'
 import Twitter from '../images/icons/twitter-square.svg'
 import LinkedIn from '../images/icons/linkedin.svg'
 import GitHub from '../images/icons/github-square.svg'
@@ -51,7 +51,7 @@ const Contact = ({ inView }) => {
           </InnerContentWrapper>
           <ContactIcons>
             <a
-              href="https://www.twitter.com/nathancleon"
+              href="https://www.twitter.com/nathanleoncodes"
               target="_blank"
               rel="noopener noreferrer"
             >
