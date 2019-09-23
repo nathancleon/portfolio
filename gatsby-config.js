@@ -1,8 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: 'Nathaniel Collins Leon Portfolio',
-    description: 'This is the portfolio of Nathaniel Collins Leon',
+    description:
+      'This is the portfolio of Nathaniel Collins Leon and his dog Renly!',
     author: 'Nathaniel Collins Leon',
+    url: 'https://www.nathancleon.com',
+    image: '/images/website-screenshot.png',
+    twitterUsername: '@nathanleoncodes',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import WebsiteScreenshot from '../images/website-screenshot.png'
 import { StaticQuery, graphql } from 'gatsby'
 
 function SEO({ description, lang, meta, keywords, title }) {
@@ -32,6 +33,10 @@ function SEO({ description, lang, meta, keywords, title }) {
               {
                 property: 'og:type',
                 content: 'website',
+              },
+              {
+                property: 'og:image',
+                content: WebsiteScreenshot,
               },
               {
                 name: 'twitter:card',
@@ -78,6 +83,9 @@ SEO.propTypes = {
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
+  image: null,
+  pathname: null,
+  article: false,
 }
 
 export default SEO
@@ -89,6 +97,9 @@ const detailsQuery = graphql`
         title
         description
         author
+        url
+        image
+        twitterUsername
       }
     }
   }
