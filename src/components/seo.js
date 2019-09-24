@@ -43,6 +43,10 @@ function SEO({ description, lang, meta, keywords, title }) {
                 content: 'summary_large_image',
               },
               {
+                name: 'twitter:site',
+                content: '@nathanleoncodes',
+              },
+              {
                 name: 'twitter:creator',
                 content: data.site.siteMetadata.author,
               },
