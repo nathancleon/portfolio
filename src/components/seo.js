@@ -60,7 +60,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: 'twitter:image',
-                content: WebsiteScreenshot,
+                content: `https://www.nathancleon.com/${WebsiteScreenshot}`,
               },
             ]
               .concat(
