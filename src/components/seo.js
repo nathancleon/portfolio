@@ -36,7 +36,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: 'og:image',
-                content: WebsiteScreenshot,
+                content: `https://www.nathancleon.com${WebsiteScreenshot}`,
               },
               {
                 name: 'twitter:card',
