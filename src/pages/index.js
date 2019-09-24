@@ -1,14 +1,10 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { Global, css } from '@emotion/core'
 import SEO from '../components/seo'
 import Landing from '../components/Landing'
 
 const IndexPage = () => (
   <>
-    <Helmet>
-      <html lang="en" />
-    </Helmet>
     <div>
       <Global
         styles={css`

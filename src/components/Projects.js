@@ -38,7 +38,7 @@ export default class Projects extends React.Component {
             'Bark Local is a simple app to find dog parks by utilizing the Google Maps and Foursquare APIs. Enter your zipcode to find dog parks near you!',
           techStack: ['jQuery', 'node', 'mocha', 'chai'],
           liveDemo: 'https://sprout-log.herokuapp.com/',
-          gitHub: 'https://github.com/nathancleon/sprout-log-app',
+          gitHub: 'https://nathancleon.github.io/bark-local/',
           image: BarkLocal,
         },
       ],
