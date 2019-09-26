@@ -44,19 +44,38 @@ export default class Projects extends React.Component {
         },
       ],
       selectedIndex: 0,
+      newIndex: 0,
       fade: null,
       touchStartValX: null,
       touchStartValY: null,
       touchMoveValX: null,
       touchMoveValY: null,
     }
+    this.selectProject = this.selectProject.bind(this)
+    this.cycleThroughProjects = this.cycleThroughProjects.bind(this)
+    this.getInitialTouchValue = this.getInitialTouchValue.bind(this)
+    this.swipeThroughProjects = this.swipeThroughProjects.bind(this)
+    this.triggerTouchevent = this.triggerTouchevent.bind(this)
   }
 
   selectProject(event) {
+    if (this.state.selectedIndex === this.state.projects.length - 1) {
+      this.setState({
+        selectedIndex: 0,
+      })
+    } else if (this.state.selectedIndex === 0) {
+      this.setState({
+        selectedIndex: 0,
+      })
+    }
     this.setState({
       selectedIndex: event.target.id,
     })
-    clearInterval(this.intervalId)
+    console.log('select proj state', this.state.selectedIndex)
+    console.log('select proj event', event.target.id)
+    if (this.intervalId) {
+      clearInterval(this.intervalId)
+    }
   }
 
   generateDots() {
@@ -67,7 +86,7 @@ export default class Projects extends React.Component {
           key={i}
           id={i}
           alt="navigation dot"
-          onClick={this.selectProject.bind(this)}
+          onClick={this.selectProject}
           src={CircleOutlineSvg}
         />
       )
@@ -77,7 +96,7 @@ export default class Projects extends React.Component {
         key={this.state.selectedIndex}
         id={this.state.selectedIndex}
         alt="selected navigation dot"
-        onClick={this.selectProject.bind(this)}
+        onClick={this.selectProject}
         src={CircleSvg}
       />
     )
@@ -92,9 +111,11 @@ export default class Projects extends React.Component {
     } else {
       this.setState({ selectedIndex: this.state.selectedIndex + 1 })
     }
+    console.log('cycle state', this.state.selectedIndex)
   }
 
   getInitialTouchValue(event) {
+    clearInterval(this.intervalId)
     this.setState({
       touchStartValX: event.touches[0].clientX,
       touchStartValY: event.touches[0].clientY,
@@ -109,35 +130,40 @@ export default class Projects extends React.Component {
   }
 
   triggerTouchevent() {
+    console.log('swipe state', this.state.selectedIndex)
     let xDiff = this.state.touchStartValX - this.state.touchMoveValX
     let yDiff = this.state.touchStartValY - this.state.touchMoveValY
     let xyDiff = xDiff - yDiff
+    let increment = this.state.selectedIndex + 1
+    let decrement = this.state.selectedIndex - 1
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
       //swipe right, but only after a significant/large swipe
       if (xyDiff > 120) {
-        if (this.intervalId) {
-          clearInterval(this.intervalId)
-        }
         if (this.state.selectedIndex === this.state.projects.length - 1) {
           this.setState({
-            selectedIndex: 0,
+            selectedIndex: this.state.projects.length - 1,
           })
         } else {
-          this.setState({ selectedIndex: this.state.selectedIndex + 1 })
+          console.log('right swipe state', this.state.selectedIndex)
+          this.setState({
+            selectedIndex: increment,
+          })
+          console.log('right swipe state after', this.state.selectedIndex)
         }
       } else {
         //swipe left
         if (xyDiff < -120) {
-          if (this.intervalId) {
-            clearInterval(this.intervalId)
-          }
-          if (this.state.selectedIndex === 0) {
+          console.log('left swipe state', this.state.selectedIndex)
+          if (this.state.selectedIndex < 1) {
             this.setState({
               selectedIndex: 0,
             })
           } else {
-            this.setState({ selectedIndex: this.state.selectedIndex - 1 })
+            this.setState({
+              selectedIndex: decrement,
+            })
+            console.log('left swipe state after', this.state.selectedIndex)
           }
         }
       }
@@ -154,6 +180,7 @@ export default class Projects extends React.Component {
   }
 
   clearTouchEvent() {
+    clearInterval(this.intervalId)
     this.setState({
       touchStartVal: null,
       touchMoveVal: null,
@@ -161,14 +188,21 @@ export default class Projects extends React.Component {
   }
 
   componentDidMount() {
-    let projectCycle = () => this.cycleThroughProjects()
     this._isMounted = true
-    this.intervalId = setInterval(projectCycle, 7000)
+    this.intervalId = setInterval(this.cycleThroughProjects, 7000)
   }
+
+  // componentDidUpdate(prevState) {
+  //   if (prevState && prevState.selectedIndex !== this.state.selectedIndex) {
+  //     this.setState({ selectedIndex: prevStateselectedIndex })
+  //   }
+  // }
 
   componentWillUnmount() {
     this._isMounted = false
-    clearInterval(this.intervalId)
+    if (this.intervalId) {
+      clearInterval(this.intervalId)
+    }
   }
 
   render() {
@@ -176,62 +210,64 @@ export default class Projects extends React.Component {
     const sliderDots = this.generateDots()
     return (
       <Wrapper id="projects">
-        {this.props.inView ? (
-          <ContentWrapper
-            onTouchStart={this.getInitialTouchValue.bind(this)}
-            onTouchMove={this.swipeThroughProjects.bind(this)}
-            onTouchEnd={this.triggerTouchevent.bind(this)}
-          >
-            <HeaderText>Projects</HeaderText>
-            <InnerContentWrapper>
-              <InnerContent key={this.state.selectedIndex}>
-                <InnerContentText>
-                  <InnerContentHeader>
-                    <h3>{selectedProject.title}</h3>
-                  </InnerContentHeader>
-                  <p>{selectedProject.description}</p>
-                  <TechStack>
-                    {selectedProject.techStack.map((tech, index) => (
-                      <li key={index}>{tech}</li>
-                    ))}
-                  </TechStack>
-                </InnerContentText>
-                <ProjectImgContainer>
-                  <img
-                    src={selectedProject.image}
-                    alt="desktop and mobile view of the project"
-                  />
-                  <ProjectLinks>
-                    {selectedProject.liveDemo ? (
-                      <a
-                        href={selectedProject.liveDemo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Live Demo
-                      </a>
-                    ) : null}
-                    {selectedProject.gitHub ? (
-                      <a
-                        href={selectedProject.gitHub}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        GitHub Link
-                      </a>
-                    ) : null}
-                  </ProjectLinks>
-                </ProjectImgContainer>
-              </InnerContent>
-            </InnerContentWrapper>
-            <SliderNavigation>{sliderDots}</SliderNavigation>
-            <ExperienceText>
-              <h3>Projects</h3>
-              <h3>Projects</h3>
-              <h3>Projects</h3>
-            </ExperienceText>
-          </ContentWrapper>
-        ) : null}
+        <React.StrictMode>
+          {this.props.inView ? (
+            <ContentWrapper
+              onTouchStart={this.getInitialTouchValue.bind(this)}
+              onTouchMove={this.swipeThroughProjects.bind(this)}
+              onTouchEnd={this.triggerTouchevent.bind(this)}
+            >
+              <HeaderText>Projects</HeaderText>
+              <InnerContentWrapper>
+                <InnerContent key={this.state.selectedIndex}>
+                  <InnerContentText>
+                    <InnerContentHeader>
+                      {/* <h3>{selectedProject.title}</h3> */}
+                    </InnerContentHeader>
+                    {/* <p>{selectedProject.description}</p> */}
+                    {/* <TechStack>
+                      {selectedProject.techStack.map((tech, index) => (
+                        <li key={index}>{tech}</li>
+                      ))}
+                    </TechStack> */}
+                  </InnerContentText>
+                  {/* <ProjectImgContainer>
+                    <img
+                      src={selectedProject.image}
+                      alt="desktop and mobile view of the project"
+                    />
+                    <ProjectLinks>
+                      {selectedProject.liveDemo ? (
+                        <a
+                          href={selectedProject.liveDemo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Live Demo
+                        </a>
+                      ) : null}
+                      {selectedProject.gitHub ? (
+                        <a
+                          href={selectedProject.gitHub}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          GitHub Link
+                        </a>
+                      ) : null}
+                    </ProjectLinks>
+                  </ProjectImgContainer> */}
+                </InnerContent>
+              </InnerContentWrapper>
+              <ExperienceText>
+                <h3>Projects</h3>
+                <h3>Projects</h3>
+                <h3>Projects</h3>
+              </ExperienceText>
+              <SliderNavigation>{sliderDots}</SliderNavigation>
+            </ContentWrapper>
+          ) : null}
+        </React.StrictMode>
       </Wrapper>
     )
   }
@@ -519,7 +555,7 @@ const SliderNavigation = styled.div`
   justify-content: center;
   position: absolute;
   height: 30px;
-  bottom: -35px;
+  bottom: -55px;
   left: 0;
   right: 0;
   z-index: 100;
@@ -534,7 +570,6 @@ const SliderNavigation = styled.div`
   @media only screen and (max-width: 1024px) {
     img {
       width: 15px;
-      pointer-events: none;
     }
   }
 `
