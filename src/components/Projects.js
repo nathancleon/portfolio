@@ -37,8 +37,8 @@ export default class Projects extends React.Component {
           description:
             'Bark Local is a simple app to find dog parks by utilizing the Google Maps and Foursquare APIs. Enter your zipcode to find dog parks near you!',
           techStack: ['jQuery', 'node', 'mocha', 'chai'],
-          liveDemo: 'https://sprout-log.herokuapp.com/',
-          gitHub: 'https://nathancleon.github.io/bark-local/',
+          liveDemo: 'https://nathancleon.github.io/bark-local/',
+          gitHub: 'https://github.com/nathancleon/bark-local',
           image: BarkLocal,
         },
       ],
@@ -106,14 +106,19 @@ export default class Projects extends React.Component {
       touchMoveValX: event.touches[0].clientX,
       touchMoveValY: event.touches[0].clientY,
     })
+  }
 
+  triggerTouchevent() {
     let xDiff = this.state.touchStartValX - this.state.touchMoveValX
     let yDiff = this.state.touchStartValY - this.state.touchMoveValY
+    let xyDiff = xDiff - yDiff
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
-      if (xDiff > 0) {
-        //swipe right
-        clearInterval(this.intervalId)
+      //swipe right, but only after a significant/large swipe
+      if (xyDiff > 120) {
+        if (this.intervalId) {
+          clearInterval(this.intervalId)
+        }
         if (this.state.selectedIndex === this.state.projects.length - 1) {
           this.setState({
             selectedIndex: 0,
@@ -123,22 +128,29 @@ export default class Projects extends React.Component {
         }
       } else {
         //swipe left
-        clearInterval(this.intervalId)
-        if (this.state.selectedIndex === 0) {
-          this.setState({
-            selectedIndex: 0,
-          })
-        } else {
-          this.setState({ selectedIndex: this.state.selectedIndex - 1 })
+        if (xyDiff < -120) {
+          if (this.intervalId) {
+            clearInterval(this.intervalId)
+          }
+          if (this.state.selectedIndex === 0) {
+            this.setState({
+              selectedIndex: 0,
+            })
+          } else {
+            this.setState({ selectedIndex: this.state.selectedIndex - 1 })
+          }
         }
       }
     } else {
       if (yDiff > 0) {
+        this.clearTouchEvent()
         return
       } else {
+        this.clearTouchEvent()
         return
       }
     }
+    this.clearTouchEvent()
   }
 
   clearTouchEvent() {
@@ -170,7 +182,7 @@ export default class Projects extends React.Component {
           <ContentWrapper
             onTouchStart={event => this.getInitialTouchValue(event)}
             onTouchMove={event => this.swipeThroughProjects(event)}
-            onTouchEnd={() => this.clearTouchEvent()}
+            onTouchEnd={() => this.triggerTouchevent()}
           >
             <HeaderText>Projects</HeaderText>
             <InnerContentWrapper>
@@ -229,10 +241,10 @@ export default class Projects extends React.Component {
 
 const skewUp = keyframes`
 from {
-  transform: translate3d(0, 100px, 0) skewY(6deg);
+  transform: translate3d(0, 100px, 0);
 }
 to {
-  transform: translate3d(0) skewY(0deg);
+  transform: translate3d(0);
 }
 `
 
@@ -270,7 +282,7 @@ const ContentWrapper = styled.div`
   width: 80%;
   height: 60%;
   border: 1px solid #444;
-  animation: ${fadeIn} 3s, ${skewUp} 1s;
+  animation: ${fadeIn} 3s, ${slideIn} 1s;
   @media only screen and (max-width: 1024px) {
     width: 100%;
     height: auto;
@@ -315,18 +327,15 @@ const InnerContentWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 70vh;
+  height: 70vh;
   padding: 2vw;
   z-index: 5;
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
-    justify-content: space-around;
     padding: 0;
   }
 `
-const InnerContent = styled(InnerContentWrapper)`
-  animation: ${fadeIn} 3s ease, ${slideIn} 1s ease;
-`
+const InnerContent = styled(InnerContentWrapper)``
 
 const InnerContentText = styled.div`
   position: relative;
@@ -344,7 +353,8 @@ const InnerContentText = styled.div`
   }
   @media only screen and (max-width: 1024px) {
     width: 100%;
-    margin-top: 0;
+    margin-top: 4vmin;
+    margin-bottom: 50px;
     p {
       margin-left: 5vw;
       font-size: 14px;
@@ -416,6 +426,7 @@ const ProjectImgContainer = styled.div`
     z-index: 50;
   }
   @media only screen and (max-width: 1024px) {
+    animation: ${fadeIn} 3.5s ease, ${slideIn} 1s ease;
     margin-left: 0;
     img {
       width: 100%;
@@ -513,6 +524,7 @@ const SliderNavigation = styled.div`
   bottom: -35px;
   left: 0;
   right: 0;
+  z-index: 100;
   img {
     width: 20px;
     cursor: pointer;
