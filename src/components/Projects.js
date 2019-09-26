@@ -9,6 +9,7 @@ import CircleOutlineSvg from '../images/icons/circle-outline.svg'
 
 export default class Projects extends React.Component {
   _isMounted = false
+  intervalId = 0
   constructor(props) {
     super(props)
 
@@ -44,7 +45,6 @@ export default class Projects extends React.Component {
       ],
       selectedIndex: 0,
       fade: null,
-      intervalId: null,
       touchStartValX: null,
       touchStartValY: null,
       touchMoveValX: null,
@@ -163,9 +163,7 @@ export default class Projects extends React.Component {
   componentDidMount() {
     let projectCycle = () => this.cycleThroughProjects()
     this._isMounted = true
-    setTimeout(() => {
-      this.intervalId = setInterval(projectCycle, 7000)
-    }, 6000)
+    this.intervalId = setInterval(projectCycle, 7000)
   }
 
   componentWillUnmount() {
@@ -180,9 +178,9 @@ export default class Projects extends React.Component {
       <Wrapper id="projects">
         {this.props.inView ? (
           <ContentWrapper
-            onTouchStart={event => this.getInitialTouchValue(event)}
-            onTouchMove={event => this.swipeThroughProjects(event)}
-            onTouchEnd={() => this.triggerTouchevent()}
+            onTouchStart={this.getInitialTouchValue.bind(this)}
+            onTouchMove={this.swipeThroughProjects.bind(this)}
+            onTouchEnd={this.triggerTouchevent.bind(this)}
           >
             <HeaderText>Projects</HeaderText>
             <InnerContentWrapper>
@@ -536,6 +534,7 @@ const SliderNavigation = styled.div`
   @media only screen and (max-width: 1024px) {
     img {
       width: 15px;
+      pointer-events: none;
     }
   }
 `
