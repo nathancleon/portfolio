@@ -44,18 +44,14 @@ export default class Projects extends React.Component {
         },
       ],
       selectedIndex: 0,
-      newIndex: 0,
       fade: null,
       touchStartValX: null,
       touchStartValY: null,
       touchMoveValX: null,
       touchMoveValY: null,
     }
-    this.selectProject = this.selectProject.bind(this)
+
     this.cycleThroughProjects = this.cycleThroughProjects.bind(this)
-    this.getInitialTouchValue = this.getInitialTouchValue.bind(this)
-    this.swipeThroughProjects = this.swipeThroughProjects.bind(this)
-    this.triggerTouchevent = this.triggerTouchevent.bind(this)
   }
 
   selectProject(event) {
@@ -71,8 +67,6 @@ export default class Projects extends React.Component {
     this.setState({
       selectedIndex: event.target.id,
     })
-    console.log('select proj state', this.state.selectedIndex)
-    console.log('select proj event', event.target.id)
     if (this.intervalId) {
       clearInterval(this.intervalId)
     }
@@ -86,7 +80,7 @@ export default class Projects extends React.Component {
           key={i}
           id={i}
           alt="navigation dot"
-          onClick={this.selectProject}
+          onClick={this.selectProject.bind(this)}
           src={CircleOutlineSvg}
         />
       )
@@ -96,7 +90,7 @@ export default class Projects extends React.Component {
         key={this.state.selectedIndex}
         id={this.state.selectedIndex}
         alt="selected navigation dot"
-        onClick={this.selectProject}
+        onClick={this.selectProject.bind(this)}
         src={CircleSvg}
       />
     )
@@ -111,80 +105,6 @@ export default class Projects extends React.Component {
     } else {
       this.setState({ selectedIndex: this.state.selectedIndex + 1 })
     }
-    console.log('cycle state', this.state.selectedIndex)
-  }
-
-  getInitialTouchValue(event) {
-    clearInterval(this.intervalId)
-    this.setState({
-      touchStartValX: event.touches[0].clientX,
-      touchStartValY: event.touches[0].clientY,
-    })
-  }
-
-  swipeThroughProjects(event) {
-    this.setState({
-      touchMoveValX: event.touches[0].clientX,
-      touchMoveValY: event.touches[0].clientY,
-    })
-  }
-
-  triggerTouchevent() {
-    console.log('swipe state', this.state.selectedIndex)
-    let xDiff = this.state.touchStartValX - this.state.touchMoveValX
-    let yDiff = this.state.touchStartValY - this.state.touchMoveValY
-    let xyDiff = xDiff - yDiff
-    let increment = this.state.selectedIndex + 1
-    let decrement = this.state.selectedIndex - 1
-
-    if (Math.abs(xDiff) > Math.abs(yDiff)) {
-      //swipe right, but only after a significant/large swipe
-      if (xyDiff > 120) {
-        if (this.state.selectedIndex === this.state.projects.length - 1) {
-          this.setState({
-            selectedIndex: this.state.projects.length - 1,
-          })
-        } else {
-          console.log('right swipe state', this.state.selectedIndex)
-          this.setState({
-            selectedIndex: increment,
-          })
-          console.log('right swipe state after', this.state.selectedIndex)
-        }
-      } else {
-        //swipe left
-        if (xyDiff < -120) {
-          console.log('left swipe state', this.state.selectedIndex)
-          if (this.state.selectedIndex < 1) {
-            this.setState({
-              selectedIndex: 0,
-            })
-          } else {
-            this.setState({
-              selectedIndex: decrement,
-            })
-            console.log('left swipe state after', this.state.selectedIndex)
-          }
-        }
-      }
-    } else {
-      if (yDiff > 0) {
-        this.clearTouchEvent()
-        return
-      } else {
-        this.clearTouchEvent()
-        return
-      }
-    }
-    this.clearTouchEvent()
-  }
-
-  clearTouchEvent() {
-    clearInterval(this.intervalId)
-    this.setState({
-      touchStartVal: null,
-      touchMoveVal: null,
-    })
   }
 
   componentDidMount() {
@@ -192,17 +112,9 @@ export default class Projects extends React.Component {
     this.intervalId = setInterval(this.cycleThroughProjects, 7000)
   }
 
-  // componentDidUpdate(prevState) {
-  //   if (prevState && prevState.selectedIndex !== this.state.selectedIndex) {
-  //     this.setState({ selectedIndex: prevStateselectedIndex })
-  //   }
-  // }
-
   componentWillUnmount() {
     this._isMounted = false
-    if (this.intervalId) {
-      clearInterval(this.intervalId)
-    }
+    clearInterval(this.intervalId)
   }
 
   render() {
@@ -212,26 +124,22 @@ export default class Projects extends React.Component {
       <Wrapper id="projects">
         <React.StrictMode>
           {this.props.inView ? (
-            <ContentWrapper
-              onTouchStart={this.getInitialTouchValue.bind(this)}
-              onTouchMove={this.swipeThroughProjects.bind(this)}
-              onTouchEnd={this.triggerTouchevent.bind(this)}
-            >
+            <ContentWrapper>
               <HeaderText>Projects</HeaderText>
               <InnerContentWrapper>
                 <InnerContent key={this.state.selectedIndex}>
                   <InnerContentText>
                     <InnerContentHeader>
-                      {/* <h3>{selectedProject.title}</h3> */}
+                      <h3>{selectedProject.title}</h3>
                     </InnerContentHeader>
-                    {/* <p>{selectedProject.description}</p> */}
-                    {/* <TechStack>
+                    <p>{selectedProject.description}</p>
+                    <TechStack>
                       {selectedProject.techStack.map((tech, index) => (
                         <li key={index}>{tech}</li>
                       ))}
-                    </TechStack> */}
+                    </TechStack>
                   </InnerContentText>
-                  {/* <ProjectImgContainer>
+                  <ProjectImgContainer>
                     <img
                       src={selectedProject.image}
                       alt="desktop and mobile view of the project"
@@ -256,7 +164,7 @@ export default class Projects extends React.Component {
                         </a>
                       ) : null}
                     </ProjectLinks>
-                  </ProjectImgContainer> */}
+                  </ProjectImgContainer>
                 </InnerContent>
               </InnerContentWrapper>
               <ExperienceText>
